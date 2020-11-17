@@ -1,13 +1,32 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="1db62128-3702-4220-bcbe-fc42f957e3b5" name="Default Changelist" comment="" />
+    <list default="true" id="1db62128-3702-4220-bcbe-fc42f957e3b5" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.env.example" beforeDir="false" afterPath="$PROJECT_DIR$/.env.example" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/myBudgetApp.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/myBudgetApp.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/php.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/php.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Kernel.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Kernel.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Models/User.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Models/User.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Providers/RouteServiceProvider.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Providers/RouteServiceProvider.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/composer.json" beforeDir="false" afterPath="$PROJECT_DIR$/composer.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/composer.lock" beforeDir="false" afterPath="$PROJECT_DIR$/composer.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/config/app.php" beforeDir="false" afterPath="$PROJECT_DIR$/config/app.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/config/session.php" beforeDir="false" afterPath="$PROJECT_DIR$/config/session.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/database/migrations/2014_10_12_000000_create_users_table.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/migrations/2014_10_12_000000_create_users_table.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/css/app.css" beforeDir="false" afterPath="$PROJECT_DIR$/resources/css/app.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/js/app.js" beforeDir="false" afterPath="$PROJECT_DIR$/resources/js/app.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/routes/api.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/api.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/routes/web.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/web.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/webpack.mix.js" beforeDir="false" afterPath="$PROJECT_DIR$/webpack.mix.js" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
-  <component name="ComposerSettings" synchronizationState="SYNCHRONIZE">
+  <component name="ComposerSettings" doNotAsk="true" synchronizationState="SYNCHRONIZE">
     <pharConfigPath>$PROJECT_DIR$/composer.json</pharConfigPath>
     <execution />
   </component>
@@ -15,8 +34,12 @@
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="composer.json" />
+        <option value="SCSS File" />
       </list>
     </option>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="PhpWorkspaceProjectConfiguration">
     <include_path>
@@ -125,9 +148,22 @@
       <path value="$PROJECT_DIR$/vendor/sebastian/lines-of-code" />
       <path value="$PROJECT_DIR$/vendor/phar-io/manifest" />
       <path value="$PROJECT_DIR$/vendor/phar-io/version" />
+      <path value="$PROJECT_DIR$/vendor/jaybizzle/crawler-detect" />
+      <path value="$PROJECT_DIR$/vendor/laravel/jetstream" />
+      <path value="$PROJECT_DIR$/vendor/laravel/fortify" />
+      <path value="$PROJECT_DIR$/vendor/jenssegers/agent" />
+      <path value="$PROJECT_DIR$/vendor/pragmarx/google2fa" />
+      <path value="$PROJECT_DIR$/vendor/paragonie/constant_time_encoding" />
+      <path value="$PROJECT_DIR$/vendor/bacon/bacon-qr-code" />
+      <path value="$PROJECT_DIR$/vendor/dasprid/enum" />
+      <path value="$PROJECT_DIR$/vendor/mobiledetect/mobiledetectlib" />
+      <path value="$PROJECT_DIR$/vendor/inertiajs/inertia-laravel" />
+      <path value="$PROJECT_DIR$/vendor/laravel/sanctum" />
+      <path value="$PROJECT_DIR$/vendor/tightenco/ziggy" />
     </include_path>
   </component>
   <component name="ProjectId" id="1kHkVbHSr9KFT1WfPasoadbz1Gd" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
@@ -135,8 +171,27 @@
   <component name="PropertiesComponent">
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/resources/images" />
+    <property name="list.type.of.created.stylesheet" value="SCSS" />
+    <property name="node.js.detected.package.eslint" value="true" />
+    <property name="node.js.detected.package.tslint" value="true" />
+    <property name="node.js.path.for.package.eslint" value="project" />
+    <property name="node.js.path.for.package.tslint" value="project" />
+    <property name="node.js.selected.package.eslint" value="(autodetect)" />
+    <property name="node.js.selected.package.tslint" value="(autodetect)" />
     <property name="nodejs_package_manager_path" value="npm" />
     <property name="vue.rearranger.settings.migration" value="true" />
+  </component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/resources/images" />
+      <recent name="$PROJECT_DIR$/resources/sass" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/resources/views/landing" />
+      <recent name="$PROJECT_DIR$/resources/sass" />
+      <recent name="$PROJECT_DIR$/resources/css" />
+    </key>
   </component>
   <component name="RunManager">
     <configuration name="phpunit.xml" type="PHPUnitRunConfigurationType" factoryName="PHPUnit">
@@ -152,11 +207,64 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1605364939835</updated>
-      <workItem from="1605364946013" duration="454000" />
+      <workItem from="1605364946013" duration="1621000" />
+      <workItem from="1605458811559" duration="948000" />
+      <workItem from="1605553295696" duration="6083000" />
+      <workItem from="1605640043790" duration="7708000" />
     </task>
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
+  </component>
+  <component name="WindowStateProjectService">
+    <state x="2049" y="-51" key="#com.intellij.ide.util.MemberChooser" timestamp="1605478862339">
+      <screen x="1280" y="-280" width="1920" height="1080" />
+    </state>
+    <state x="2049" y="-51" key="#com.intellij.ide.util.MemberChooser/0.0.1280.800/1280.-280.1920.1080/3200.-280.1920.1080@1280.-280.1920.1080" timestamp="1605478862339" />
+    <state x="1795" y="-58" key="#com.intellij.openapi.keymap.impl.ui.EditKeymapsDialog" timestamp="1605478784942">
+      <screen x="1280" y="-280" width="1920" height="1080" />
+    </state>
+    <state x="1795" y="-58" key="#com.intellij.openapi.keymap.impl.ui.EditKeymapsDialog/0.0.1280.800/1280.-280.1920.1080/3200.-280.1920.1080@1280.-280.1920.1080" timestamp="1605478784942" />
+    <state x="1905" y="45" key="EditFileWatcherDialog" timestamp="1605641510318">
+      <screen x="1280" y="-280" width="1920" height="1080" />
+    </state>
+    <state x="1905" y="45" key="EditFileWatcherDialog/0.0.1280.800/1280.-280.1920.1080/3200.-280.1920.1080@1280.-280.1920.1080" timestamp="1605641510318" />
+    <state width="1878" height="305" key="GridCell.Tab.0.bottom" timestamp="1605569764996">
+      <screen x="0" y="0" width="1280" height="800" />
+    </state>
+    <state width="1878" height="305" key="GridCell.Tab.0.bottom/0.0.1280.800/1280.-280.1920.1080/3200.-280.1920.1080@1280.-280.1920.1080" timestamp="1605567185115" />
+    <state width="1878" height="305" key="GridCell.Tab.0.bottom/0.0.1280.800@0.0.1280.800" timestamp="1605569764996" />
+    <state width="1878" height="305" key="GridCell.Tab.0.center" timestamp="1605569764994">
+      <screen x="0" y="0" width="1280" height="800" />
+    </state>
+    <state width="1878" height="305" key="GridCell.Tab.0.center/0.0.1280.800/1280.-280.1920.1080/3200.-280.1920.1080@1280.-280.1920.1080" timestamp="1605567185110" />
+    <state width="1878" height="305" key="GridCell.Tab.0.center/0.0.1280.800@0.0.1280.800" timestamp="1605569764994" />
+    <state width="1878" height="305" key="GridCell.Tab.0.left" timestamp="1605569764993">
+      <screen x="0" y="0" width="1280" height="800" />
+    </state>
+    <state width="1878" height="305" key="GridCell.Tab.0.left/0.0.1280.800/1280.-280.1920.1080/3200.-280.1920.1080@1280.-280.1920.1080" timestamp="1605567185108" />
+    <state width="1878" height="305" key="GridCell.Tab.0.left/0.0.1280.800@0.0.1280.800" timestamp="1605569764993" />
+    <state width="1878" height="305" key="GridCell.Tab.0.right" timestamp="1605569764995">
+      <screen x="0" y="0" width="1280" height="800" />
+    </state>
+    <state width="1878" height="305" key="GridCell.Tab.0.right/0.0.1280.800/1280.-280.1920.1080/3200.-280.1920.1080@1280.-280.1920.1080" timestamp="1605567185112" />
+    <state width="1878" height="305" key="GridCell.Tab.0.right/0.0.1280.800@0.0.1280.800" timestamp="1605569764995" />
+    <state x="2063" y="190" key="NewPhpFileDialog" timestamp="1605558207272">
+      <screen x="1280" y="-280" width="1920" height="1080" />
+    </state>
+    <state x="2063" y="190" key="NewPhpFileDialog/0.0.1280.800/1280.-280.1920.1080/3200.-280.1920.1080@1280.-280.1920.1080" timestamp="1605558207272" />
+    <state x="2093" y="180" key="VCS.ChangelistChooser" timestamp="1605478754291">
+      <screen x="1280" y="-280" width="1920" height="1080" />
+    </state>
+    <state x="2093" y="180" key="VCS.ChangelistChooser/0.0.1280.800/1280.-280.1920.1080/3200.-280.1920.1080@1280.-280.1920.1080" timestamp="1605478754291" />
+    <state x="1912" y="77" key="com.jetbrains.php.test.PhpNewTestDialog" timestamp="1605478856905">
+      <screen x="1280" y="-280" width="1920" height="1080" />
+    </state>
+    <state x="1912" y="77" key="com.jetbrains.php.test.PhpNewTestDialog/0.0.1280.800/1280.-280.1920.1080/3200.-280.1920.1080@1280.-280.1920.1080" timestamp="1605478856905" />
+    <state x="1905" y="-39" width="670" height="676" key="search.everywhere.popup" timestamp="1605643060918">
+      <screen x="1280" y="-280" width="1920" height="1080" />
+    </state>
+    <state x="1905" y="-39" width="670" height="676" key="search.everywhere.popup/0.0.1280.800/1280.-280.1920.1080/3200.-280.1920.1080@1280.-280.1920.1080" timestamp="1605643060918" />
   </component>
 </project>
