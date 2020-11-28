@@ -32,7 +32,7 @@
         }
 
         .main-heading {
-            font-size: 2.5rem;
+            font-size: 2rem;
             white-space: pre-wrap;
             line-height: 2.5rem;
             margin-bottom: 1rem;
@@ -45,7 +45,8 @@
 
     .login-page-form-container {
         color: #2f2f2f;
-margin-top: 1rem;
+        margin-top: 1rem;
+
         .error-message-container {
             color: #d40000;
             text-align: center;
@@ -84,7 +85,8 @@ margin-top: 1rem;
 
                 &:focus-within {
                     border-color: #005ab7;
-                    i{
+
+                    i {
                         color: #005ab7;
                     }
                 }
@@ -150,7 +152,7 @@ margin-top: 1rem;
                 }
 
                 .btn-login {
-                    background: $header-bg;
+                    background: $primary-color;
                     width: 100%;
                     padding: 0.75rem;
                     border-radius: 2rem;

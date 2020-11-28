@@ -11,9 +11,9 @@
             <div class="login-page-header-background-container">
                 <div class="login-page-header-background"></div>
             </div>
-            <h1 class="main-heading">
-                <div>Create an account</div>
-            </h1>
+            <h1 class="main-heading">Create account</h1>
+            <span class="sub-heading">Create an account to access your dashboard if you don't have an account already.</span>
+
         </header>
         <section class="login-page-form-container">
 
@@ -43,7 +43,7 @@
                             class="sr-only">{{ __('Last Name') }}</span></label>
                     <input class="form-block-input" id="lastName" type="text" name="lastName"
                            value="{{old('lastName')}}" required placeholder="{{ __('Last Name') }}"
-                            autocomplete="lastName"/>
+                           autocomplete="lastName"/>
                 </div>
 
                 <div class="form-block">
@@ -87,8 +87,8 @@
             <div class="socials-container">
                 <a class="social-btn fb-btn" href="/fb"><span class="sr-only">{{ __('Password') }}</span><i
                         class="fab fa-facebook-f"></i></a>
-{{--                <a class="social-btn twitter-btn" href="/twitter"><span class="sr-only">{{ __('Password') }}</span><i--}}
-{{--                        class="fab fa-twitter"></i></a>--}}
+                {{--                <a class="social-btn twitter-btn" href="/twitter"><span class="sr-only">{{ __('Password') }}</span><i--}}
+                {{--                        class="fab fa-twitter"></i></a>--}}
                 <a class="social-btn google-btn" href="/google"><span class="sr-only">{{ __('Password') }}</span><i
                         class="fab fa-google-plus-g"></i></a>
             </div>
