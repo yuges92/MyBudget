@@ -1,6 +1,6 @@
 .landing-page {
-  padding-top: 3rem;
-  background: #f7faff;
+  padding-top: 1rem;
+  background: #f1f4ff;
   font-family: "Nunito", sans-serif;
   margin: 0;
   display: flex;
@@ -12,10 +12,12 @@
 .landing-page .logo-container {
   display: flex;
   justify-content: center;
+  flex-direction: column;
+  align-items: center;
 }
 
-.landing-page .logo-container .logo {
-  max-width: 6rem;
+.landing-page .logo-container .logo-title {
+  margin-top: 0;
 }
 
 .landing-page .headings .landing-page-header-1 {
@@ -35,11 +37,15 @@
 
 .landing-page .landing-page-svg-img {
   width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .landing-page .landing-page-svg-img svg {
   width: 100%;
   height: 100%;
+  max-width: 15rem;
 }
 
 .landing-page .footer {
@@ -59,7 +65,7 @@
   border-radius: 3rem;
   font-size: 1.2rem;
   text-transform: uppercase;
-  width: 20rem;
+  width: 15rem;
 }
 
 .landing-page .footer .lets-get-started-btn:hover {
@@ -70,5 +76,10 @@
   text-decoration: none;
   width: 100%;
   text-align: center;
+  color: #2d3748;
+  font-size: 1.2rem;
+  margin-top: 0.5rem;
+  text-transform: uppercase;
+  font-weight: 900;
 }
 

@@ -41741,10 +41741,10 @@ window.axios.defaults.headers.common['X-Requested-With'] = 'XMLHttpRequest';
 
 /***/ }),
 
-/***/ "./resources/sass/landing.scss":
-/*!*************************************!*\
-  !*** ./resources/sass/landing.scss ***!
-  \*************************************/
+/***/ "./resources/sass/external.scss":
+/*!**************************************!*\
+  !*** ./resources/sass/external.scss ***!
+  \**************************************/
 /*! no static exports found */
 /***/ (function(module, exports) {
 
@@ -41753,14 +41753,14 @@ window.axios.defaults.headers.common['X-Requested-With'] = 'XMLHttpRequest';
 /***/ }),
 
 /***/ 0:
-/*!*******************************************************************************************************************!*\
-  !*** multi ./resources/js/app.js ./resources/sass/landing.scss ./resources/sass/app.scss ./resources/css/app.css ***!
-  \*******************************************************************************************************************/
+/*!********************************************************************************************************************!*\
+  !*** multi ./resources/js/app.js ./resources/sass/external.scss ./resources/sass/app.scss ./resources/css/app.css ***!
+  \********************************************************************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
 __webpack_require__(/*! /Users/Yuges/Documents/Codes/LaravelProjects/myBudgetApp/resources/js/app.js */"./resources/js/app.js");
-__webpack_require__(/*! /Users/Yuges/Documents/Codes/LaravelProjects/myBudgetApp/resources/sass/landing.scss */"./resources/sass/landing.scss");
+__webpack_require__(/*! /Users/Yuges/Documents/Codes/LaravelProjects/myBudgetApp/resources/sass/external.scss */"./resources/sass/external.scss");
 __webpack_require__(/*! /Users/Yuges/Documents/Codes/LaravelProjects/myBudgetApp/resources/sass/app.scss */"./resources/sass/app.scss");
 module.exports = __webpack_require__(/*! /Users/Yuges/Documents/Codes/LaravelProjects/myBudgetApp/resources/css/app.css */"./resources/css/app.css");
 

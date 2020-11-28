@@ -1,6 +1,6 @@
 .landing-page {
-    padding-top: 3rem;
-    background: #f7faff;
+    padding-top: 1rem;
+    background: #f1f4ff;
     font-family: 'Nunito', sans-serif;
     margin: 0;
     display: flex;
@@ -9,13 +9,21 @@
     flex-direction: column;
     justify-content: space-between;
 
-    .logo-container{
+    .logo-container {
         display: flex;
         justify-content: center;
-        .logo{
-            max-width: 6rem;
+        flex-direction: column;
+        align-items: center;
+
+        .logo {
+            //max-height: 5rem;
+        }
+
+        .logo-title {
+            margin-top: 0;
         }
     }
+
     .headings {
         .landing-page-header-1 {
             font-size: 1.2rem;
@@ -36,10 +44,14 @@
 
     .landing-page-svg-img {
         width: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
 
         svg {
             width: 100%;
             height: 100%;
+            max-width: 15rem;
         }
     }
 
@@ -49,6 +61,7 @@
         flex-direction: column;
         justify-content: center;
         align-items: center;
+
         .lets-get-started-btn {
             text-decoration: none;
             background: #002245;
@@ -58,9 +71,9 @@
             border-radius: 3rem;
             font-size: 1.2rem;
             text-transform: uppercase;
-            width: 20rem;
+            width: 15rem;
 
-            &:hover{
+            &:hover {
                 background: #2d3748;
             }
         }
@@ -69,6 +82,12 @@
             text-decoration: none;
             width: 100%;
             text-align: center;
+            color: #2d3748;
+            font-size: 1.2rem;
+            margin-top: 0.5rem;
+            text-transform: uppercase;
+            font-weight: 900;
+
         }
     }
 
