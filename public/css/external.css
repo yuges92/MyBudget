@@ -6257,7 +6257,7 @@ html {
   width: 100%;
   overflow: hidden;
   position: absolute;
-  top: -25%;
+  top: -10rem;
   left: 0%;
   z-index: -1;
 }
@@ -6284,6 +6284,7 @@ html {
 
 .login-page .login-page-form-container {
   color: #2f2f2f;
+  margin-top: 1rem;
 }
 
 .login-page .login-page-form-container .error-message-container {
