@@ -6152,308 +6152,40 @@ html {
   font-family: "Nunito", "Arial";
 }
 
-.landing-page {
-  padding-top: 1rem;
-  background: #f1f4ff;
-  font-family: "Nunito", sans-serif;
-  margin: 0;
+.sm-nav {
   display: flex;
-  height: 90vh;
-  flex-direction: column;
-  justify-content: space-between;
-}
-
-.landing-page .logo-container {
-  display: flex;
-  justify-content: center;
-  flex-direction: column;
-  align-items: center;
-}
-
-.landing-page .logo-container .logo-title {
-  margin-top: 0;
-}
-
-.landing-page .headings .landing-page-header-1 {
-  font-size: 1.2rem;
-  color: #002245;
-  text-align: center;
-  margin: 0;
-}
-
-.landing-page .headings .landing-page-slogan {
-  font-size: 1.1rem;
-  color: #737373;
-  text-align: center;
-  font-weight: 300;
-  margin: 0;
-}
-
-.landing-page .landing-page-svg-img {
   width: 100%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  border-top: 1px solid #a9a9a97d;
+  box-shadow: 0px -2px 20px -1px #a9a9a97d;
 }
 
-.landing-page .landing-page-svg-img svg {
-  width: 100%;
-  height: 100%;
-  max-width: 15rem;
-}
-
-.landing-page .footer {
-  width: 100%;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-}
-
-.landing-page .footer .lets-get-started-btn {
-  text-decoration: none;
-  background: #002245;
-  color: #ffffff;
-  text-align: center;
-  padding: 1rem;
-  border-radius: 3rem;
-  font-size: 1.2rem;
-  text-transform: uppercase;
-  width: 15rem;
-}
-
-.landing-page .footer .lets-get-started-btn:hover {
-  background: #2d3748;
-}
-
-.landing-page .footer .login-btn {
-  text-decoration: none;
-  width: 100%;
-  text-align: center;
-  color: #2d3748;
-  font-size: 1.2rem;
-  margin-top: 0.5rem;
-  text-transform: uppercase;
-  font-weight: 900;
-}
-
-.login-page .login-page-body {
-  min-height: 100vh;
-  padding: 2rem;
-  color: #fff;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-}
-
-.login-page .login-page-body .login-page-header {
-  height: 10rem;
-  display: flex;
-  justify-content: center;
-  flex-direction: column;
-  margin-bottom: 1rem;
-}
-
-.login-page .login-page-body .login-page-header .login-page-header-background-container {
-  width: 100%;
-  overflow: hidden;
-  position: absolute;
-  top: -10rem;
-  left: 0%;
-  z-index: -1;
-}
-
-.login-page .login-page-body .login-page-header .login-page-header-background-container .login-page-header-background {
-  background: linear-gradient(-45deg, #002245, #005ab7);
-  height: 23rem;
-  border-radius: 50%;
-  width: 150%;
-  position: relative;
-  left: -40%;
-}
-
-.login-page .login-page-body .login-page-header .main-heading {
-  font-size: 2rem;
-  line-height: 2.5rem;
-  margin-bottom: 1rem;
-}
-
-.login-page .login-page-body .login-page-header .sub-heading {
-  color: #e2e8f0;
-}
-
-.login-page .login-page-body .login-page-form-container {
-  color: #2f2f2f;
-  margin-top: 1rem;
-}
-
-.login-page .login-page-body .login-page-form-container .error-message-container {
-  color: #d40000;
-  text-align: center;
-  margin: 1rem auto;
-  background: #ffebeb;
-  border: 1px solid #ffd5d5;
-  padding: 0.5rem 0;
-  border-radius: 1rem;
-}
-
-.login-page .login-page-body .login-page-form-container .error-message-container ul {
+.sm-nav .sm-nav-container {
   list-style: none;
-}
-
-.login-page .login-page-body .login-page-form-container .main-logo {
   display: flex;
-  justify-content: center;
-}
-
-.login-page .login-page-body .login-page-form-container .login-form .form-block {
-  display: flex;
-  border-radius: 5rem;
+  justify-content: space-evenly;
   width: 100%;
-  margin-bottom: 1rem;
-  border: 1px solid #002245;
-  overflow: hidden;
-  color: #002245;
+  display: flex;
 }
 
-.login-page .login-page-body .login-page-form-container .login-form .form-block:focus-within {
-  border-color: #005ab7;
+.sm-nav .sm-nav-container .sm-nav-list-link {
+  color: #5b5b5b;
+  font-size: 2rem;
+  padding: 1rem;
+  text-decoration: none;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
 }
 
-.login-page .login-page-body .login-page-form-container .login-form .form-block:focus-within i {
+.sm-nav .sm-nav-container .sm-nav-list-link .sm-nav-list-link-name {
+  font-size: 0.8rem;
+  display: none;
+}
+
+.sm-nav .sm-nav-container .sm-nav-list-link.active {
   color: #005ab7;
-}
-
-.login-page .login-page-body .login-page-form-container .login-form .form-block.has-error {
-  border-color: #d40000;
-  color: #d40000 !important;
-}
-
-.login-page .login-page-body .login-page-form-container .login-form .form-block .form-block-label {
-  width: 3rem;
-  height: 3rem;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  padding: 1rem;
-}
-
-.login-page .login-page-body .login-page-form-container .login-form .form-block .form-block-label .sr-only {
-  position: absolute;
-  width: 1px;
-  height: 1px;
-  padding: 0;
-  margin: -1px;
-  overflow: hidden;
-  clip: rect(0, 0, 0, 0);
-  border: 0;
-}
-
-.login-page .login-page-body .login-page-form-container .login-form .form-block .form-block-input {
-  border: none;
-  font-size: 1.2rem;
-  padding: 0 0.5rem;
-  width: 100%;
-  border-radius: 0 1.5rem 1.5rem 0;
-  outline: none;
-  color: #4a5568;
-}
-
-.login-page .login-page-body .login-page-form-container .login-form .forgot-password-txt-container {
-  width: 100%;
-  text-align: right;
-  margin-bottom: 1rem;
-}
-
-.login-page .login-page-body .login-page-form-container .login-form .forgot-password-txt-container .forgot-password-txt {
-  text-decoration: none;
-  text-align: center;
-  color: #718096;
-}
-
-.login-page .login-page-body .login-page-form-container .login-form .form-btn-container {
-  width: 100%;
-  display: flex;
-  justify-content: center;
-}
-
-.login-page .login-page-body .login-page-form-container .login-form .form-btn-container .btn {
-  border: none;
-  background: none;
-}
-
-.login-page .login-page-body .login-page-form-container .login-form .form-btn-container .btn-login {
-  background: #005ab7;
-  width: 100%;
-  padding: 0.75rem;
-  border-radius: 2rem;
-  color: #fff;
-  font-size: 1.2rem;
-  text-transform: uppercase;
-  margin-bottom: 1rem;
-}
-
-.login-page .login-page-body .login-page-footer {
-  color: #718096;
-  text-align: center;
-}
-
-.login-page .login-page-body .login-page-footer .sign-up-link-container {
-  text-align: center;
-  margin-bottom: 0.5rem;
-}
-
-.login-page .login-page-body .login-page-footer .sign-up-link-container a {
-  padding: 0.5rem;
-  text-decoration: none;
-  font-weight: 700;
-  color: #002245;
-}
-
-.login-page .login-page-body .login-page-footer .connect-with-txt {
-  margin-bottom: 2rem;
-}
-
-.login-page .login-page-body .login-page-footer .socials-container {
-  margin-top: 0.5rem;
-  display: flex;
-  justify-content: center;
-}
-
-.login-page .login-page-body .login-page-footer .socials-container .social-btn {
-  text-align: center;
-  text-decoration: none;
-  border-radius: 50%;
-  font-size: 1.5rem;
-  padding: 1rem;
-  height: 3rem;
-  width: 3rem;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  margin: auto 0.5rem;
-}
-
-.login-page .login-page-body .login-page-footer .socials-container .social-btn.fb-btn {
-  background: #3B5998;
-  color: white;
-}
-
-.login-page .login-page-body .login-page-footer .socials-container .social-btn.twitter-btn {
-  background: #55ACEE;
-  color: white;
-}
-
-.login-page .login-page-body .login-page-footer .socials-container .social-btn.google-btn {
-  background: #dd4b39;
-  color: white;
-}
-
-@media screen and (min-width: 768px) {
-  .login-page .login-page-body {
-    margin: auto;
-    max-width: 40rem;
-    min-width: 20rem;
-  }
 }
 

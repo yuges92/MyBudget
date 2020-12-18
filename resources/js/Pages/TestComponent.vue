@@ -1,14 +1,17 @@
 <template>
-    <div>
-        {{ text }}
-{{$page.user}}
-    </div>
+<customer-layout>
+    <h1>
+        Hello World
+    </h1>
+</customer-layout>
 
 </template>
 
 <script>
+import CustomerLayout from "@/Layouts/CustomerLayout";
 export default {
     name: "TestComponent",
+    components: {CustomerLayout},
     props: {
         text: String
     }
