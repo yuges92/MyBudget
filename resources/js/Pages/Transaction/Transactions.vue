@@ -1,5 +1,5 @@
 <template>
-    <app-layout page-title="Overview">
+    <app-layout page-title="Transactions">
 
     </app-layout>
 </template>

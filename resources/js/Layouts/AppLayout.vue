@@ -1,16 +1,14 @@
 <template>
-    <div class="min-h-screen bg-gray-100">
+    <div class="client-app">
 
 
         <!-- Page Heading -->
-        <header class="bg-white shadow">
-            <div class="max-w-7xl mx-auto py-6 px-4 sm:px-6 lg:px-8">
-                <slot name="header"/>
-            </div>
-        </header>
+        <client-header :page-title="pageTitle">
+
+        </client-header>
 
         <!-- Page Content -->
-        <main>
+        <main class="client-app-main-body">
             <slot/>
         </main>
 
@@ -29,9 +27,11 @@ import JetDropdownLink from '@/Jetstream/DropdownLink'
 import JetNavLink from '@/Jetstream/NavLink'
 import JetResponsiveNavLink from '@/Jetstream/ResponsiveNavLink'
 import BottomNavBar from "@/Partials/BottomNavBar";
+import ClientHeader from "@/Partials/ClientHeader";
 
 export default {
     components: {
+        ClientHeader,
         BottomNavBar,
         JetApplicationMark,
         JetDropdown,
@@ -39,7 +39,12 @@ export default {
         JetNavLink,
         JetResponsiveNavLink,
     },
-
+    props: {
+        pageTitle: {
+            type: String,
+            default: ""
+        },
+    },
     data() {
         return {
             showingNavigationDropdown: false,
@@ -63,3 +68,15 @@ export default {
     }
 }
 </script>
+
+<style scoped lang="scss">
+
+.client-app{
+    background: #f5f5f5;
+    min-height: 90vh;
+
+    .client-app-main-body{
+        min-height: 50vh;
+    }
+}
+</style>
