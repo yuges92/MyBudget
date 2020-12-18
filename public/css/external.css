@@ -1,3 +1,5 @@
+@charset "UTF-8";
+
 /*!
  * Font Awesome Free 5.15.1 by @fontawesome - https://fontawesome.com
  * License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License)
@@ -21,15 +23,15 @@
 .fa-lg {
   font-size: 1.33333em;
   line-height: 0.75em;
-  vertical-align: -.0667em;
+  vertical-align: -0.0667em;
 }
 
 .fa-xs {
-  font-size: .75em;
+  font-size: 0.75em;
 }
 
 .fa-sm {
-  font-size: .875em;
+  font-size: 0.875em;
 }
 
 .fa-1x {
@@ -97,8 +99,8 @@
 
 .fa-border {
   border: solid 0.08em #eee;
-  border-radius: .1em;
-  padding: .2em .25em .15em;
+  border-radius: 0.1em;
+  padding: 0.2em 0.25em 0.15em;
 }
 
 .fa-pull-left {
@@ -114,7 +116,7 @@
 .far.fa-pull-left,
 .fal.fa-pull-left,
 .fab.fa-pull-left {
-  margin-right: .3em;
+  margin-right: 0.3em;
 }
 
 .fa.fa-pull-right,
@@ -122,7 +124,7 @@
 .far.fa-pull-right,
 .fal.fa-pull-right,
 .fab.fa-pull-right {
-  margin-left: .3em;
+  margin-left: 0.3em;
 }
 
 .fa-spin {
@@ -180,7 +182,8 @@
   transform: scale(1, -1);
 }
 
-.fa-flip-both, .fa-flip-horizontal.fa-flip-vertical {
+.fa-flip-both,
+.fa-flip-horizontal.fa-flip-vertical {
   -ms-filter: "progid:DXImageTransform.Microsoft.BasicImage(rotation=2, mirror=1)";
   transform: scale(-1, -1);
 }
@@ -6073,7 +6076,8 @@ readers do not read off random characters that represent icons */
   width: 1px;
 }
 
-.sr-only-focusable:active, .sr-only-focusable:focus {
+.sr-only-focusable:active,
+.sr-only-focusable:focus {
   clip: auto;
   height: auto;
   margin: 0;
@@ -6083,62 +6087,48 @@ readers do not read off random characters that represent icons */
 }
 
 @font-face {
-  font-family: 'Font Awesome 5 Brands';
-
+  font-family: "Font Awesome 5 Brands";
   font-style: normal;
-
   font-weight: 400;
-
   font-display: block;
-
   src: url(/fonts/vendor/@fortawesome/fontawesome-free/webfa-brands-400.eot?e2ca6541bff3a3e9f4799ee327b28c58);
-
-  src: url(/fonts/vendor/@fortawesome/fontawesome-free/webfa-brands-400.eot?e2ca6541bff3a3e9f4799ee327b28c58?#iefix) format("embedded-opentype"), url(/fonts/vendor/@fortawesome/fontawesome-free/webfa-brands-400.woff2?f075c50f89795e4cdb4d45b51f1a6800) format("woff2"), url(/fonts/vendor/@fortawesome/fontawesome-free/webfa-brands-400.woff?ad527cc5ec23d6da66e8a1d6772ea6d3) format("woff"), url(/fonts/vendor/@fortawesome/fontawesome-free/webfa-brands-400.ttf?8300bd7f30e0a313c1d772b49d96cb8e) format("truetype"), url(/fonts/vendor/@fortawesome/fontawesome-free/webfa-brands-400.svg?2f12242375edd68e9013ecfb59c672e9#fontawesome) format("svg");
+  src: url(/fonts/vendor/@fortawesome/fontawesome-free/webfa-brands-400.eot?e2ca6541bff3a3e9f4799ee327b28c58) format("embedded-opentype"), url(/fonts/vendor/@fortawesome/fontawesome-free/webfa-brands-400.woff2?f075c50f89795e4cdb4d45b51f1a6800) format("woff2"), url(/fonts/vendor/@fortawesome/fontawesome-free/webfa-brands-400.woff?ad527cc5ec23d6da66e8a1d6772ea6d3) format("woff"), url(/fonts/vendor/@fortawesome/fontawesome-free/webfa-brands-400.ttf?8300bd7f30e0a313c1d772b49d96cb8e) format("truetype"), url(/fonts/vendor/@fortawesome/fontawesome-free/webfa-brands-400.svg?2f12242375edd68e9013ecfb59c672e9) format("svg");
 }
 
 .fab {
-  font-family: 'Font Awesome 5 Brands';
+  font-family: "Font Awesome 5 Brands";
   font-weight: 400;
 }
 
 @font-face {
-  font-family: 'Font Awesome 5 Free';
-
+  font-family: "Font Awesome 5 Free";
   font-style: normal;
-
   font-weight: 400;
-
   font-display: block;
-
   src: url(/fonts/vendor/@fortawesome/fontawesome-free/webfa-regular-400.eot?b01516c1808be557667befec76cd6318);
-
-  src: url(/fonts/vendor/@fortawesome/fontawesome-free/webfa-regular-400.eot?b01516c1808be557667befec76cd6318?#iefix) format("embedded-opentype"), url(/fonts/vendor/@fortawesome/fontawesome-free/webfa-regular-400.woff2?4a74738e7728e93c4394b8604081da62) format("woff2"), url(/fonts/vendor/@fortawesome/fontawesome-free/webfa-regular-400.woff?3c6879c4f342203d099bdd66dce6d396) format("woff"), url(/fonts/vendor/@fortawesome/fontawesome-free/webfa-regular-400.ttf?49f00693b0e5d45097832ef5ea1bc541) format("truetype"), url(/fonts/vendor/@fortawesome/fontawesome-free/webfa-regular-400.svg?3602b7e8b2cb1462b0bef9738757ef8a#fontawesome) format("svg");
+  src: url(/fonts/vendor/@fortawesome/fontawesome-free/webfa-regular-400.eot?b01516c1808be557667befec76cd6318) format("embedded-opentype"), url(/fonts/vendor/@fortawesome/fontawesome-free/webfa-regular-400.woff2?4a74738e7728e93c4394b8604081da62) format("woff2"), url(/fonts/vendor/@fortawesome/fontawesome-free/webfa-regular-400.woff?3c6879c4f342203d099bdd66dce6d396) format("woff"), url(/fonts/vendor/@fortawesome/fontawesome-free/webfa-regular-400.ttf?49f00693b0e5d45097832ef5ea1bc541) format("truetype"), url(/fonts/vendor/@fortawesome/fontawesome-free/webfa-regular-400.svg?3602b7e8b2cb1462b0bef9738757ef8a) format("svg");
 }
 
 .far {
-  font-family: 'Font Awesome 5 Free';
+  font-family: "Font Awesome 5 Free";
   font-weight: 400;
 }
 
 @font-face {
-  font-family: 'Font Awesome 5 Free';
-
+  font-family: "Font Awesome 5 Free";
   font-style: normal;
-
   font-weight: 900;
-
   font-display: block;
-
   src: url(/fonts/vendor/@fortawesome/fontawesome-free/webfa-solid-900.eot?8ac3167427b1d5d2967646bd8f7a0587);
-
-  src: url(/fonts/vendor/@fortawesome/fontawesome-free/webfa-solid-900.eot?8ac3167427b1d5d2967646bd8f7a0587?#iefix) format("embedded-opentype"), url(/fonts/vendor/@fortawesome/fontawesome-free/webfa-solid-900.woff2?8e1ed89b6ccb8ce41faf5cb672677105) format("woff2"), url(/fonts/vendor/@fortawesome/fontawesome-free/webfa-solid-900.woff?4451e1d86df7491dd874f2c41eee1053) format("woff"), url(/fonts/vendor/@fortawesome/fontawesome-free/webfa-solid-900.ttf?205f07b3883c484f27f40d21a92950d4) format("truetype"), url(/fonts/vendor/@fortawesome/fontawesome-free/webfa-solid-900.svg?664de3932dd6291b4b8a8c0ddbcb4c61#fontawesome) format("svg");
+  src: url(/fonts/vendor/@fortawesome/fontawesome-free/webfa-solid-900.eot?8ac3167427b1d5d2967646bd8f7a0587) format("embedded-opentype"), url(/fonts/vendor/@fortawesome/fontawesome-free/webfa-solid-900.woff2?8e1ed89b6ccb8ce41faf5cb672677105) format("woff2"), url(/fonts/vendor/@fortawesome/fontawesome-free/webfa-solid-900.woff?4451e1d86df7491dd874f2c41eee1053) format("woff"), url(/fonts/vendor/@fortawesome/fontawesome-free/webfa-solid-900.ttf?205f07b3883c484f27f40d21a92950d4) format("truetype"), url(/fonts/vendor/@fortawesome/fontawesome-free/webfa-solid-900.svg?664de3932dd6291b4b8a8c0ddbcb4c61) format("svg");
 }
 
 .fa,
 .fas {
-  font-family: 'Font Awesome 5 Free';
+  font-family: "Font Awesome 5 Free";
   font-weight: 900;
 }
+
 *,
 ::after,
 ::before {
@@ -6236,7 +6226,7 @@ html {
   font-weight: 900;
 }
 
-.login-page {
+.login-page .login-page-body {
   min-height: 100vh;
   padding: 2rem;
   color: #fff;
@@ -6245,7 +6235,7 @@ html {
   justify-content: space-between;
 }
 
-.login-page .login-page-header {
+.login-page .login-page-body .login-page-header {
   height: 10rem;
   display: flex;
   justify-content: center;
@@ -6253,7 +6243,7 @@ html {
   margin-bottom: 1rem;
 }
 
-.login-page .login-page-header .login-page-header-background-container {
+.login-page .login-page-body .login-page-header .login-page-header-background-container {
   width: 100%;
   overflow: hidden;
   position: absolute;
@@ -6262,7 +6252,7 @@ html {
   z-index: -1;
 }
 
-.login-page .login-page-header .login-page-header-background-container .login-page-header-background {
+.login-page .login-page-body .login-page-header .login-page-header-background-container .login-page-header-background {
   background: linear-gradient(-45deg, #002245, #005ab7);
   height: 23rem;
   border-radius: 50%;
@@ -6271,23 +6261,22 @@ html {
   left: -40%;
 }
 
-.login-page .login-page-header .main-heading {
+.login-page .login-page-body .login-page-header .main-heading {
   font-size: 2rem;
-  white-space: pre-wrap;
   line-height: 2.5rem;
   margin-bottom: 1rem;
 }
 
-.login-page .login-page-header .sub-heading {
+.login-page .login-page-body .login-page-header .sub-heading {
   color: #e2e8f0;
 }
 
-.login-page .login-page-form-container {
+.login-page .login-page-body .login-page-form-container {
   color: #2f2f2f;
   margin-top: 1rem;
 }
 
-.login-page .login-page-form-container .error-message-container {
+.login-page .login-page-body .login-page-form-container .error-message-container {
   color: #d40000;
   text-align: center;
   margin: 1rem auto;
@@ -6297,16 +6286,16 @@ html {
   border-radius: 1rem;
 }
 
-.login-page .login-page-form-container .error-message-container ul {
+.login-page .login-page-body .login-page-form-container .error-message-container ul {
   list-style: none;
 }
 
-.login-page .login-page-form-container .main-logo {
+.login-page .login-page-body .login-page-form-container .main-logo {
   display: flex;
   justify-content: center;
 }
 
-.login-page .login-page-form-container .login-form .form-block {
+.login-page .login-page-body .login-page-form-container .login-form .form-block {
   display: flex;
   border-radius: 5rem;
   width: 100%;
@@ -6316,15 +6305,20 @@ html {
   color: #002245;
 }
 
-.login-page .login-page-form-container .login-form .form-block:focus-within {
+.login-page .login-page-body .login-page-form-container .login-form .form-block:focus-within {
   border-color: #005ab7;
 }
 
-.login-page .login-page-form-container .login-form .form-block:focus-within i {
+.login-page .login-page-body .login-page-form-container .login-form .form-block:focus-within i {
   color: #005ab7;
 }
 
-.login-page .login-page-form-container .login-form .form-block .form-block-label {
+.login-page .login-page-body .login-page-form-container .login-form .form-block.has-error {
+  border-color: #d40000;
+  color: #d40000 !important;
+}
+
+.login-page .login-page-body .login-page-form-container .login-form .form-block .form-block-label {
   width: 3rem;
   height: 3rem;
   display: flex;
@@ -6333,7 +6327,7 @@ html {
   padding: 1rem;
 }
 
-.login-page .login-page-form-container .login-form .form-block .form-block-label .sr-only {
+.login-page .login-page-body .login-page-form-container .login-form .form-block .form-block-label .sr-only {
   position: absolute;
   width: 1px;
   height: 1px;
@@ -6344,7 +6338,7 @@ html {
   border: 0;
 }
 
-.login-page .login-page-form-container .login-form .form-block .form-block-input {
+.login-page .login-page-body .login-page-form-container .login-form .form-block .form-block-input {
   border: none;
   font-size: 1.2rem;
   padding: 0 0.5rem;
@@ -6354,31 +6348,31 @@ html {
   color: #4a5568;
 }
 
-.login-page .login-page-form-container .login-form .forgot-password-txt-container {
+.login-page .login-page-body .login-page-form-container .login-form .forgot-password-txt-container {
   width: 100%;
   text-align: right;
   margin-bottom: 1rem;
 }
 
-.login-page .login-page-form-container .login-form .forgot-password-txt-container .forgot-password-txt {
+.login-page .login-page-body .login-page-form-container .login-form .forgot-password-txt-container .forgot-password-txt {
   text-decoration: none;
   text-align: center;
   color: #718096;
 }
 
-.login-page .login-page-form-container .login-form .form-btn-container {
+.login-page .login-page-body .login-page-form-container .login-form .form-btn-container {
   width: 100%;
   display: flex;
   justify-content: center;
 }
 
-.login-page .login-page-form-container .login-form .form-btn-container .btn {
+.login-page .login-page-body .login-page-form-container .login-form .form-btn-container .btn {
   border: none;
   background: none;
 }
 
-.login-page .login-page-form-container .login-form .form-btn-container .btn-login {
-  background: #002245;
+.login-page .login-page-body .login-page-form-container .login-form .form-btn-container .btn-login {
+  background: #005ab7;
   width: 100%;
   padding: 0.75rem;
   border-radius: 2rem;
@@ -6388,34 +6382,34 @@ html {
   margin-bottom: 1rem;
 }
 
-.login-page .login-page-footer {
+.login-page .login-page-body .login-page-footer {
   color: #718096;
   text-align: center;
 }
 
-.login-page .login-page-footer .sign-up-link-container {
+.login-page .login-page-body .login-page-footer .sign-up-link-container {
   text-align: center;
   margin-bottom: 0.5rem;
 }
 
-.login-page .login-page-footer .sign-up-link-container a {
+.login-page .login-page-body .login-page-footer .sign-up-link-container a {
   padding: 0.5rem;
   text-decoration: none;
   font-weight: 700;
   color: #002245;
 }
 
-.login-page .login-page-footer .connect-with-txt {
+.login-page .login-page-body .login-page-footer .connect-with-txt {
   margin-bottom: 2rem;
 }
 
-.login-page .login-page-footer .socials-container {
+.login-page .login-page-body .login-page-footer .socials-container {
   margin-top: 0.5rem;
   display: flex;
   justify-content: center;
 }
 
-.login-page .login-page-footer .socials-container .social-btn {
+.login-page .login-page-body .login-page-footer .socials-container .social-btn {
   text-align: center;
   text-decoration: none;
   border-radius: 50%;
@@ -6429,18 +6423,26 @@ html {
   margin: auto 0.5rem;
 }
 
-.login-page .login-page-footer .socials-container .social-btn.fb-btn {
+.login-page .login-page-body .login-page-footer .socials-container .social-btn.fb-btn {
   background: #3B5998;
   color: white;
 }
 
-.login-page .login-page-footer .socials-container .social-btn.twitter-btn {
+.login-page .login-page-body .login-page-footer .socials-container .social-btn.twitter-btn {
   background: #55ACEE;
   color: white;
 }
 
-.login-page .login-page-footer .socials-container .social-btn.google-btn {
+.login-page .login-page-body .login-page-footer .socials-container .social-btn.google-btn {
   background: #dd4b39;
   color: white;
+}
+
+@media screen and (min-width: 768px) {
+  .login-page .login-page-body {
+    margin: auto;
+    max-width: 40rem;
+    min-width: 20rem;
+  }
 }
 

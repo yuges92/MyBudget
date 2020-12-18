@@ -1,225 +1,244 @@
 .login-page {
-    min-height: 100vh;
-    padding: 2rem;
-    color: #fff;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-
-    .login-page-header {
-        height: 10rem;
+    .login-page-body {
+        min-height: 100vh;
+        padding: 2rem;
+        color: #fff;
         display: flex;
-        justify-content: center;
         flex-direction: column;
-        margin-bottom: 1rem;
+        justify-content: space-between;
 
-        .login-page-header-background-container {
-            width: 100%;
-            overflow: hidden;
-            position: absolute;
-            top: -10rem;
-            left: 0%;
-            z-index: -1;
-
-            .login-page-header-background {
-                background: $header-bg;
-                height: 23rem;
-                border-radius: 50%;
-                width: 150%;
-                position: relative;
-                left: -40%;
-            }
-        }
-
-        .main-heading {
-            font-size: 2rem;
-            white-space: pre-wrap;
-            line-height: 2.5rem;
-            margin-bottom: 1rem;
-        }
-
-        .sub-heading {
-            color: #e2e8f0;
-        }
-    }
-
-    .login-page-form-container {
-        color: #2f2f2f;
-        margin-top: 1rem;
-
-        .error-message-container {
-            color: #d40000;
-            text-align: center;
-            margin: 1rem auto;
-            background: #ffebeb;
-            border: 1px solid #ffd5d5;
-            padding: 0.5rem 0;
-            border-radius: 1rem;
-
-            ul {
-                list-style: none;
-            }
-
-            .error-messages {
-
-                .error-message {
-
-                }
-            }
-        }
-
-        .main-logo {
+        .login-page-header {
+            height: 10rem;
             display: flex;
             justify-content: center;
+            flex-direction: column;
+            margin-bottom: 1rem;
+
+            .login-page-header-background-container {
+                width: 100%;
+                overflow: hidden;
+                position: absolute;
+                top: -10rem;
+                left: 0%;
+                z-index: -1;
+
+                .login-page-header-background {
+                    background: $header-bg;
+                    height: 23rem;
+                    border-radius: 50%;
+                    width: 150%;
+                    position: relative;
+                    left: -40%;
+                }
+            }
+
+            .main-heading {
+                font-size: 2rem;
+                line-height: 2.5rem;
+                margin-bottom: 1rem;
+            }
+
+            .sub-heading {
+                color: #e2e8f0;
+            }
         }
 
-        .login-form {
-            .form-block {
+        .login-page-form-container {
+            color: #2f2f2f;
+            margin-top: 1rem;
+
+            .error-message-container {
+                color: #d40000;
+                text-align: center;
+                margin: 1rem auto;
+                background: #ffebeb;
+                border: 1px solid #ffd5d5;
+                padding: 0.5rem 0;
+                border-radius: 1rem;
+
+                ul {
+                    list-style: none;
+                }
+
+                .error-messages {
+
+                    .error-message {
+
+                    }
+                }
+            }
+
+            .main-logo {
                 display: flex;
-                border-radius: 5rem;
-                width: 100%;
-                margin-bottom: 1rem;
-                border: 1px solid $primary-color;
-                overflow: hidden;
-                color: $primary-color;
+                justify-content: center;
+            }
 
-                &:focus-within {
-                    border-color: #005ab7;
+            .login-form {
+                .form-block {
 
-                    i {
-                        color: #005ab7;
+                    display: flex;
+                    border-radius: 5rem;
+                    width: 100%;
+                    margin-bottom: 1rem;
+                    border: 1px solid $primary-color;
+                    overflow: hidden;
+                    color: $primary-color;
+
+                    &:focus-within {
+                        border-color: #005ab7;
+
+                        i {
+                            color: #005ab7;
+                        }
+                    }
+
+                    &.has-error {
+                        border-color: #d40000;
+                        color: #d40000 !important;
+                    }
+
+                    .form-block-label {
+                        //background: red;
+                        width: 3rem;
+                        height: 3rem;
+                        display: flex;
+                        justify-content: center;
+                        align-items: center;
+                        //background: $header-bg;
+                        padding: 1rem;
+
+                        i {
+                        }
+
+                        .sr-only {
+                            position: absolute;
+                            width: 1px;
+                            height: 1px;
+                            padding: 0;
+                            margin: -1px;
+                            overflow: hidden;
+                            clip: rect(0, 0, 0, 0);
+                            border: 0;
+                        }
+                    }
+
+                    .form-block-input {
+                        border: none;
+                        font-size: 1.2rem;
+                        padding: 0 0.5rem;
+                        width: 100%;
+                        border-radius: 0 1.5rem 1.5rem 0;
+                        outline: none;
+                        color: #4a5568;
+
                     }
                 }
 
-                .form-block-label {
-                    //background: red;
-                    width: 3rem;
+                .forgot-password-txt-container {
+                    width: 100%;
+                    text-align: right;
+                    margin-bottom: 1rem;
+
+                    .forgot-password-txt {
+                        text-decoration: none;
+                        text-align: center;
+                        color: #718096;
+
+                    }
+                }
+
+                .form-btn-container {
+                    width: 100%;
+                    display: flex;
+                    justify-content: center;
+
+                    .btn {
+                        border: none;
+                        background: none;
+                    }
+
+                    .btn-login {
+                        background: $primary-color-light;
+                        width: 100%;
+                        padding: 0.75rem;
+                        border-radius: 2rem;
+                        color: #fff;
+                        font-size: 1.2rem;
+                        text-transform: uppercase;
+                        margin-bottom: 1rem;
+                    }
+                }
+
+            }
+        }
+
+
+        .login-page-footer {
+            color: #718096;
+            text-align: center;
+
+            .sign-up-link-container {
+                text-align: center;
+                margin-bottom: 0.5rem;
+
+                a {
+                    padding: 0.5rem;
+                    text-decoration: none;
+                    font-weight: 700;
+                    color: $primary-color;
+                }
+            }
+
+            .connect-with-txt {
+                margin-bottom: 2rem;
+            }
+
+            .socials-container {
+                margin-top: 0.5rem;
+                display: flex;
+                justify-content: center;
+
+                .social-btn {
+                    text-align: center;
+                    text-decoration: none;
+                    border-radius: 50%;
+                    font-size: 1.5rem;
+                    padding: 1rem;
                     height: 3rem;
+                    width: 3rem;
                     display: flex;
                     justify-content: center;
                     align-items: center;
-                    //background: $header-bg;
-                    padding: 1rem;
+                    margin: auto 0.5rem;
 
-                    i {
+                    &.fb-btn {
+                        background: #3B5998;
+                        color: white;
                     }
 
-                    .sr-only {
-                        position: absolute;
-                        width: 1px;
-                        height: 1px;
-                        padding: 0;
-                        margin: -1px;
-                        overflow: hidden;
-                        clip: rect(0, 0, 0, 0);
-                        border: 0;
+                    &.twitter-btn {
+                        background: #55ACEE;
+                        color: white;
                     }
-                }
 
-                .form-block-input {
-                    border: none;
-                    font-size: 1.2rem;
-                    padding: 0 0.5rem;
-                    width: 100%;
-                    border-radius: 0 1.5rem 1.5rem 0;
-                    outline: none;
-                    color: #4a5568;
-
-                }
-            }
-
-            .forgot-password-txt-container {
-                width: 100%;
-                text-align: right;
-                margin-bottom: 1rem;
-
-                .forgot-password-txt {
-                    text-decoration: none;
-                    text-align: center;
-                    color: #718096;
-
-                }
-            }
-
-            .form-btn-container {
-                width: 100%;
-                display: flex;
-                justify-content: center;
-
-                .btn {
-                    border: none;
-                    background: none;
-                }
-
-                .btn-login {
-                    background: $primary-color;
-                    width: 100%;
-                    padding: 0.75rem;
-                    border-radius: 2rem;
-                    color: #fff;
-                    font-size: 1.2rem;
-                    text-transform: uppercase;
-                    margin-bottom: 1rem;
-                }
-            }
-
-        }
-    }
-
-
-    .login-page-footer {
-        color: #718096;
-        text-align: center;
-
-        .sign-up-link-container {
-            text-align: center;
-            margin-bottom: 0.5rem;
-
-            a {
-                padding: 0.5rem;
-                text-decoration: none;
-                font-weight: 700;
-                color: $primary-color;
-            }
-        }
-
-        .connect-with-txt {
-            margin-bottom: 2rem;
-        }
-
-        .socials-container {
-            margin-top: 0.5rem;
-            display: flex;
-            justify-content: center;
-
-            .social-btn {
-                text-align: center;
-                text-decoration: none;
-                border-radius: 50%;
-                font-size: 1.5rem;
-                padding: 1rem;
-                height: 3rem;
-                width: 3rem;
-                display: flex;
-                justify-content: center;
-                align-items: center;
-                margin: auto 0.5rem;
-
-                &.fb-btn {
-                    background: #3B5998;
-                    color: white;
-                }
-
-                &.twitter-btn {
-                    background: #55ACEE;
-                    color: white;
-                }
-
-                &.google-btn {
-                    background: #dd4b39;
-                    color: white;
+                    &.google-btn {
+                        background: #dd4b39;
+                        color: white;
+                    }
                 }
             }
         }
     }
+}
+
+@include media-md {
+    .login-page {
+        .login-page-body {
+            margin: auto;
+
+            max-width: 40rem;
+            min-width: 20rem;
+        }
+    }
+
 }

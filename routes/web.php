@@ -18,3 +18,5 @@ Route::get('/', [\App\Http\Controllers\HomeController::class,'index']);
 Route::middleware(['auth:sanctum', 'verified'])->get('/dashboard', function () {
     return Inertia\Inertia::render('Dashboard');
 })->name('dashboard');
+
+Route::get('/test', [\App\Http\Controllers\TestController::class,'index'])->name('test');

@@ -2,6 +2,7 @@
 @section("body")
 
     <section class="login-page">
+        <div class="login-page-body">
 
         <header class="login-page-header">
             <div class="login-page-header-background-container">
@@ -52,6 +53,7 @@
                 <a class="social-btn google-btn" href="/google"><span class="sr-only">{{ __('Password') }}</span><i class="fab fa-google-plus-g"></i></a>
             </div>
         </section>
+        </div>
 
     </section>
 @endsection

@@ -14,8 +14,7 @@
 
 
 </head>
-<body>
-
-@yield("body")
-</body>
+    <body>
+         @yield("body")
+    </body>
 </html>
