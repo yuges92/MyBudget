@@ -2,9 +2,9 @@
     <nav class="sm-nav">
         <ul class="sm-nav-container">
             <li class="sm-nav-list">
-                <inertia-link :class="{'active':route().current('dashboard')}" :href="route('dashboard')"
+                <inertia-link :class="{'active':route().current('overview')}" :href="route('overview')"
                               class="sm-nav-list-link "><i class="fas fa-home"></i> <span
-                    class="sm-nav-list-link-name">Dashboard</span></inertia-link>
+                    class="sm-nav-list-link-name">Overview</span></inertia-link>
             </li>
             <li>
                 <inertia-link :class="{'active':route().current('incomes')}" :href="route('incomes')"
@@ -60,7 +60,7 @@ export default {
         .sm-nav-list-link {
             color: #5b5b5b;
             font-size: 1.5rem;
-            padding: 1rem;
+            padding: 0.5rem 1rem;
             text-decoration: none;
             text-align: center;
             display: flex;

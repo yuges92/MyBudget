@@ -11,6 +11,7 @@
 
     <!-- Styles -->
     <link rel="stylesheet" href="{{ mix('css/external.css') }}">
+    <link rel="manifest" href="/manifest.json" />
 
 </head>
 <body class="landing-page">

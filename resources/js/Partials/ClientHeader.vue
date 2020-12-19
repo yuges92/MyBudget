@@ -30,6 +30,8 @@ export default {
 
 <style lang="scss" scoped>
 .client-header {
+    position: fixed;
+    width: 100%;
     background: #005ab7;
     color: #fff;
     min-height: 4rem;

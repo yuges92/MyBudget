@@ -1,0 +1,10 @@
+{
+    "name": "My Budget App",
+    "short_name": "MyBudgetApp",
+    "display": "standalone",
+    "background_color": "#fff",
+    "theme_color": "#000",
+    "description": "My Budget App",
+    "dir": "ltr",
+    "lang": "en-UK"
+}

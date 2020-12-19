@@ -4154,7 +4154,7 @@ exports = module.exports = __webpack_require__(/*! ../../../node_modules/css-loa
 
 
 // module
-exports.push([module.i, ".sm-nav[data-v-b571c36c] {\n  display: flex;\n  width: 100%;\n  position: fixed;\n  bottom: 0;\n  left: 0;\n  border-top: 1px solid #a9a9a97d;\n  box-shadow: 0px -2px 20px -1px #a9a9a97d;\n  background: #fff;\n  justify-content: center;\n}\n.sm-nav .sm-nav-container[data-v-b571c36c] {\n  list-style: none;\n  display: flex;\n  justify-content: space-evenly;\n  width: 100%;\n  display: flex;\n}\n.sm-nav .sm-nav-container .sm-nav-list-link[data-v-b571c36c] {\n  color: #5b5b5b;\n  font-size: 1.5rem;\n  padding: 1rem;\n  text-decoration: none;\n  text-align: center;\n  display: flex;\n  flex-direction: column;\n}\n.sm-nav .sm-nav-container .sm-nav-list-link .sm-nav-list-link-name[data-v-b571c36c] {\n  font-size: 0.8rem;\n}\n.sm-nav .sm-nav-container .sm-nav-list-link.active[data-v-b571c36c] {\n  color: #005ab7;\n}", ""]);
+exports.push([module.i, ".sm-nav[data-v-b571c36c] {\n  display: flex;\n  width: 100%;\n  position: fixed;\n  bottom: 0;\n  left: 0;\n  border-top: 1px solid #a9a9a97d;\n  box-shadow: 0px -2px 20px -1px #a9a9a97d;\n  background: #fff;\n  justify-content: center;\n}\n.sm-nav .sm-nav-container[data-v-b571c36c] {\n  list-style: none;\n  display: flex;\n  justify-content: space-evenly;\n  width: 100%;\n  display: flex;\n}\n.sm-nav .sm-nav-container .sm-nav-list-link[data-v-b571c36c] {\n  color: #5b5b5b;\n  font-size: 1.5rem;\n  padding: 0.5rem 1rem;\n  text-decoration: none;\n  text-align: center;\n  display: flex;\n  flex-direction: column;\n}\n.sm-nav .sm-nav-container .sm-nav-list-link .sm-nav-list-link-name[data-v-b571c36c] {\n  font-size: 0.8rem;\n}\n.sm-nav .sm-nav-container .sm-nav-list-link.active[data-v-b571c36c] {\n  color: #005ab7;\n}", ""]);
 
 // exports
 
@@ -4173,7 +4173,7 @@ exports = module.exports = __webpack_require__(/*! ../../../node_modules/css-loa
 
 
 // module
-exports.push([module.i, ".client-header[data-v-162ecff2] {\n  background: #005ab7;\n  color: #fff;\n  min-height: 4rem;\n  text-align: center;\n  display: flex;\n  justify-content: center;\n  align-items: flex-end;\n}\n.client-header .client-header-container[data-v-162ecff2] {\n  display: flex;\n  width: 100%;\n  text-align: center;\n}\n.client-header .client-header-container .page-title[data-v-162ecff2] {\n  justify-content: center;\n  text-align: center;\n  flex: 100%;\n  padding-bottom: 0.5rem;\n}\n.client-header .client-header-container .go-back-btn[data-v-162ecff2] {\n  border: none;\n  background: none;\n  font-size: 1.5rem;\n  justify-self: flex-start;\n  color: #fff;\n  width: 2rem;\n  text-align: left;\n  position: absolute;\n}", ""]);
+exports.push([module.i, ".client-header[data-v-162ecff2] {\n  position: fixed;\n  width: 100%;\n  background: #005ab7;\n  color: #fff;\n  min-height: 4rem;\n  text-align: center;\n  display: flex;\n  justify-content: center;\n  align-items: flex-end;\n}\n.client-header .client-header-container[data-v-162ecff2] {\n  display: flex;\n  width: 100%;\n  text-align: center;\n}\n.client-header .client-header-container .page-title[data-v-162ecff2] {\n  justify-content: center;\n  text-align: center;\n  flex: 100%;\n  padding-bottom: 0.5rem;\n}\n.client-header .client-header-container .go-back-btn[data-v-162ecff2] {\n  border: none;\n  background: none;\n  font-size: 1.5rem;\n  justify-self: flex-start;\n  color: #fff;\n  width: 2rem;\n  text-align: left;\n  position: absolute;\n}", ""]);
 
 // exports
 
@@ -27028,14 +27028,14 @@ var render = function() {
             "inertia-link",
             {
               staticClass: "sm-nav-list-link ",
-              class: { active: _vm.route().current("dashboard") },
-              attrs: { href: _vm.route("dashboard") }
+              class: { active: _vm.route().current("overview") },
+              attrs: { href: _vm.route("overview") }
             },
             [
               _c("i", { staticClass: "fas fa-home" }),
               _vm._v(" "),
               _c("span", { staticClass: "sm-nav-list-link-name" }, [
-                _vm._v("Dashboard")
+                _vm._v("Overview")
               ])
             ]
           )
