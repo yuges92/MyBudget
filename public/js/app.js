@@ -4187,7 +4187,7 @@ __webpack_require__.r(__webpack_exports__);
   remember: ['isCollapsed'],
   data: function data() {
     return {
-      isCollapsed: Inertia.state
+      isCollapsed: true
     };
   },
   methods: {

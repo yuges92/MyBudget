@@ -52,7 +52,7 @@ export default {
 
     data() {
         return {
-            isCollapsed: Inertia.state,
+            isCollapsed: true,
         }
     },
     methods: {
