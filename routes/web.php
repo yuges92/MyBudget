@@ -16,21 +16,8 @@ use Illuminate\Support\Facades\Route;
 
 Route::get('/', [\App\Http\Controllers\HomeController::class, 'index']);
 
-Route::middleware(['auth:sanctum', 'verified'])->get('/overview', function () {
-    return Inertia\Inertia::render('Dashboard');
-})->name('overview');
 
-Route::middleware(['auth:sanctum', 'verified'])->get('/incomes', function () {
-    return Inertia\Inertia::render('Dashboard');
-})->name('incomes');
-
-Route::middleware(['auth:sanctum', 'verified'])->get('/transactions', function () {
-    return Inertia\Inertia::render('Transaction/Transactions');
-})->name('transactions');
-
-Route::middleware(['auth:sanctum', 'verified'])->get('/debts', function () {
-    return Inertia\Inertia::render('Dashboard');
-})->name('debts');
+Route::get('/{any}', [\App\Http\Controllers\SPAController::class,'index'])->where('any', '.*');
 
 Route::get('/test', [\App\Http\Controllers\TestController::class, 'index'])->name('test');
 

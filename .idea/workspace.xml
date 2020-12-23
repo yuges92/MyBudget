@@ -3,8 +3,26 @@
   <component name="ChangeListManager">
     <list default="true" id="1db62128-3702-4220-bcbe-fc42f957e3b5" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/HomeController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/HomeController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/css/app.css" beforeDir="false" afterPath="$PROJECT_DIR$/public/css/app.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/css/client.css" beforeDir="false" afterPath="$PROJECT_DIR$/public/css/client.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/css/external.css" beforeDir="false" afterPath="$PROJECT_DIR$/public/css/external.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/public/js/app.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/js/app.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/mix-manifest.json" beforeDir="false" afterPath="$PROJECT_DIR$/public/mix-manifest.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/js/Layouts/AppLayout.vue" beforeDir="false" afterPath="$PROJECT_DIR$/resources/js/Layouts/AppLayout.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/js/Pages/Dashboard.vue" beforeDir="false" afterPath="$PROJECT_DIR$/resources/js/Pages/Dashboard.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/js/Pages/Transaction/Transactions.vue" beforeDir="false" afterPath="$PROJECT_DIR$/resources/js/Pages/Transaction/Transactions.vue" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/resources/js/Partials/SideMenu.vue" beforeDir="false" afterPath="$PROJECT_DIR$/resources/js/Partials/SideMenu.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/js/app.js" beforeDir="false" afterPath="$PROJECT_DIR$/resources/js/app.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/sass/client.scss" beforeDir="false" afterPath="$PROJECT_DIR$/resources/sass/client.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/sass/external.scss" beforeDir="false" afterPath="$PROJECT_DIR$/resources/sass/external.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/app.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/app.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/landing/landing.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/landing/landing.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/layouts/master.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/layouts/master.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/routes/web.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/web.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/webpack.mix.js" beforeDir="false" afterPath="$PROJECT_DIR$/webpack.mix.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -21,6 +39,7 @@
         <option value="composer.json" />
         <option value="SCSS File" />
         <option value="Vue Single File Component" />
+        <option value="JavaScript File" />
       </list>
     </option>
   </component>
@@ -160,7 +179,7 @@
   <component name="PropertiesComponent">
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/resources/js/Pages/Settings" />
     <property name="list.type.of.created.stylesheet" value="SCSS" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.detected.package.tslint" value="true" />
@@ -174,18 +193,18 @@
     <property name="vue.rearranger.settings.migration" value="true" />
   </component>
   <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/resources/js/Pages/Settings" />
+      <recent name="$PROJECT_DIR$/resources/js/Pages/Debts" />
+      <recent name="$PROJECT_DIR$/resources/js/Pages/Incomes" />
+      <recent name="$PROJECT_DIR$" />
+      <recent name="$PROJECT_DIR$/resources/js/Pages" />
+    </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/resources/js/router" />
       <recent name="$PROJECT_DIR$/public" />
       <recent name="$PROJECT_DIR$/resources/js/Pages/Transaction" />
       <recent name="$PROJECT_DIR$/resources/views/landing" />
-      <recent name="$PROJECT_DIR$/resources/sass" />
-      <recent name="$PROJECT_DIR$/resources/css" />
-    </key>
-    <key name="CopyFile.RECENT_KEYS">
-      <recent name="$PROJECT_DIR$" />
-      <recent name="$PROJECT_DIR$/resources/js/Pages" />
-      <recent name="$PROJECT_DIR$/public/images" />
-      <recent name="$PROJECT_DIR$/resources/images" />
       <recent name="$PROJECT_DIR$/resources/sass" />
     </key>
   </component>
@@ -255,25 +274,25 @@
       <screen x="1280" y="-280" width="1920" height="1080" />
     </state>
     <state x="1905" y="45" key="EditFileWatcherDialog/0.0.1280.800/1280.-280.1920.1080/3200.-280.1920.1080@1280.-280.1920.1080" timestamp="1605641510318" />
-    <state width="1878" height="376" key="GridCell.Tab.0.bottom" timestamp="1607021359160">
+    <state width="1878" height="305" key="GridCell.Tab.0.bottom" timestamp="1608737370134">
       <screen x="1280" y="-280" width="1920" height="1080" />
     </state>
-    <state width="1878" height="376" key="GridCell.Tab.0.bottom/0.0.1280.800/1280.-280.1920.1080/3200.-280.1920.1080@1280.-280.1920.1080" timestamp="1607021359160" />
+    <state width="1878" height="305" key="GridCell.Tab.0.bottom/0.0.1280.800/1280.-280.1920.1080/3200.-280.1920.1080@1280.-280.1920.1080" timestamp="1608737370134" />
     <state width="1878" height="305" key="GridCell.Tab.0.bottom/0.0.1280.800@0.0.1280.800" timestamp="1605569764996" />
-    <state width="1878" height="376" key="GridCell.Tab.0.center" timestamp="1607021359157">
+    <state width="1878" height="305" key="GridCell.Tab.0.center" timestamp="1608737370130">
       <screen x="1280" y="-280" width="1920" height="1080" />
     </state>
-    <state width="1878" height="376" key="GridCell.Tab.0.center/0.0.1280.800/1280.-280.1920.1080/3200.-280.1920.1080@1280.-280.1920.1080" timestamp="1607021359157" />
+    <state width="1878" height="305" key="GridCell.Tab.0.center/0.0.1280.800/1280.-280.1920.1080/3200.-280.1920.1080@1280.-280.1920.1080" timestamp="1608737370130" />
     <state width="1878" height="305" key="GridCell.Tab.0.center/0.0.1280.800@0.0.1280.800" timestamp="1605569764994" />
-    <state width="1878" height="376" key="GridCell.Tab.0.left" timestamp="1607021359156">
+    <state width="1878" height="305" key="GridCell.Tab.0.left" timestamp="1608737370129">
       <screen x="1280" y="-280" width="1920" height="1080" />
     </state>
-    <state width="1878" height="376" key="GridCell.Tab.0.left/0.0.1280.800/1280.-280.1920.1080/3200.-280.1920.1080@1280.-280.1920.1080" timestamp="1607021359156" />
+    <state width="1878" height="305" key="GridCell.Tab.0.left/0.0.1280.800/1280.-280.1920.1080/3200.-280.1920.1080@1280.-280.1920.1080" timestamp="1608737370129" />
     <state width="1878" height="305" key="GridCell.Tab.0.left/0.0.1280.800@0.0.1280.800" timestamp="1605569764993" />
-    <state width="1878" height="376" key="GridCell.Tab.0.right" timestamp="1607021359158">
+    <state width="1878" height="305" key="GridCell.Tab.0.right" timestamp="1608737370132">
       <screen x="1280" y="-280" width="1920" height="1080" />
     </state>
-    <state width="1878" height="376" key="GridCell.Tab.0.right/0.0.1280.800/1280.-280.1920.1080/3200.-280.1920.1080@1280.-280.1920.1080" timestamp="1607021359158" />
+    <state width="1878" height="305" key="GridCell.Tab.0.right/0.0.1280.800/1280.-280.1920.1080/3200.-280.1920.1080@1280.-280.1920.1080" timestamp="1608737370132" />
     <state width="1878" height="305" key="GridCell.Tab.0.right/0.0.1280.800@0.0.1280.800" timestamp="1605569764995" />
     <state width="1878" height="376" key="GridCell.Tab.1.bottom" timestamp="1607021359168">
       <screen x="1280" y="-280" width="1920" height="1080" />
@@ -321,10 +340,10 @@
       <screen x="1280" y="-280" width="1920" height="1080" />
     </state>
     <state x="1947" y="-14" width="586" height="548" key="find.popup/0.0.1280.800/1280.-280.1920.1080/3200.-280.1920.1080@1280.-280.1920.1080" timestamp="1608575010613" />
-    <state x="1905" y="-39" width="670" height="676" key="search.everywhere.popup" timestamp="1608501366432">
+    <state x="1905" y="-39" width="670" height="676" key="search.everywhere.popup" timestamp="1608742254881">
       <screen x="1280" y="-280" width="1920" height="1080" />
     </state>
-    <state x="1905" y="-39" width="670" height="676" key="search.everywhere.popup/0.0.1280.800/1280.-280.1920.1080/3200.-280.1920.1080@1280.-280.1920.1080" timestamp="1608501366432" />
+    <state x="1905" y="-39" width="670" height="676" key="search.everywhere.popup/0.0.1280.800/1280.-280.1920.1080/3200.-280.1920.1080@1280.-280.1920.1080" timestamp="1608742254881" />
     <state x="1905" y="-39" width="670" height="676" key="search.everywhere.popup/0.23.1280.777/1280.-280.1920.1080/3200.-257.1920.1057@1280.-280.1920.1080" timestamp="1608329249995" />
   </component>
 </project>

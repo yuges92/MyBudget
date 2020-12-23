@@ -1,4 +1,4 @@
-@import "~@fortawesome/fontawesome-free/css/all";
+@import "~@fortawesome/fontawesome-free/css/all.min.css";
 @import "config";
 @import "variable";
 @import "reset";
@@ -171,7 +171,8 @@
 
                     }
 
-                    &:hover, &.active {
+
+                    &:hover, &.active,&.router-link-active.router-link-exact-active {
                         background: $primary-color;
                         color: #fff;
                         z-index: 0;

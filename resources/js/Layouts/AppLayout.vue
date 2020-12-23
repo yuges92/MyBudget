@@ -1,7 +1,7 @@
 <template>
     <div class="client-app">
         <side-menu/>
-
+<h1>Hello World!</h1>
         <!-- Page Heading -->
 <!--        <client-header :page-title="pageTitle">-->
 
@@ -9,8 +9,9 @@
 
         <!-- Page Content -->
         <main class="client-app-main-body">
-            <slot/>
+            <router-view />
         </main>
+
 
         <!-- Modal Portal -->
         <!--        <portal-target multiple name="modal">-->
@@ -54,19 +55,7 @@ export default {
     },
 
     methods: {
-        switchToTeam(team) {
-            this.$inertia.put(route('current-team.update'), {
-                'team_id': team.id
-            }, {
-                preserveState: false
-            })
-        },
 
-        logout() {
-            axios.post(route('logout').url()).then(response => {
-                window.location = '/';
-            })
-        },
     }
 }
 </script>
