@@ -1,6 +1,6 @@
 <template>
     <app-layout page-title="Overview">
-
+        <h1>Dashboard</h1>
     </app-layout>
 </template>
 

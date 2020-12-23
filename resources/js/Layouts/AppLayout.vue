@@ -1,11 +1,11 @@
 <template>
     <div class="client-app">
-
+        <side-menu/>
 
         <!-- Page Heading -->
-        <client-header :page-title="pageTitle">
+<!--        <client-header :page-title="pageTitle">-->
 
-        </client-header>
+<!--        </client-header>-->
 
         <!-- Page Content -->
         <main class="client-app-main-body">
@@ -13,10 +13,10 @@
         </main>
 
         <!-- Modal Portal -->
-        <portal-target multiple name="modal">
-        </portal-target>
+        <!--        <portal-target multiple name="modal">-->
+        <!--        </portal-target>-->
 
-        <bottom-nav-bar/>
+<!--        <bottom-nav-bar/>-->
     </div>
 </template>
 
@@ -28,9 +28,11 @@ import JetNavLink from '@/Jetstream/NavLink'
 import JetResponsiveNavLink from '@/Jetstream/ResponsiveNavLink'
 import BottomNavBar from "@/Partials/BottomNavBar";
 import ClientHeader from "@/Partials/ClientHeader";
+import SideMenu from "@/Partials/SideMenu";
 
 export default {
     components: {
+        SideMenu,
         ClientHeader,
         BottomNavBar,
         JetApplicationMark,
@@ -69,13 +71,13 @@ export default {
 }
 </script>
 
-<style scoped lang="scss">
+<style lang="scss" scoped>
 
-.client-app{
-    background: #f5f5f5;
-    min-height: 90vh;
+.client-app {
+    background: #f4f7fc;
+    min-height: 150vh;
 
-    .client-app-main-body{
+    .client-app-main-body {
         min-height: 50vh;
     }
 }

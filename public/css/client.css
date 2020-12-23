@@ -6152,3 +6152,179 @@ html {
   font-family: "Nunito", "Arial";
 }
 
+.left-side-menu {
+  background: #fff;
+  min-height: 100vh;
+  height: 100%;
+  width: 15rem;
+  position: fixed;
+  padding: 1rem 0;
+  box-shadow: 0px 0px 2px 0px rgba(0, 0, 0, 0.15);
+  transform-origin: 100% 10%;
+  transition: all 300ms linear 0s;
+  position: -webkit-sticky;
+  position: sticky;
+  top: 0rem;
+  left: 0rem;
+}
+
+.left-side-menu .hamburger-btn {
+  background: none;
+  border: none;
+  outline: none;
+  padding: 1rem;
+  position: absolute;
+  display: flex;
+  right: 1rem;
+  top: 1rem;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  transition: all 0.2s ease-in-out;
+}
+
+.left-side-menu .hamburger-btn .hamburger {
+  width: 100%;
+  max-width: 30px;
+  height: 3px;
+  background: #8a8585;
+  border-radius: 1rem;
+  transition: all 0.2s ease-in-out;
+  position: absolute;
+  display: flex;
+}
+
+.left-side-menu .hamburger-btn .hamburger::before,
+.left-side-menu .hamburger-btn .hamburger::after {
+  content: "";
+  position: absolute;
+  width: 20px;
+  height: 3px;
+  background: #8a8585;
+  border-radius: 5px;
+  transition: all 0.2s ease-in-out;
+}
+
+.left-side-menu .hamburger-btn .hamburger::before {
+  transform: translateY(-10px);
+}
+
+.left-side-menu .hamburger-btn .hamburger::after {
+  transform: translateY(10px);
+}
+
+.left-side-menu .hamburger-btn.collapse .hamburger {
+  background: transparent;
+  width: 25px;
+  right: -0.5rem;
+}
+
+.left-side-menu .hamburger-btn.collapse .hamburger::after {
+  width: 30px;
+  transform: translateY(-0.36em) translateX(-0.67em) rotate(-45deg) scaleX(0.5);
+}
+
+.left-side-menu .hamburger-btn.collapse .hamburger::before {
+  width: 30px;
+  transform: translateY(0.36em) translateX(-0.67em) rotate(45deg) scaleX(0.5);
+}
+
+.left-side-menu .left-side-menu-header {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 3rem;
+}
+
+.left-side-menu .left-side-menu-header .profile-image-container {
+  transition: all 200ms ease-in-out;
+}
+
+.left-side-menu .left-side-menu-header .profile-image-container .profile-image {
+  max-width: 5rem;
+  border-radius: 50%;
+  transition: all 200ms ease-in-out;
+}
+
+.left-side-menu .left-side-menu-header .user-full-name {
+  font-size: 1.3rem;
+}
+
+.left-side-menu .left-side-menu-body {
+  padding: 1rem 0;
+  height: 100%;
+}
+
+.left-side-menu .left-side-menu-body .side-menu-container {
+  list-style: none;
+  width: 100%;
+  height: 50vh;
+  display: flex;
+  flex-direction: column;
+}
+
+.left-side-menu .left-side-menu-body .side-menu-container .side-menu-nav-list {
+  display: flex;
+  justify-content: center;
+}
+
+.left-side-menu .left-side-menu-body .side-menu-container .side-menu-nav-list .side-menu-nav-list-link {
+  width: 100%;
+  padding: 0.5rem 1rem;
+  color: #5b5b5b;
+  display: flex;
+  text-decoration: none;
+  align-items: baseline;
+  font-size: 1.1rem;
+  width: 80%;
+  justify-self: left;
+  border-radius: 3rem;
+  margin-bottom: 0.2rem;
+}
+
+.left-side-menu .left-side-menu-body .side-menu-container .side-menu-nav-list .side-menu-nav-list-link i {
+  margin-right: 0.5rem;
+}
+
+.left-side-menu .left-side-menu-body .side-menu-container .side-menu-nav-list .side-menu-nav-list-link .side-menu-nav-list-link-name {
+  transition: all 200ms ease-in-out;
+}
+
+.left-side-menu .left-side-menu-body .side-menu-container .side-menu-nav-list .side-menu-nav-list-link:hover,
+.left-side-menu .left-side-menu-body .side-menu-container .side-menu-nav-list .side-menu-nav-list-link.active {
+  background: #002245;
+  color: #fff;
+  z-index: 0;
+}
+
+.left-side-menu.collapse {
+  width: 4rem;
+}
+
+.left-side-menu.collapse .left-side-menu-header .profile-image-container .profile-image {
+  max-width: 3rem;
+}
+
+.left-side-menu.collapse .left-side-menu-header .user-full-name {
+  display: none;
+}
+
+.left-side-menu.collapse .left-side-menu-body .side-menu-container .side-menu-nav-list .side-menu-nav-list-link {
+  width: 80%;
+}
+
+.left-side-menu.collapse .left-side-menu-body .side-menu-container .side-menu-nav-list .side-menu-nav-list-link i {
+  margin-right: 0.5rem;
+}
+
+.left-side-menu.collapse .left-side-menu-body .side-menu-container .side-menu-nav-list .side-menu-nav-list-link .side-menu-nav-list-link-name {
+  opacity: 0;
+}
+
+.left-side-menu.collapse .left-side-menu-body .side-menu-container .side-menu-nav-list .side-menu-nav-list-link:hover,
+.left-side-menu.collapse .left-side-menu-body .side-menu-container .side-menu-nav-list .side-menu-nav-list-link.active {
+  background: #002245;
+  color: #fff;
+  z-index: 0;
+}
+
