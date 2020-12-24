@@ -2,28 +2,28 @@
     <nav class="sm-nav">
         <ul class="sm-nav-container">
             <li class="sm-nav-list">
-                <inertia-link :class="{'active':route().current('overview')}" :href="route('overview')"
+                <router-link :to="{name:'overview'}"
                               class="sm-nav-list-link "><i class="fas fa-home"></i> <span
-                    class="sm-nav-list-link-name">Overview</span></inertia-link>
+                    class="sm-nav-list-link-name">Overview</span></router-link>
             </li>
             <li>
-                <inertia-link :class="{'active':route().current('incomes')}" :href="route('incomes')"
+                <router-link :to="{name:'incomes'}"
                               class="sm-nav-list-link"><i class="fas fa-hand-holding-usd"></i> <span
-                    class="sm-nav-list-link-name">Incomes</span></inertia-link>
+                    class="sm-nav-list-link-name">Incomes</span></router-link>
             </li>
             <li>
-                <inertia-link :class="{'active':route().current('transactions')}" :href="route('transactions')"
+                <router-link :to="{name:'overview'}"
                               class="sm-nav-list-link"><i class="fas fa-chart-line"></i> <span
-                    class="sm-nav-list-link-name">Transactions</span></inertia-link>
+                    class="sm-nav-list-link-name">Transactions</span></router-link>
             </li>
             <li>
-                <inertia-link :class="{'active':route().current('debts')}" :href="route('debts')"
+                <router-link :to="{name:'overview'}"
                               class="sm-nav-list-link"><i class="fas fa-credit-card"></i> <span
-                    class="sm-nav-list-link-name">Debts</span></inertia-link>
+                    class="sm-nav-list-link-name">Debts</span></router-link>
             </li>
             <li>
-                <inertia-link class="sm-nav-list-link" href=""><i class="fas fa-ellipsis-h"></i> <span
-                    class="sm-nav-list-link-name">More</span></inertia-link>
+                <a class="sm-nav-list-link" href=""><i class="fas fa-ellipsis-h"></i> <span
+                    class="sm-nav-list-link-name">More</span></a>
             </li>
         </ul>
     </nav>

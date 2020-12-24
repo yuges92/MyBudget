@@ -1,7 +1,6 @@
 <template>
     <div class="client-app">
         <side-menu/>
-<h1>Hello World!</h1>
         <!-- Page Heading -->
 <!--        <client-header :page-title="pageTitle">-->
 
@@ -30,17 +29,17 @@ import JetResponsiveNavLink from '@/Jetstream/ResponsiveNavLink'
 import BottomNavBar from "@/Partials/BottomNavBar";
 import ClientHeader from "@/Partials/ClientHeader";
 import SideMenu from "@/Partials/SideMenu";
+import customerRoutes from "@/router/customerRoutes";
 
 export default {
+
     components: {
         SideMenu,
         ClientHeader,
         BottomNavBar,
-        JetApplicationMark,
-        JetDropdown,
-        JetDropdownLink,
-        JetNavLink,
-        JetResponsiveNavLink,
+    },
+    setup(){
+        console.log('setup')
     },
     props: {
         pageTitle: {
@@ -48,6 +47,7 @@ export default {
             default: ""
         },
     },
+
     data() {
         return {
             showingNavigationDropdown: false,
@@ -56,7 +56,10 @@ export default {
 
     methods: {
 
+    },
+    created(){
     }
+
 }
 </script>
 
@@ -64,10 +67,12 @@ export default {
 
 .client-app {
     background: #f4f7fc;
-    min-height: 150vh;
+    min-height: 100vh;
+    display: flex;
 
     .client-app-main-body {
         min-height: 50vh;
+        width: 100%;
     }
 }
 </style>

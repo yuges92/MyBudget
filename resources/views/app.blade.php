@@ -21,7 +21,7 @@
 <body class="">
 {{--        @inertia--}}
 <div id="app">
-    <app-layout/>
+{{--    <app-layout/>--}}
 </div>
 </body>
 </html>

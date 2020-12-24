@@ -4,6 +4,7 @@ import Transactions from "@/Pages/Transaction/Transactions";
 import Incomes from "@/Pages/Incomes/Incomes";
 import Debts from "@/Pages/Debts/Debts";
 import Settings from "@/Pages/Settings/Settings";
+import NotFound from "@/Pages/NotFound";
 
 const routes = [
     {
@@ -31,6 +32,10 @@ const routes = [
         path: '/settings',
         name: "settings",
         component: Settings
+    },
+    {
+        path: "/:catchAll(.*)",
+        component: NotFound,
     },
 ];
 const customerRoutes = createRouter({

@@ -60,7 +60,7 @@ export default {
 
     data() {
         return {
-            isCollapsed: true,
+            isCollapsed: false,
         }
     },
     methods: {
