@@ -2,13 +2,14 @@
     <div class="client-app">
         <side-menu/>
         <!-- Page Heading -->
-<!--        <client-header :page-title="pageTitle">-->
+        <!--        <client-header :page-title="pageTitle">-->
 
-<!--        </client-header>-->
+        <!--        </client-header>-->
 
         <!-- Page Content -->
         <main class="client-app-main-body">
-            <router-view />
+            <router-view>
+            </router-view>
         </main>
 
 
@@ -16,20 +17,14 @@
         <!--        <portal-target multiple name="modal">-->
         <!--        </portal-target>-->
 
-<!--        <bottom-nav-bar/>-->
+        <!--        <bottom-nav-bar/>-->
     </div>
 </template>
 
 <script>
-import JetApplicationMark from '@/Jetstream/ApplicationMark'
-import JetDropdown from '@/Jetstream/Dropdown'
-import JetDropdownLink from '@/Jetstream/DropdownLink'
-import JetNavLink from '@/Jetstream/NavLink'
-import JetResponsiveNavLink from '@/Jetstream/ResponsiveNavLink'
 import BottomNavBar from "@/Partials/BottomNavBar";
 import ClientHeader from "@/Partials/ClientHeader";
 import SideMenu from "@/Partials/SideMenu";
-import customerRoutes from "@/router/customerRoutes";
 
 export default {
 
@@ -38,7 +33,7 @@ export default {
         ClientHeader,
         BottomNavBar,
     },
-    setup(){
+    setup() {
         console.log('setup')
     },
     props: {
@@ -54,10 +49,8 @@ export default {
         }
     },
 
-    methods: {
-
-    },
-    created(){
+    methods: {},
+    created() {
     }
 
 }
@@ -75,4 +68,14 @@ export default {
         width: 100%;
     }
 }
+
+.page-enter-active, .page-leave-active {
+    transition: opacity 1s, transform 1s;
+}
+.page-enter, .page-leave-to {
+    opacity: 0;
+    transform: translateX(-30%);
+
+}
+
 </style>
