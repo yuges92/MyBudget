@@ -28,6 +28,8 @@
     "name": "myBudgetApp",
     "dependencies": {
         "@fortawesome/fontawesome-free": "^5.15.1",
+        "highcharts": "^8.2.2",
+        "vue-highcharts": "^0.2.0",
         "vue-router": "^4.0.1"
     }
 }

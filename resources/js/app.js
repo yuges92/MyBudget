@@ -1,13 +1,19 @@
 import AppLayout from "@/Layouts/AppLayout";
+import {createApp} from 'vue';
+import Highcharts from 'highcharts';
+import VueHighcharts from 'vue-highcharts';
+
+
+// console.log(route())
+import customerRoutes from './router/customerRoutes'
 
 require('./bootstrap');
 
-import {createApp} from 'vue';
-console.log(route())
-import customerRoutes from './router/customerRoutes'
-const app = document.getElementById('app');
 
-createApp(AppLayout)
-    // .mixin({methods:{route}})
-    .use(customerRoutes)
-    .mount(app)
+const appElement = document.getElementById('app');
+
+const app = createApp(AppLayout);
+// .mixin({methods:{route}})
+app.use(customerRoutes)
+    .use(VueHighcharts, {Highcharts})
+    .mount(appElement)

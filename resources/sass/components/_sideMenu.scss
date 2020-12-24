@@ -2,7 +2,7 @@
     background: #fff;
     min-height: 100vh;
     height: 100%;
-    width: 15rem;
+    min-width: 15rem;
     position: fixed;
     padding: 1rem 0;
     box-shadow: 0px 0px 2px 0px rgba(0, 0, 0, 0.15);
@@ -166,7 +166,7 @@
                     }
 
 
-                    &:hover, &.active,&.router-link-active.router-link-exact-active {
+                    &:hover, &.active, &.router-link-active.router-link-exact-active {
                         background: $primary-color;
                         color: #fff;
                         z-index: 0;
@@ -177,6 +177,7 @@
     }
 
     &.collapse {
+        min-width: 4rem;
         width: 4rem;
 
         .left-side-menu-header {
@@ -188,7 +189,7 @@
             }
 
             .user-full-name {
-                display: none;
+                font-size: 0;
             }
 
         }

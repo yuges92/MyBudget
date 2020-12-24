@@ -30,7 +30,7 @@ html {
   background: #fff;
   min-height: 100vh;
   height: 100%;
-  width: 15rem;
+  min-width: 15rem;
   position: fixed;
   padding: 1rem 0;
   box-shadow: 0px 0px 2px 0px rgba(0, 0, 0, 0.15);
@@ -150,13 +150,14 @@ html {
   z-index: 0;
 }
 .left-side-menu.collapse {
+  min-width: 4rem;
   width: 4rem;
 }
 .left-side-menu.collapse .left-side-menu-header .profile-image-container .profile-image {
   max-width: 3rem;
 }
 .left-side-menu.collapse .left-side-menu-header .user-full-name {
-  display: none;
+  font-size: 0;
 }
 .left-side-menu.collapse .left-side-menu-body .side-menu-container .side-menu-nav-list .side-menu-nav-list-link {
   width: 80%;
@@ -188,7 +189,7 @@ html {
   padding: 0.5rem 1rem;
 }
 .small-card .small-card-body .left-items {
-  margin-right: 1rem;
+  width: 3.5rem;
 }
 .small-card .small-card-body .left-items i {
   width: 2.5rem;
@@ -206,9 +207,11 @@ html {
   color: #949494;
   font-weight: bold;
   text-transform: uppercase;
+  margin-bottom: 0.2rem;
 }
 .small-card .small-card-body .right-items .amount {
-  font-size: 20px;
+  font-size: 1.2rem;
+  color: #2d3748;
 }
 
 .dashboard .page-header {
