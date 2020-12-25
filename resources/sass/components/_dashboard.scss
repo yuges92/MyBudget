@@ -6,7 +6,7 @@
         margin-bottom: 1rem;
         width: 100%;
         background: #fff;
-        padding: 1rem 2rem;
+        padding: 1rem;
         border-bottom: 1px solid #f1f4ff;
 
         .page-title {
@@ -45,14 +45,40 @@
 
     .page-body {
 
-        padding: 0 2rem;
+        padding: 0 1rem;
 
         .top-row {
             display: flex;
             margin-bottom: 1rem;
             justify-content: space-evenly;
+            flex-wrap: wrap;
 
+            > * {
+                margin: 0.5rem;
 
+            }
+
+            :first-child {
+            }
+
+            :last-child {
+            }
+
+        }
+
+        .group-charts {
+            display: flex;
+            flex-wrap: wrap;
+            margin: 0.5rem;
+
+            .chart-col-3 {
+            }
+
+            .chart-col-1 {
+                flex: 1;
+            }
         }
     }
 }
+
+

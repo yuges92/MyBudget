@@ -1,0 +1,20 @@
+.table {
+    width: 100%;
+    border: 1px solid #f4f7fc;
+    border-collapse: collapse;
+
+    th, td {
+        padding: 0.5rem;
+        border: 1px solid #f4f7fc;
+    }
+
+    tbody{
+        tr{
+            border: none!important;
+            &:hover{
+                background: #f4f7fc;
+            }
+        }
+    }
+
+}

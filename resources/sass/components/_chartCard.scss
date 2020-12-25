@@ -1,0 +1,26 @@
+.chart-card {
+    background: #fff;
+    padding: 1rem;
+    border-radius: 10px;
+    border: 1px solid #f1f4ff;
+    width: 100%;
+    margin-bottom: 1rem;
+    //@include custom-shadow;
+
+    .chart-card-header {
+        padding: 0.5rem;
+
+        .chart-card-title {
+            font-size: 16px;
+            font-weight: bold;
+            margin-bottom: 1rem;
+            border-bottom: 1px solid #cbcbcb;
+        }
+
+    }
+
+    .chart-card-body {
+        padding: 1rem;
+    }
+
+}

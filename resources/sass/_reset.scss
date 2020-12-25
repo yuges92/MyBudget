@@ -10,3 +10,8 @@ html{
     font-family: $font-family;
 }
 
+svg.highcharts-root,.highcharts-container {
+    width: 100% !important;
+
+}
+

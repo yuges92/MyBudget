@@ -26,6 +26,10 @@ html {
   font-family: "Nunito", "Arial";
 }
 
+svg.highcharts-root, .highcharts-container {
+  width: 100% !important;
+}
+
 .landing-page {
   padding-top: 1rem;
   background: #f1f4ff;
