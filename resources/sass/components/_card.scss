@@ -1,4 +1,4 @@
-.chart-card {
+.card {
     background: #fff;
     padding: 1rem;
     border-radius: 10px;
@@ -7,19 +7,25 @@
     margin-bottom: 1rem;
     //@include custom-shadow;
 
-    .chart-card-header {
+    .card-header {
         padding: 0.5rem;
+        display: flex;
+        width: 100%;
+        justify-content: space-between;
 
-        .chart-card-title {
+        .card-title {
             font-size: 16px;
             font-weight: bold;
-            margin-bottom: 1rem;
             border-bottom: 1px solid #cbcbcb;
+
+        }
+
+        .card-header-content{
         }
 
     }
 
-    .chart-card-body {
+    .card-body {
         padding: 1rem;
     }
 

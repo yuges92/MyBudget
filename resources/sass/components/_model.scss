@@ -1,0 +1,118 @@
+.modal-container {
+    display: flex;
+    position: absolute;
+    width: 100%;
+    height: 0;
+    top: 0;
+    background: #002244ba;
+    justify-content: center;
+    align-items: center;
+    transform: scale(1.2);
+    z-index: -1;
+    transition: transform 300ms ease;
+    overflow: auto;
+
+    &.active {
+        transform: scale(1);
+        z-index: 10;
+        transition: transform 300ms ease;
+        height: 100vh;
+
+    }
+
+    .modal {
+        background: #fff;
+        min-width: 20rem;
+        border-radius: 10px;
+        overflow: hidden;
+        transition: all .3s ease;
+
+        .modal-header {
+            padding: 1rem;
+            width: 100%;
+            background: $primary-color;
+            position: relative;
+
+            .modal-title {
+                font-size: 1.2rem;
+                color: #fff;
+            }
+
+            .close-btn {
+                position: absolute;
+                right: 0rem;
+                top: 0rem;
+                color: #dddddd;
+                font-size: 1.5rem;
+                padding: 0.5rem;
+                outline: none;
+
+                &:hover {
+                    color: #fff;
+                }
+            }
+        }
+
+        .modal-body {
+            min-height: 10rem;
+            padding: 1rem;
+
+        }
+
+        .modal-footer {
+            padding: 1rem;
+            display: flex;
+            width: 100%;
+
+            .btn {
+                padding: 0.5rem;
+                border-radius: 2rem;
+                height: 2rem;
+            }
+
+            .close-modal-btn {
+                background: #fff;
+                margin-left: auto;
+            }
+
+            .modal-action-btn {
+                background: #2d3748;
+                color: #fff;
+                min-width: 4rem;
+                text-align: center;
+
+                &:hover {
+                    background: #002244e8;
+                }
+
+            }
+
+            .loading-btn {
+                background: #2d3748;
+                color: #fff;
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+                min-width: 4rem;
+                text-align: center;
+                cursor: wait;
+
+                span {
+                    margin-left: 0.5rem;
+                    color: #ececec;
+                }
+            }
+
+        }
+    }
+}
+
+.modal-enter,
+.modal-leave {
+    opacity: 0;
+}
+
+.modal-enter .modal-container,
+.modal-leave .modal-container {
+    transform: scale(1.1);
+}

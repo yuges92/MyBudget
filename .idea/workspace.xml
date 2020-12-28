@@ -3,23 +3,19 @@
   <component name="ChangeListManager">
     <list default="true" id="1db62128-3702-4220-bcbe-fc42f957e3b5" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/public/css/app.css" beforeDir="false" afterPath="$PROJECT_DIR$/public/css/app.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/public/css/client.css" beforeDir="false" afterPath="$PROJECT_DIR$/public/css/client.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/css/external.css" beforeDir="false" afterPath="$PROJECT_DIR$/public/css/external.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/public/js/app.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/js/app.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/public/mix-manifest.json" beforeDir="false" afterPath="$PROJECT_DIR$/public/mix-manifest.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/resources/js/Pages/Dashboard.vue" beforeDir="false" afterPath="$PROJECT_DIR$/resources/js/Pages/Dashboard.vue" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/resources/js/Pages/Incomes/Incomes.vue" beforeDir="false" afterPath="$PROJECT_DIR$/resources/js/Pages/Incomes/Incomes.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/sass/_config.scss" beforeDir="false" afterPath="$PROJECT_DIR$/resources/sass/_config.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/sass/_reset.scss" beforeDir="false" afterPath="$PROJECT_DIR$/resources/sass/_reset.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/js/Partials/ChartCard.vue" beforeDir="false" afterPath="$PROJECT_DIR$/resources/js/Partials/Card.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/js/app.js" beforeDir="false" afterPath="$PROJECT_DIR$/resources/js/app.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/resources/sass/client.scss" beforeDir="false" afterPath="$PROJECT_DIR$/resources/sass/client.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/sass/components/_dashboard.scss" beforeDir="false" afterPath="$PROJECT_DIR$/resources/sass/components/_dashboard.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/sass/components/_sideMenu.scss" beforeDir="false" afterPath="$PROJECT_DIR$/resources/sass/components/_sideMenu.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/sass/components/_smallCard.scss" beforeDir="false" afterPath="$PROJECT_DIR$/resources/sass/components/_smallCard.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/sass/components/_btns.scss" beforeDir="false" afterPath="$PROJECT_DIR$/resources/sass/components/_btns.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/sass/components/_chartCard.scss" beforeDir="false" afterPath="$PROJECT_DIR$/resources/sass/components/_card.scss" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/resources/views/app.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/app.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/webpack.mix.js" beforeDir="false" afterPath="$PROJECT_DIR$/webpack.mix.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -35,8 +31,8 @@
       <list>
         <option value="composer.json" />
         <option value="JavaScript File" />
-        <option value="Vue Single File Component" />
         <option value="SCSS File" />
+        <option value="Vue Single File Component" />
       </list>
     </option>
   </component>
@@ -251,7 +247,9 @@
       <workItem from="1608756921590" duration="2362000" />
       <workItem from="1608819556972" duration="17015000" />
       <workItem from="1608908175169" duration="767000" />
-      <workItem from="1608909041538" duration="12934000" />
+      <workItem from="1608909041538" duration="14677000" />
+      <workItem from="1608993906152" duration="14886000" />
+      <workItem from="1609165434569" duration="6725000" />
     </task>
     <servers />
   </component>

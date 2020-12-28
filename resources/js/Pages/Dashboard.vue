@@ -39,14 +39,14 @@
 
             <div class="group-charts">
 
-                <chart-card card-title="Trajectory Overview" class="chart-col-3">
-                    <template v-slot:chart-card-body-content>
+                <card card-title="Trajectory Overview" class="chart-col-3">
+                    <template v-slot:card-body-content>
                         <Highcharts ref="highchartsRef" :options="options"/>
                     </template>
-                </chart-card>
+                </card>
 
-                <chart-card card-title="Latest Transactions" class="chart-col-1">
-                    <template v-slot:chart-card-body-content>
+                <card card-title="Latest Transactions" class="chart-col-1">
+                    <template v-slot:card-body-content>
                         <ul class="list">
                             <li v-for="index in 5" class="list-item">
                                 Transaction {{ index }} <span class="date">01/01/2020</span>
@@ -56,12 +56,12 @@
 
                         <button class="">View All</button>
                     </template>
-                </chart-card>
+                </card>
             </div>
 
             <div>
-                <chart-card card-title="Monthly Outgoings" class="chart-col-1">
-                    <template v-slot:chart-card-body-content>
+                <card card-title="Monthly Outgoings" class="chart-col-1">
+                    <template v-slot:card-body-content>
                         <ul class="list">
                             <li v-for="index in 10" class="list-item">
                                 Monthly Outgoings {{ index }} <span class="date">01/01/2020</span>
@@ -71,15 +71,15 @@
 
                         <button class="">View All</button>
                     </template>
-                </chart-card>
+                </card>
             </div>
 
             <div>
                 <h2></h2>
             </div>
             <div>
-                <chart-card card-title="Upcoming Payments" class="chart-col-1">
-                    <template v-slot:chart-card-body-content>
+                <card card-title="Upcoming Payments" class="chart-col-1">
+                    <template v-slot:card-body-content>
                         <ul class="list">
                             <li v-for="index in 10" class="list-item">
                                 Upcoming Payments {{ index }} <span class="date">01/01/2020</span>
@@ -89,12 +89,12 @@
 
                         <button class="">View All</button>
                     </template>
-                </chart-card>
+                </card>
             </div>
 
             <div>
-                <chart-card card-title="Debts" class="chart-col-1">
-                    <template v-slot:chart-card-body-content>
+                <card card-title="Debts" class="chart-col-1">
+                    <template v-slot:card-body-content>
                         <ul class="list">
                             <li v-for="index in 3" class="list-item">
                                 Debts {{ index }}
@@ -104,7 +104,7 @@
 
                         <button class="">View All</button>
                     </template>
-                </chart-card>
+                </card>
             </div>
 
         </div>
@@ -115,10 +115,10 @@
 <script>
 import SmallCard from "@/Partials/SmallCard";
 import {ref} from "vue";
-import ChartCard from "@/Partials/ChartCard";
+import Card from "@/Partials/Card";
 
 export default {
-    components: {ChartCard, SmallCard},
+    components: {Card, SmallCard},
     setup() {
         const options = {
             chart: {

@@ -19,7 +19,8 @@ mix.js('resources/js/app.js', 'public/js')
     //     require('postcss-import'),
     //     require('tailwindcss'),
     // ])
-    .webpackConfig(require('./webpack.config')).vue();
+    .webpackConfig(require('./webpack.config'))
+    .vue();
 
 mix.browserSync({
     proxy: 'https://mybudgetapp.test/'

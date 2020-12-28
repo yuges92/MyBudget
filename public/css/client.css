@@ -272,7 +272,7 @@ svg.highcharts-root, .highcharts-container {
   flex: 1;
 }
 
-.chart-card {
+.card {
   background: #fff;
   padding: 1rem;
   border-radius: 10px;
@@ -280,16 +280,18 @@ svg.highcharts-root, .highcharts-container {
   width: 100%;
   margin-bottom: 1rem;
 }
-.chart-card .chart-card-header {
+.card .card-header {
   padding: 0.5rem;
+  display: flex;
+  width: 100%;
+  justify-content: space-between;
 }
-.chart-card .chart-card-header .chart-card-title {
+.card .card-header .card-title {
   font-size: 16px;
   font-weight: bold;
-  margin-bottom: 1rem;
   border-bottom: 1px solid #cbcbcb;
 }
-.chart-card .chart-card-body {
+.card .card-body {
   padding: 1rem;
 }
 
@@ -322,4 +324,112 @@ svg.highcharts-root, .highcharts-container {
 }
 .table tbody tr:hover {
   background: #f4f7fc;
+}
+
+.modal-container {
+  display: flex;
+  position: absolute;
+  width: 100%;
+  height: 0;
+  top: 0;
+  background: #002244ba;
+  justify-content: center;
+  align-items: center;
+  transform: scale(1.2);
+  z-index: -1;
+  transition: transform 300ms ease;
+  overflow: auto;
+}
+.modal-container.active {
+  transform: scale(1);
+  z-index: 10;
+  transition: transform 300ms ease;
+  height: 100vh;
+}
+.modal-container .modal {
+  background: #fff;
+  min-width: 20rem;
+  border-radius: 10px;
+  overflow: hidden;
+  transition: all 0.3s ease;
+}
+.modal-container .modal .modal-header {
+  padding: 1rem;
+  width: 100%;
+  background: #002245;
+  position: relative;
+}
+.modal-container .modal .modal-header .modal-title {
+  font-size: 1.2rem;
+  color: #fff;
+}
+.modal-container .modal .modal-header .close-btn {
+  position: absolute;
+  right: 0rem;
+  top: 0rem;
+  color: #dddddd;
+  font-size: 1.5rem;
+  padding: 0.5rem;
+  outline: none;
+}
+.modal-container .modal .modal-header .close-btn:hover {
+  color: #fff;
+}
+.modal-container .modal .modal-body {
+  min-height: 10rem;
+  padding: 1rem;
+}
+.modal-container .modal .modal-footer {
+  padding: 1rem;
+  display: flex;
+  width: 100%;
+}
+.modal-container .modal .modal-footer .btn {
+  padding: 0.5rem;
+  border-radius: 2rem;
+  height: 2rem;
+}
+.modal-container .modal .modal-footer .close-modal-btn {
+  background: #fff;
+  margin-left: auto;
+}
+.modal-container .modal .modal-footer .modal-action-btn {
+  background: #2d3748;
+  color: #fff;
+  min-width: 4rem;
+  text-align: center;
+}
+.modal-container .modal .modal-footer .modal-action-btn:hover {
+  background: #002244e8;
+}
+.modal-container .modal .modal-footer .loading-btn {
+  background: #2d3748;
+  color: #fff;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  min-width: 4rem;
+  text-align: center;
+  cursor: wait;
+}
+.modal-container .modal .modal-footer .loading-btn span {
+  margin-left: 0.5rem;
+  color: #ececec;
+}
+
+.modal-enter,
+.modal-leave {
+  opacity: 0;
+}
+
+.modal-enter .modal-container,
+.modal-leave .modal-container {
+  transform: scale(1.1);
+}
+
+.btn {
+  background: none;
+  border: none;
+  cursor: pointer;
+  outline: none;
 }

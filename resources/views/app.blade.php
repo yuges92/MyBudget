@@ -21,9 +21,8 @@
 </head>
 <body class="">
 {{--        @inertia--}}
-<div id="app">
-{{--    <app-layout/>--}}
-</div>
+<div id="app"></div>
+<div id="modal-teleport"></div>
 </body>
 </html>
 
