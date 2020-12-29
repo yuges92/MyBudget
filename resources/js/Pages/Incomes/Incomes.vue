@@ -1,62 +1,70 @@
 <template>
-    <div class="dashboard">
+    <div>
+        <div class="dashboard">
+            <header class="page-header">
+                <h1 class="page-title">Incomes</h1>
+                <div class="calendar">
+                    <h2>Calendar</h2>
+                </div>
+            </header>
+            <div class="page-body">
+                <div>
+                    <card card-title="All Incomes" class="chart-col-1">
+                        <template v-slot:card-header-content>
+                            <button class="btn" @click="toggleModal"><i class="fas fa-plus"></i> <span>Add Income</span>
+                            </button>
+                        </template>
+                        <template v-slot:card-body-content>
+                            <ul class="list">
+                                <li v-for="index in 5" class="list-item">
+                                    <button class="btn">
+                                        Transaction {{ index }}
+                                        <span class="date">01/01/2020</span>
+                                        <span>Type</span>
+                                        <span>From</span>
+                                        <span>Date</span>
+                                        <span>Amount</span>
+                                    </button>
 
-        <header class="page-header">
-            <h1 class="page-title">Incomes</h1>
-            <div class="calendar">
-                <h2>Calendar</h2>
-            </div>
-        </header>
-        <div class="page-body">
-            <div>
-                <card card-title="All Incomes" class="chart-col-1">
-                    <template v-slot:card-header-content>
-                        <button @click="toggleModal" class="btn"><i class="fas fa-plus"></i> <span>Add Income</span></button>
-                    </template>
-                    <template v-slot:card-body-content>
-                        <ul class="list">
-                            <li v-for="index in 5" class="list-item">
-                                <button class="btn">
-
-                                    Transaction {{ index }} <span class="date">01/01/2020</span>
-                                    <span>Type</span>
-                                    <span>From</span>
-                                    <span>Date</span>
-                                    <span>Amount</span>
-                                </button>
-
-                            </li>
-                        </ul>
-                    </template>
-                </card>
+                                </li>
+                            </ul>
+                        </template>
+                    </card>
+                </div>
             </div>
         </div>
+        <modal v-model:visible="showModal" modal-action-text="Save" modal-title="Add Income" @submit="save">
+            <template v-slot:modal-body>
+                <form action="" class="form" onsubmit.preventDefault="">
+                    <input-text-field v-model:inputValue="form.firstName" input-type="text" label-name="Type"/>
+                    <input-text-field v-model:inputValue="form.lastName" input-type="text" label-name="Description"/>
+                    <input-text-field v-model:inputValue="form.lastName" input-type="date" label-name="Date"/>
+                    <input-text-field v-model:inputValue="form.lastName" input-type="text" label-name="From"/>
+                    <input-text-field v-model:inputValue="form.lastName" input-type="number" label-name="Amount"/>
+                </form>
+            </template>
+        </modal>
     </div>
-    <modal :visible="showModal" modal-action-text="Save" modal-title="Add Income" @close="toggleModal" @submit="save">
-        <template v-slot:modal-body>
-            <form action="" class="form">
-                <div>
-                    <label for="name">some</label>
-                    <input id="name" type="text">
-                </div>
-            </form>
-        </template>
-    </modal>
 
 </template>
 
 <script>
 
-import Card from "@/Partials/Card";
-import Modal from "@/Partials/Modal";
+import Card from "@/Components/Card";
+import Modal from "@/Components/Modal";
 import {ref} from "vue";
+import InputTextField from "@/Components/InputTextField";
 
 export default {
-    components: {Modal, Card},
+    components: {InputTextField, Modal, Card},
     setup() {
         const showModal = ref(false)
+        const form = ref({
+            firstName: "",
+            lastName: "",
+        })
         const toggleModal = () => {
-           // console.log(showModal.value)
+            // console.log(showModal.value)
             showModal.value = !showModal.value
         }
         let save = () => {
@@ -68,13 +76,16 @@ export default {
                 toggleModal()
             })
         }
-        return {showModal, toggleModal, save}
+        const updateFormValue = (att, val) => {
+            form.value[att] = val
+        }
+        return {showModal, toggleModal, save, form, updateFormValue}
     },
-    // data() {
-    //     return {
-    //         showModal: false
-    //     }
-    // },
+    data() {
+        return {
+            firstname: "No name"
+        }
+    },
     methods: {},
 }
 </script>

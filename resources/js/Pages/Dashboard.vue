@@ -113,9 +113,9 @@
 </template>
 
 <script>
-import SmallCard from "@/Partials/SmallCard";
+import SmallCard from "@/Components/SmallCard";
 import {ref} from "vue";
-import Card from "@/Partials/Card";
+import Card from "@/Components/Card";
 
 export default {
     components: {Card, SmallCard},

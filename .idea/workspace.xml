@@ -2,19 +2,28 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="1db62128-3702-4220-bcbe-fc42f957e3b5" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/resources/js/Components/Modal.vue" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/js/Components/SideMenu.vue" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/css/app.css" beforeDir="false" afterPath="$PROJECT_DIR$/public/css/app.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/public/css/client.css" beforeDir="false" afterPath="$PROJECT_DIR$/public/css/client.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/css/external.css" beforeDir="false" afterPath="$PROJECT_DIR$/public/css/external.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/public/js/app.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/js/app.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/mix-manifest.json" beforeDir="false" afterPath="$PROJECT_DIR$/public/mix-manifest.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/js/Layouts/AppLayout.vue" beforeDir="false" afterPath="$PROJECT_DIR$/resources/js/Layouts/AppLayout.vue" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/resources/js/Pages/Dashboard.vue" beforeDir="false" afterPath="$PROJECT_DIR$/resources/js/Pages/Dashboard.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/js/Pages/Debts/Debts.vue" beforeDir="false" afterPath="$PROJECT_DIR$/resources/js/Pages/Debts/Debts.vue" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/resources/js/Pages/Incomes/Incomes.vue" beforeDir="false" afterPath="$PROJECT_DIR$/resources/js/Pages/Incomes/Incomes.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/js/Partials/ChartCard.vue" beforeDir="false" afterPath="$PROJECT_DIR$/resources/js/Partials/Card.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/js/app.js" beforeDir="false" afterPath="$PROJECT_DIR$/resources/js/app.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/js/Partials/BottomNavBar.vue" beforeDir="false" afterPath="$PROJECT_DIR$/resources/js/Components/BottomNavBar.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/js/Partials/Card.vue" beforeDir="false" afterPath="$PROJECT_DIR$/resources/js/Components/Card.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/js/Partials/ClientHeader.vue" beforeDir="false" afterPath="$PROJECT_DIR$/resources/js/Components/ClientHeader.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/js/Partials/Modal.vue" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/js/Partials/SideMenu.vue" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/js/Partials/SmallCard.vue" beforeDir="false" afterPath="$PROJECT_DIR$/resources/js/Components/SmallCard.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/js/Partials/Spinner.vue" beforeDir="false" afterPath="$PROJECT_DIR$/resources/js/Components/Spinner.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/sass/_config.scss" beforeDir="false" afterPath="$PROJECT_DIR$/resources/sass/_config.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/sass/_reset.scss" beforeDir="false" afterPath="$PROJECT_DIR$/resources/sass/_reset.scss" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/resources/sass/client.scss" beforeDir="false" afterPath="$PROJECT_DIR$/resources/sass/client.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/sass/components/_btns.scss" beforeDir="false" afterPath="$PROJECT_DIR$/resources/sass/components/_btns.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/sass/components/_chartCard.scss" beforeDir="false" afterPath="$PROJECT_DIR$/resources/sass/components/_card.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/app.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/app.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/sass/components/_model.scss" beforeDir="false" afterPath="$PROJECT_DIR$/resources/sass/components/_modal.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/sass/components/_sideMenu.scss" beforeDir="false" afterPath="$PROJECT_DIR$/resources/sass/components/_sideMenu.scss" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/webpack.mix.js" beforeDir="false" afterPath="$PROJECT_DIR$/webpack.mix.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -31,8 +40,8 @@
       <list>
         <option value="composer.json" />
         <option value="JavaScript File" />
-        <option value="SCSS File" />
         <option value="Vue Single File Component" />
+        <option value="SCSS File" />
       </list>
     </option>
   </component>
@@ -249,7 +258,7 @@
       <workItem from="1608908175169" duration="767000" />
       <workItem from="1608909041538" duration="14677000" />
       <workItem from="1608993906152" duration="14886000" />
-      <workItem from="1609165434569" duration="6725000" />
+      <workItem from="1609165434569" duration="28850000" />
     </task>
     <servers />
   </component>

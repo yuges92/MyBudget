@@ -8,7 +8,10 @@
 
         <!-- Page Content -->
         <main class="client-app-main-body">
-            <router-view>
+            <router-view v-slot="{ Component }">
+                <transition name="mode-fade" mode="out-in">
+                    <component :is="Component"/>
+                </transition>
             </router-view>
         </main>
 
@@ -22,9 +25,9 @@
 </template>
 
 <script>
-import BottomNavBar from "@/Partials/BottomNavBar";
-import ClientHeader from "@/Partials/ClientHeader";
-import SideMenu from "@/Partials/SideMenu";
+import BottomNavBar from "@/Components/BottomNavBar";
+import ClientHeader from "@/Components/ClientHeader";
+import SideMenu from "@/Components/SideMenu";
 
 export default {
 
@@ -69,13 +72,19 @@ export default {
     }
 }
 
-.page-enter-active, .page-leave-active {
-    transition: opacity 1s, transform 1s;
-}
-.page-enter, .page-leave-to {
-    opacity: 0;
-    transform: translateX(-30%);
 
+.mode-fade-enter-active, .mode-fade-leave-active {
+    transition: transform .5s ease;
 }
+
+.mode-fade-leave-active {
+    transform: translateX(0%);
+}
+
+
+.mode-fade-enter-from, .mode-fade-leave-to {
+    transform: translateX(-100%);
+}
+
 
 </style>
