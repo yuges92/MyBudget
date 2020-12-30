@@ -675,7 +675,7 @@ a {
   color: #2d3748;
 }
 
-.dashboard .page-header {
+.page-layout .page-header {
   display: flex;
   align-items: center;
   margin-bottom: 1rem;
@@ -684,17 +684,17 @@ a {
   padding: 1rem;
   border-bottom: 1px solid #f1f4ff;
 }
-.dashboard .page-header .page-title {
+.page-layout .page-header .page-title {
   flex: 1;
   color: #2d3748;
   font-size: 1.6rem;
 }
-.dashboard .page-header .filter-btns {
+.page-layout .page-header .filter-btns {
   width: 10rem;
   display: flex;
   justify-content: space-around;
 }
-.dashboard .page-header .filter-btns .btn {
+.page-layout .page-header .filter-btns .btn {
   background: #c8c8c8;
   border: none;
   border-radius: 10px;
@@ -702,31 +702,31 @@ a {
   cursor: pointer;
   outline: none;
 }
-.dashboard .page-header .filter-btns .btn.active, .dashboard .page-header .filter-btns .btn.active:hover {
+.page-layout .page-header .filter-btns .btn.active, .page-layout .page-header .filter-btns .btn.active:hover {
   background: #002245;
   color: #f1f4ff;
 }
-.dashboard .page-header .filter-btns .btn:hover {
+.page-layout .page-header .filter-btns .btn:hover {
   background: #e2e2e2;
 }
-.dashboard .page-body {
+.page-layout .page-body {
   padding: 0 1rem;
 }
-.dashboard .page-body .top-row {
+.page-layout .page-body .top-row {
   display: flex;
   margin-bottom: 1rem;
   justify-content: space-evenly;
   flex-wrap: wrap;
 }
-.dashboard .page-body .top-row > * {
+.page-layout .page-body .top-row > * {
   margin: 0.5rem;
 }
-.dashboard .page-body .group-charts {
+.page-layout .page-body .group-charts {
   display: flex;
   flex-wrap: wrap;
   margin: 0.5rem;
 }
-.dashboard .page-body .group-charts .chart-col-1 {
+.page-layout .page-body .group-charts .chart-col-1 {
   flex: 1;
 }
 

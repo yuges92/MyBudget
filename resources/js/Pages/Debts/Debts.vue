@@ -1,10 +1,13 @@
 <template>
-<h1>Debts</h1>
+    <page-layout page-title="Debts">
+
+
+    </page-layout>
 </template>
 
 <script>
-    export default {
-        components: {
-        },
-    }
+import PageLayout from "@/Components/PageLayout";
+export default {
+    components: {PageLayout},
+}
 </script>

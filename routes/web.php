@@ -17,7 +17,7 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', [\App\Http\Controllers\HomeController::class, 'index']);
 
 
-Route::get('/{any}', [\App\Http\Controllers\SPAController::class,'index'])->where('any', '.*');
+Route::get('/{any}', [\App\Http\Controllers\SPAController::class,'index'])->where('any', '^(?!api).*$');
 
 Route::get('/test', [\App\Http\Controllers\TestController::class, 'index'])->name('test');
 

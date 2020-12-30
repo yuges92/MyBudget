@@ -1,15 +1,14 @@
 <template>
-    <div class="dashboard">
-
-        <header class="page-header">
-            <h1 class="page-title">My Dashboard</h1>
+    <page-layout page-title="Overview">
+        <template #right-content>
             <div class="filter-btns">
                 <button class="btn btn-week active">Week</button>
                 <button class="btn btn-month">Month</button>
                 <button class="btn btn-year">Year</button>
             </div>
-        </header>
-        <div class="page-body">
+        </template>
+
+        <template #page-body>
             <div class="top-row">
                 <small-card amount="£19.00" card-title="Balance" class="">
                     <template v-slot:icon>
@@ -98,7 +97,7 @@
                         <ul class="list">
                             <li v-for="index in 3" class="list-item">
                                 Debts {{ index }}
-                                <span>£1{{index}}00</span>
+                                <span>£1{{ index }}00</span>
                             </li>
                         </ul>
 
@@ -107,8 +106,8 @@
                 </card>
             </div>
 
-        </div>
-    </div>
+        </template>
+    </page-layout>
 
 </template>
 
@@ -116,9 +115,10 @@
 import SmallCard from "@/Components/SmallCard";
 import {ref} from "vue";
 import Card from "@/Components/Card";
+import PageLayout from "@/Components/PageLayout";
 
 export default {
-    components: {Card, SmallCard},
+    components: {PageLayout, Card, SmallCard},
     setup() {
         const options = {
             chart: {
