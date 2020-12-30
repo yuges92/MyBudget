@@ -68,7 +68,8 @@ export default {
             showModal.value = !showModal.value
         }
         let save = () => {
-            axios.get('users').then(res => {
+            console.log(form.value.firstName)
+            axios.get('/api/users').then(res => {
                 console.log(res)
             }).catch(err => {
                 console.log(err)
@@ -76,17 +77,21 @@ export default {
                 toggleModal()
             })
         }
-        const updateFormValue = (att, val) => {
-            form.value[att] = val
-        }
-        return {showModal, toggleModal, save, form, updateFormValue}
+
+        return {showModal, toggleModal, save, form}
     },
     data() {
         return {
             firstname: "No name"
         }
     },
-    methods: {},
+    methods: {
+
+    },
+    mounted() {
+        console.log(process.env.MIX_API_URL)
+
+    }
 }
 </script>
 

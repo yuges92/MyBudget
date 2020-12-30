@@ -3,6 +3,12 @@
     border: none;
     cursor: pointer;
     outline: none;
+    padding: 0.5rem;
+
+    &:hover{
+        opacity: 0.65;
+    }
+
 }
 
 .btn-default {

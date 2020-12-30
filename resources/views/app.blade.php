@@ -11,11 +11,11 @@
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700&display=swap">
 
     <!-- Styles -->
-    <link rel="stylesheet" href="{{ asset('css/app.css') }}">
+{{--    <link rel="stylesheet" href="{{ asset('css/app.css') }}">--}}
     <link rel="stylesheet" href="{{ asset('css/client.css') }}">
 
     <!-- Scripts -->
-    @routes
+{{--    @routes--}}
     <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.26.0/moment.min.js"></script>
     <script src="{{ asset('js/app.js') }}" defer></script>
 </head>

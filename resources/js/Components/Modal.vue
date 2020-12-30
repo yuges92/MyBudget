@@ -1,8 +1,8 @@
 <template>
     <teleport to="#modal-teleport">
 
-        <div :class="{'active':visibility}" class=" modal-container" @click="close">
-            <div v-if="visibility" class="modal" transition="modal" @click.stop>
+        <div :class="{'show':visibility}" class=" modal-container" @click="close">
+            <div  class="modal" transition="modal" @click.stop>
                 <header class="modal-header">
                     <span class="modal-title">{{ modalTitle }}</span>
                     <!--                    <button class="btn close-btn" @click="close"><i class="fas fa-times"></i></button>-->
@@ -33,7 +33,7 @@ import {ref} from "vue";
 export default {
     name: "Modal",
     components: {Spinner},
-    emits: ['submit','update:visible'],
+    emits: ['submit', 'update:visible'],
     setup(props, {emit}) {
         const visibility = ref(props.visible);
         const close = () => {
@@ -66,6 +66,7 @@ export default {
     },
     watch: {
         visible(newValue, oldValue) {
+            this.isLoading = false
             this.visibility = newValue
         }
     },
