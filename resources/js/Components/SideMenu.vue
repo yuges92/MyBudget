@@ -39,9 +39,11 @@ export default {
             isCollapsed: false,
             routes: [
                 {title: "Overview", to: "overview", icon: "fas fa-home"},
-                {title: "Incomes", to: "incomes", icon: "fas fa-hand-holding-usd"},
-                {title: "Transactions", to: "transactions", icon: "fas fa-chart-line"},
-                {title: "Debts", to: "debts", icon: "fas fa-chart-line"},
+                {title: "Incomes", to: "incomes.index", icon: "fas fa-hand-holding-usd"},
+                {title: "Transactions", to: "transactions.index", icon: "fas fa-chart-line"},
+                {title: "Debts/Loans", to: "debts.index", icon: "fas fa-credit-card"},
+                {title: "Categories", to: "categories.index", icon: "fas fa-sitemap"},
+                {title: "Notifications", to: "notifications", icon: "fas fa-bell"},
                 {title: "Settings", to: "settings", icon: "fas fa-cogs"},
             ],
         }
@@ -52,8 +54,6 @@ export default {
         }
     },
     created() {
-        console.log('created!');
-        console.log('isCollapsed!', this.isCollapsed);
     }
 }
 </script>

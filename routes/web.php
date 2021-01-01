@@ -13,6 +13,10 @@ use Illuminate\Support\Facades\Route;
 | contains the "web" middleware group. Now create something great!
 |
 */
+Route::get('logout', function(){
+    Auth::logout();
+    return redirect('login');
+});
 
 Route::get('/', [\App\Http\Controllers\HomeController::class, 'index']);
 
@@ -21,7 +25,4 @@ Route::get('/{any}', [\App\Http\Controllers\SPAController::class,'index'])->wher
 
 Route::get('/test', [\App\Http\Controllers\TestController::class, 'index'])->name('test');
 
-Route::get('logout', function(){
-    Auth::logout();
-   return redirect('login');
-});
+

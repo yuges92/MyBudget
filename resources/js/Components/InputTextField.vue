@@ -1,11 +1,12 @@
 <template>
     <div class="custom-form-field-container">
-        <label :for="labelName" class="input-label">{{ labelName }}</label>
+        <label :for="labelName" class="input-label ">{{ labelName }}</label>
         <input
             :id="labelName"
             v-model="input"
             :type="inputType"
             class="input-field"
+            :placeholder="labelName"
         >
     </div>
 </template>

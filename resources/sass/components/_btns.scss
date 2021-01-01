@@ -14,3 +14,29 @@
 .btn-default {
 
 }
+
+.submit-btn {
+    background: #2d3748;
+    color: #fff;
+    border-radius: 2rem;
+    min-width: 5rem;
+    height: 2.5rem;
+}
+
+.loading-btn {
+    border-radius: 2rem;
+    background: #2d3748;
+    opacity: 0.6;
+    color: #fff;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    min-width: 4rem;
+    text-align: center;
+    cursor: wait;
+
+    span {
+        margin-left: 0.5rem;
+        color: #ececec;
+    }
+}

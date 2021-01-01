@@ -31,6 +31,7 @@
         "@fortawesome/fontawesome-free": "^5.15.1",
         "highcharts": "^8.2.2",
         "vue-highcharts": "^0.2.0",
-        "vue-router": "^4.0.1"
+        "vue-router": "^4.0.1",
+        "vuex": "^4.0.0-rc.2"
     }
 }

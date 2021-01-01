@@ -18,7 +18,7 @@ Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
     return $request->user();
 });
 
-//Route::get('users', function (){
-//    return response()->json(\App\Models\User::all());
-//});
+Route::post('users', function (){
+    return response()->json(request()->all(),201);
+});
 

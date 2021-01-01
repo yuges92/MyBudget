@@ -11,20 +11,21 @@
             <div>
                 <card card-title="All Incomes" class="chart-col-1">
                     <template v-slot:card-header-content>
-                        <button class="btn" @click="toggleModal"><i class="fas fa-plus"></i> <span>Add Income</span>
-                        </button>
+<!--                        <button class="btn" @click="toggleModal"></button>-->
+                        <router-link class="btn" :to="{name:'incomes.create'}"><i class="fas fa-plus"></i> <span>Add Income</span></router-link>
                     </template>
                     <template v-slot:card-body-content>
                         <ul class="list">
                             <li v-for="index in 5" class="list-item">
-                                <button class="btn">
+
+                                <router-link class="btn" :to="{name:'incomes.edit', params:{id:index}}">
                                     Transaction {{ index }}
                                     <span class="date">01/01/2020</span>
                                     <span>Type</span>
                                     <span>From</span>
                                     <span>Date</span>
                                     <span>Amount</span>
-                                </button>
+                                </router-link>
 
                             </li>
                         </ul>
@@ -58,17 +59,20 @@ import Modal from "@/Components/Modal";
 import {ref} from "vue";
 import InputTextField from "@/Components/InputTextField";
 import PageLayout from "@/Components/PageLayout";
+import {useRouter} from "vue-router";
 
 export default {
     components: {PageLayout, InputTextField, Modal, Card},
     setup() {
         const showModal = ref(false)
+        const router=useRouter()
         const form = ref({
             firstName: "",
             lastName: "",
         })
         const toggleModal = () => {
             // console.log(showModal.value)
+            // router.push('overview')
             showModal.value = !showModal.value
         }
         let save = () => {

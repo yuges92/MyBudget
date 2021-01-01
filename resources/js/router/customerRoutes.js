@@ -5,6 +5,17 @@ import Incomes from "@/Pages/Incomes/Incomes";
 import Debts from "@/Pages/Debts/Debts";
 import Settings from "@/Pages/Settings/Settings";
 import NotFound from "@/Pages/NotFound";
+import IncomeCreate from "@/Pages/Incomes/IncomeCreate";
+import EmptyLayout from "@/Layouts/EmptyLayout";
+import IncomeEdit from "@/Pages/Incomes/IncomeEdit";
+import TransactionCreate from "@/Pages/Transaction/TransactionCreate";
+import TransactionEdit from "@/Pages/Transaction/TransactionEdit";
+import DebtEdit from "@/Pages/Debts/DebtEdit";
+import DebtCreate from "@/Pages/Debts/DebtCreate";
+import Notifications from "@/Pages/Notifications";
+import Categories from "@/Pages/Categories/Categories";
+import CategoryEdit from "@/Pages/Categories/CategoryEdit";
+import CategoryCreate from "@/Pages/Categories/CategoryCreate";
 
 const routes = [
     {
@@ -14,24 +25,103 @@ const routes = [
     },
     {
         path: '/incomes',
-        name: "incomes",
-        component: Incomes
+        component:EmptyLayout,
+        children: [
+            {
+                path: '',
+                name: "incomes.index",
+                component: Incomes,
+            },
+            {
+                path: ':id',
+                name: "incomes.edit",
+                component: IncomeEdit,
+            },
+
+            {
+                path: 'create',
+                name: "incomes.create",
+                component: IncomeCreate
+            }
+        ]
+
     },
 
     {
         path: '/transactions',
-        name: "transactions",
-        component: Transactions
+        component: EmptyLayout,
+        children: [
+            {
+                path: '',
+                name: "transactions.index",
+                component: Transactions,
+            },
+            {
+                path: ':id',
+                name: "transactions.edit",
+                component: TransactionEdit,
+            },
+
+            {
+                path: 'create',
+                name: "transactions.create",
+                component: TransactionCreate
+            }
+        ]
     },
     {
         path: '/debts',
-        name: "debts",
-        component: Debts
+        component: EmptyLayout,
+        children: [
+            {
+                path: '',
+                name: "debts.index",
+                component: Debts,
+            },
+            {
+                path: ':id',
+                name: "debts.edit",
+                component: DebtEdit,
+            },
+
+            {
+                path: 'create',
+                name: "debts.create",
+                component: DebtCreate
+            }
+        ]
+    },
+    {
+        path: '/categories',
+        component: EmptyLayout,
+        children: [
+            {
+                path: '',
+                name: "categories.index",
+                component: Categories,
+            },
+            {
+                path: ':id',
+                name: "categories.edit",
+                component: CategoryEdit,
+            },
+
+            {
+                path: 'create',
+                name: "categories.create",
+                component: CategoryCreate
+            }
+        ]
     },
     {
         path: '/settings',
         name: "settings",
         component: Settings
+    },
+    {
+        path: '/notifications',
+        name: "notifications",
+        component: Notifications
     },
     {
         path: "/:catchAll(.*)",
