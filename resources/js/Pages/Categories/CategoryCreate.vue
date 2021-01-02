@@ -4,15 +4,18 @@
             <go-back-btn/>
         </template>
         <template #page-body>
-            <card>
+            <card class="w-1/2">
                 <template #card-body-content>
 
-                    <form action="" class="form" @submit.prevent="save">
-                        <custom-select v-model:inputValue="state.income.type" :options="state.typeOptions"
-                                       label-name="Type"/>
-                        <input-text-field v-model:inputValue="state.income.from" input-type="text"
-                                          label-name="Category Name"/>
-                        <submit-btn :isLoading="isLoading" btn-name="Save" @submit="save"/>
+                    <form action="" class="form w-2/5" @submit.prevent="save">
+
+                        <!--                        <custom-select v-model:inputValue="state.category.icon" :options="state.classList" label-name="Icon"/>-->
+                        <!--                        <i :class="state.category.icon" class="fa-4x"></i>-->
+                        <custom-select v-model:inputValue="state.category.type" :options="state.typeOptions" label-name="Type"/>
+                        <input-text-field v-model:inputValue="state.category.name" input-type="text" label-name="Category Name"/>
+                        <div class="flex justify-end full-width">
+                            <submit-btn :isLoading="isLoading" btn-name="Save" @submit="save"/>
+                        </div>
                     </form>
                 </template>
 
@@ -32,6 +35,7 @@ import GoBackBtn from "@/Components/GoBackBtn";
 import SubmitBtn from "@/Components/SubmitBtn";
 import CustomSelect from "@/Components/CustomSelect";
 import Card from "@/Components/Card";
+import faList from "@/faList";
 
 export default {
     name: "CategoryCreate",
@@ -39,11 +43,10 @@ export default {
     setup() {
         const isLoading = ref(false)
         const state = reactive({
-            income: {
+            category: {
                 type: "Income",
-                date: "",
-                from: "",
-                amount: ""
+                name: "",
+                icon: ""
             },
             typeOptions: [
                 {
@@ -53,15 +56,17 @@ export default {
                     name: "Expense"
                 },
 
-            ]
+            ],
+            classList: faList
 
         })
 
         let save = () => {
-            console.log(state.income)
+            console.log()
+            console.log(state.category)
             isLoading.value = true
-            console.log(state.income)
-            axios.post('/api/users', state.income).then(res => {
+            console.log(state.category)
+            axios.post('/api/users', state.category).then(res => {
                 console.log(res)
             }).catch(err => {
                 console.log(err)
@@ -69,6 +74,7 @@ export default {
                 isLoading.value = false
 
             })
+
         }
 
         return {save, state, isLoading}

@@ -3,22 +3,8 @@
   <component name="ChangeListManager">
     <list default="true" id="1db62128-3702-4220-bcbe-fc42f957e3b5" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/css/client.css" beforeDir="false" afterPath="$PROJECT_DIR$/public/css/client.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/public/js/app.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/js/app.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/js/Components/InputTextField.vue" beforeDir="false" afterPath="$PROJECT_DIR$/resources/js/Components/InputTextField.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/js/Components/SideMenu.vue" beforeDir="false" afterPath="$PROJECT_DIR$/resources/js/Components/SideMenu.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/js/Pages/Debts/Debts.vue" beforeDir="false" afterPath="$PROJECT_DIR$/resources/js/Pages/Debts/Debts.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/js/Pages/Incomes/Incomes.vue" beforeDir="false" afterPath="$PROJECT_DIR$/resources/js/Pages/Incomes/Incomes.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/js/Pages/Transaction/Transactions.vue" beforeDir="false" afterPath="$PROJECT_DIR$/resources/js/Pages/Transaction/Transactions.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/js/app.js" beforeDir="false" afterPath="$PROJECT_DIR$/resources/js/app.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/js/router/customerRoutes.js" beforeDir="false" afterPath="$PROJECT_DIR$/resources/js/router/customerRoutes.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/sass/components/_btns.scss" beforeDir="false" afterPath="$PROJECT_DIR$/resources/sass/components/_btns.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/sass/components/_customInputs.scss" beforeDir="false" afterPath="$PROJECT_DIR$/resources/sass/components/_customInputs.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/app.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/app.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/routes/api.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/api.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/routes/web.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/web.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/js/Pages/Categories/CategoryCreate.vue" beforeDir="false" afterPath="$PROJECT_DIR$/resources/js/Pages/Categories/CategoryCreate.vue" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -34,8 +20,8 @@
       <list>
         <option value="composer.json" />
         <option value="SCSS File" />
-        <option value="JavaScript File" />
         <option value="Vue Single File Component" />
+        <option value="JavaScript File" />
       </list>
     </option>
   </component>
@@ -192,7 +178,7 @@
     <property name="node.js.selected.package.eslint" value="(autodetect)" />
     <property name="node.js.selected.package.tslint" value="(autodetect)" />
     <property name="nodejs_package_manager_path" value="npm" />
-    <property name="settings.editor.selected.configurable" value="preferences.toDoOptions" />
+    <property name="settings.editor.selected.configurable" value="preferences.sourceCode" />
     <property name="ts.external.directory.path" value="$APPLICATION_HOME_DIR$/plugins/JavaScriptLanguage/jsLanguageServicesImpl/external" />
     <property name="vue.rearranger.settings.migration" value="true" />
   </component>
@@ -261,7 +247,8 @@
       <workItem from="1608909041538" duration="14677000" />
       <workItem from="1608993906152" duration="14886000" />
       <workItem from="1609165434569" duration="64949000" />
-      <workItem from="1609512048610" duration="9509000" />
+      <workItem from="1609512048610" duration="11124000" />
+      <workItem from="1609600969258" duration="1239000" />
     </task>
     <servers />
   </component>
