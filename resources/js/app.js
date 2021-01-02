@@ -4,7 +4,7 @@ import Highcharts from 'highcharts';
 import VueHighcharts from 'vue-highcharts';
 
 
-// console.log(route())
+console.log(route())
 import customerRoutes from './router/customerRoutes'
 import store from "@/store";
 require('./bootstrap');

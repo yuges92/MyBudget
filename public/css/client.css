@@ -976,3 +976,14 @@ a {
   background: #e0e0e0;
   cursor: pointer;
 }
+
+.input-error-message {
+  color: red;
+  padding: 0.5rem;
+  width: 100%;
+}
+
+.has-error {
+  border: 1px solid red;
+  color: red;
+}

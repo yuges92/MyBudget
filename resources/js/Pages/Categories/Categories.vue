@@ -7,39 +7,29 @@
         </template>
         <template #page-body>
             <div class="flex ">
-                <card :class="{'w-1/3':showForm}" card-title="All Categories" class="all-categories">
+                <card :class="{'w-1/3':state.showForm}" card-title="All Categories" class="all-categories">
                     <template v-slot:card-header-content>
                         <!--                        <button class="btn" @click="toggleModal"></button>-->
 
                     </template>
                     <template v-slot:card-body-content>
                         <ul class="list">
-                            <li v-for="index in 5" class="list-item">
+                            <li v-for="category in state.categories" class="list-item">
 
-                                <button class="btn" @click="showEditForm(index)">
+                                <router-link class="btn" :to="{name:'categories.edit', params:{id:category.id}}">
                                     <i class="fas fa-sitemap"></i>
-                                    <span>Categories {{ index }}</span>
-                                </button>
-
+                                    <span>{{ category.type }}</span>
+                                    <span>{{ category.name }}</span>
+                                </router-link>
 
                             </li>
                         </ul>
                     </template>
                 </card>
 
+                {{state.currentCategory}}
+                <category-edit v-if="state.showForm" :category="state.currentCategory"></category-edit>
 
-                <transition name="page">
-                    <card  card-title="Edit Category">
-
-                        <template #card-header-content>
-                            <button class="btn" @click="closeForm">Cancel</button>
-                        </template>
-                        <template #card-body-content>
-                            {{ currentCategory }}
-                        </template>
-
-                    </card>
-                </transition>
             </div>
 
 
@@ -53,26 +43,46 @@
 import PageLayout from "@/Components/PageLayout";
 import Card from "@/Components/Card";
 import Modal from "@/Components/Modal";
+import {onMounted, reactive} from "vue";
+import CategoryEdit from "@/Pages/Categories/CategoryEdit";
 
 export default {
     name: "Categories",
-    components: {Modal, Card, PageLayout},
-    data() {
-        return {
+    components: {CategoryEdit, Modal, Card, PageLayout},
+    setup() {
+        const state = reactive({
+            categories: [],
             showForm: false,
-            currentCategory: null
+            currentCategory: {}
+        })
+
+        let fetchCategories = async () => {
+            let response = await axios.get(route('categories.index'));
+            console.log(response)
+            state.categories = response.data
         }
-    },
-    methods: {
-        showEditForm(id) {
-            this.showForm = true
-            this.currentCategory = id
-        },
-        closeForm() {
-            this.showForm = false
-            this.currentCategory = null
+        onMounted(() => {
+            fetchCategories()
+
+        });
+
+        const showEditForm = (category) => {
+            console.log(category)
+            // closeForm();
+            state.showForm = true
+            state.currentCategory = null
+
+            state.currentCategory = category
         }
+        const closeForm = () => {
+            state.showForm = false
+            state.currentCategory = null
+        }
+
+        return {state, showEditForm, closeForm}
     },
+
+    methods: {},
 }
 </script>
 

@@ -4,15 +4,17 @@
         <input
             :id="labelName"
             v-model="input"
-            :type="inputType"
-            class="input-field"
+            :class="{'has-error':hasError}"
             :placeholder="labelName"
+            :type="inputType"
+            class="input-field "
         >
+        <span v-if="hasError" class="input-error-message">{{ errorMessage }}</span>
     </div>
 </template>
 
 <script>
-import {ref, watch} from "vue";
+import {onUpdated, ref, watch} from "vue";
 
 export default {
     name: "InputTextField",
@@ -31,13 +33,27 @@ export default {
             required: true,
 
         },
+        hasError: {
+            type: Boolean,
+        },
+        errorMessage: {
+            type: String,
+
+
+        }
+
 
     },
     setup(props, {emit}) {
         const input = ref(props.inputValue)
         watch(input, value => {
             emit("update:inputValue", value);
+            emit("update:hasError", false);
+
         });
+        onUpdated(()=>{
+            input.value = (props.inputValue)
+        })
         return {input};
     }
 }

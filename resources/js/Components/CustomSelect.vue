@@ -17,7 +17,7 @@
 </template>
 
 <script>
-import {ref, watch} from "vue";
+import {onUpdated, ref, watch} from "vue";
 
 export default {
     name: "CustomSelect",
@@ -52,6 +52,9 @@ export default {
         const toggleDropDown = () => {
             showDropdownList.value = !showDropdownList.value
         }
+      onUpdated(()=>{
+        input.value = (props.inputValue)
+      })
         return {input, updateValue, toggleDropDown,showDropdownList};
     },
 

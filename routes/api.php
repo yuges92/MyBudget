@@ -18,7 +18,8 @@ Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
     return $request->user();
 });
 
-Route::post('users', function (){
-    return response()->json(request()->all(),201);
+Route::post('users', function () {
+    return response()->json(request()->all(), 201);
 });
 
+Route::resource('categories', \App\Http\Controllers\Api\CategoryController::class);
