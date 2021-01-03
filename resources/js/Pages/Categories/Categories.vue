@@ -6,28 +6,46 @@
             </router-link>
         </template>
         <template #page-body>
-            <div class="flex ">
-                <card :class="{'w-1/3':state.showForm}" card-title="All Categories" class="all-categories">
+            <div class="flex  ">
+                <card card-title="All Expense Categories" class="all-categories m-4">
                     <template v-slot:card-header-content>
-                        <!--                        <button class="btn" @click="toggleModal"></button>-->
 
                     </template>
                     <template v-slot:card-body-content>
                         <ul class="list">
-                            <li v-for="category in state.categories" class="list-item">
+                            <li v-for="category in state.expenseTypes" class="list-item">
+                                <div class="flex w-full">
+                                    <router-link :to="{name:'categories.edit', params:{id:category.id}}" class="btn flex justify-around w-full">
+                                        <i class="fas fa-sitemap"></i>
+                                        <span>{{ category.name }}</span>
+                                    </router-link>
+                                    <button class="btn">Delete</button>
+                                </div>
+                            </li>
+                        </ul>
+                    </template>
+                </card>
 
-                                <router-link class="btn" :to="{name:'categories.edit', params:{id:category.id}}">
-                                    <i class="fas fa-sitemap"></i>
-                                    <span>{{ category.type }}</span>
-                                    <span>{{ category.name }}</span>
-                                </router-link>
+                <card :class="{'w-1/3':state.showForm}" card-title="All Income Categories" class="all-categories m-4">
+                    <template v-slot:card-header-content>
+                    </template>
+                    <template v-slot:card-body-content>
+                        <ul class="list">
+
+                            <li v-for="category in state.incomeTypes" class="list-item">
+                                <div class="flex w-full">
+                                    <router-link :to="{name:'categories.edit', params:{id:category.id}}" class="btn flex justify-around w-full">
+                                        <i class="fas fa-sitemap"></i>
+                                        <span>{{ category.name }}</span>
+                                    </router-link>
+                                    <button class="btn">Delete</button>
+                                </div>
 
                             </li>
                         </ul>
                     </template>
                 </card>
 
-                {{state.currentCategory}}
                 <category-edit v-if="state.showForm" :category="state.currentCategory"></category-edit>
 
             </div>
@@ -53,13 +71,22 @@ export default {
         const state = reactive({
             categories: [],
             showForm: false,
-            currentCategory: {}
+            currentCategory: {},
+            incomeTypes: [],
+            expenseTypes: [],
         })
+
 
         let fetchCategories = async () => {
             let response = await axios.get(route('categories.index'));
             console.log(response)
             state.categories = response.data
+            state.incomeTypes = state.categories.filter(item => {
+                return item.type == 'income'
+            })
+            state.expenseTypes = state.categories.filter(item => {
+                return item.type == 'expense'
+            })
         }
         onMounted(() => {
             fetchCategories()

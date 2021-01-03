@@ -7,15 +7,16 @@
         <template #page-body>
             <card class="">
                 <template #card-header-content>
-                    <submit-btn :isLoading="isLoading" btn-name="Delete" @submit="deleteCategory"/>
+                    <button btn-name="btn delete-btn " @click="deleteCategory">Delete</button>
 
                 </template>
                 <template #card-body-content>
                     <form action="" class="form " @submit.prevent="update">
 
-                        <custom-select v-model:inputValue="state.category.type" :options="state.typeOptions" label-name="Type"/>
+                        <custom-select v-model:hasError="state.errors.type" v-model:inputValue="state.category.type" :error-message="state.errorMessage.type" :options="state.typeOptions"
+                                       label-name="Type"/>
                         <input-text-field v-model:hasError="state.errors.name" v-model:inputValue="state.category.name" :error-message="state.errorMessage.name" input-type="text"
-                                          label-name="Category Name "/>
+                                          label-name="Category Name"/>
                         <div class="flex justify-end full-width">
                             <submit-btn :isLoading="isLoading" btn-name="Update" @submit="update"/>
                         </div>
@@ -31,7 +32,7 @@
 
 <script>
 import Modal from "@/Components/Modal";
-import {onBeforeMount, onMounted, reactive, ref} from "vue";
+import {onBeforeMount, reactive, ref} from "vue";
 import InputTextField from "@/Components/InputTextField";
 import PageLayout from "@/Components/PageLayout";
 import GoBackBtn from "@/Components/GoBackBtn";
@@ -39,8 +40,7 @@ import SubmitBtn from "@/Components/SubmitBtn";
 import CustomSelect from "@/Components/CustomSelect";
 import Card from "@/Components/Card";
 import faList from "@/faList";
-import {useRoute} from 'vue-router'
-import {useRouter} from 'vue-router'
+import {useRoute, useRouter} from 'vue-router'
 
 export default {
     name: "CategoryEdit",
@@ -72,6 +72,8 @@ export default {
             console.log(route('categories.store'))
             axios.put(route('categories.update', category_id), state.category).then(res => {
                 console.log(res)
+                vueRouter.go(-1)
+
             }).catch(err => {
                 console.error(state)
                 let errors = (err.response.data.errors)
@@ -110,7 +112,7 @@ export default {
         });
 
 
-        return {update, state, isLoading,deleteCategory}
+        return {update, state, isLoading, deleteCategory}
     },
 
 }
