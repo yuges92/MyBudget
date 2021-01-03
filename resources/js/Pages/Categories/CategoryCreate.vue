@@ -37,7 +37,6 @@ import GoBackBtn from "@/Components/GoBackBtn";
 import SubmitBtn from "@/Components/SubmitBtn";
 import CustomSelect from "@/Components/CustomSelect";
 import Card from "@/Components/Card";
-import faList from "@/faList";
 
 export default {
     name: "CategoryCreate",
@@ -50,28 +49,18 @@ export default {
                 name: "",
                 icon: ""
             },
-            typeOptions: [
-                {
-                    name: "Income"
-                },
-                {
-                    name: "Expense"
-                },
-
-            ],
+            typeOptions: [{name: "Income"}, {name: "Expense"}],
             errors: {
                 type: false,
                 name: false,
                 icon: false,
             },
             errorMessage: [],
-            classList: faList
 
         })
 
         let save = () => {
             isLoading.value = true
-            console.log(route('categories.store'))
             axios.post(route('categories.store'), state.category).then(res => {
                 console.log(res)
             }).catch(err => {

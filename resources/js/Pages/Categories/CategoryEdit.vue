@@ -22,8 +22,8 @@
                         </div>
                     </form>
                 </template>
-
             </card>
+            <confirm-modal :confirmModal="promisedModal"/>
         </template>
     </page-layout>
 
@@ -41,12 +41,22 @@ import CustomSelect from "@/Components/CustomSelect";
 import Card from "@/Components/Card";
 import faList from "@/faList";
 import {useRoute, useRouter} from 'vue-router'
+import ConfirmModal from "@/Components/ConfirmModal";
+import {usePromisedModal} from "@/Composables/usePromisedModal";
 
 export default {
     name: "CategoryEdit",
-    components: {Card, CustomSelect, SubmitBtn, GoBackBtn, PageLayout, InputTextField, Modal},
+    components: {ConfirmModal, Card, CustomSelect, SubmitBtn, GoBackBtn, PageLayout, InputTextField, Modal},
     setup() {
         const isLoading = ref(false)
+        const promisedModal = usePromisedModal('You wont get the data back ')
+        const confirmModalState = reactive({
+            visible: false,
+            message: "",
+            title: "",
+            action: () => {
+            }
+        })
         const state = reactive({
             category: {
                 type: "",
@@ -80,7 +90,6 @@ export default {
                 for (const error in errors) {
                     state.errorMessage[error] = errors[error][0]
                     state.errors[error] = true
-                    console.log(errors[error])
                 }
 
             }).finally(() => {
@@ -97,13 +106,16 @@ export default {
         }
 
         let deleteCategory = async (id) => {
-            axios.delete(route('categories.destroy', category_id)).then(() => {
-                console.log('deleted')
-                vueRouter.go(-1)
+            const confirmed = await promisedModal.confirm()
+            console.log(confirmed)
+            return 1;
+                axios.delete(route('categories.destroy', category_id)).then(() => {
+                    console.log('deleted')
+                    vueRouter.go(-1)
 
-            }).catch(err => {
-                console.error(err)
-            })
+                }).catch(err => {
+                    console.error(err)
+                })
 
         }
         onBeforeMount(() => {
@@ -112,7 +124,7 @@ export default {
         });
 
 
-        return {update, state, isLoading, deleteCategory}
+        return {update, state, isLoading, deleteCategory, promisedModal}
     },
 
 }

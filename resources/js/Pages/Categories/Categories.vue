@@ -38,7 +38,7 @@
                                         <i class="fas fa-sitemap"></i>
                                         <span>{{ category.name }}</span>
                                     </router-link>
-                                    <button class="btn">Delete</button>
+                                    <button class="btn" @click="showConfirmModal">Delete</button>
                                 </div>
 
                             </li>
@@ -50,7 +50,7 @@
 
             </div>
 
-
+            <confirm-modal :confirm-modal="promisedModal"></confirm-modal>
         </template>
 
     </page-layout>
@@ -63,30 +63,30 @@ import Card from "@/Components/Card";
 import Modal from "@/Components/Modal";
 import {onMounted, reactive} from "vue";
 import CategoryEdit from "@/Pages/Categories/CategoryEdit";
+import ConfirmModal from "@/Components/ConfirmModal";
+import {usePromisedModal} from "@/Composables/usePromisedModal";
 
 export default {
     name: "Categories",
-    components: {CategoryEdit, Modal, Card, PageLayout},
+    components: {ConfirmModal, CategoryEdit, Modal, Card, PageLayout},
     setup() {
+        const promisedModal = usePromisedModal('You wont get the data back ')
+
         const state = reactive({
             categories: [],
             showForm: false,
             currentCategory: {},
             incomeTypes: [],
             expenseTypes: [],
+            showDeleteConfirm: false
         })
 
 
         let fetchCategories = async () => {
             let response = await axios.get(route('categories.index'));
-            console.log(response)
             state.categories = response.data
-            state.incomeTypes = state.categories.filter(item => {
-                return item.type == 'income'
-            })
-            state.expenseTypes = state.categories.filter(item => {
-                return item.type == 'expense'
-            })
+            state.incomeTypes = state.categories.filter(item => item.type == 'income');
+            state.expenseTypes = state.categories.filter(item => item.type == 'expense');
         }
         onMounted(() => {
             fetchCategories()
@@ -94,19 +94,21 @@ export default {
         });
 
         const showEditForm = (category) => {
-            console.log(category)
-            // closeForm();
             state.showForm = true
             state.currentCategory = null
-
             state.currentCategory = category
+        }
+        const showConfirmModal = async () => {
+            let confirmed = await promisedModal.confirm()
+            console.log(confirmed)
         }
         const closeForm = () => {
             state.showForm = false
             state.currentCategory = null
         }
 
-        return {state, showEditForm, closeForm}
+
+        return {state, showEditForm, closeForm, showConfirmModal, promisedModal}
     },
 
     methods: {},
