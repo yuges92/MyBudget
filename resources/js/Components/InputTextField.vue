@@ -4,12 +4,12 @@
         <input
             :id="labelName"
             v-model="input"
-            :class="{'has-error':hasError}"
+            :class="{'has-error':errorMessage}"
             :placeholder="labelName"
             :type="inputType"
             class="input-field "
         >
-        <span v-if="hasError" class="input-error-message">{{ errorMessage }}</span>
+        <span v-if="errorMessage" class="input-error-message">{{ errorMessage }}</span>
     </div>
 </template>
 
@@ -33,9 +33,7 @@ export default {
             required: true,
 
         },
-        hasError: {
-            type: Boolean,
-        },
+
         errorMessage: {
             type: String,
 

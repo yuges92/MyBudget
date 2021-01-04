@@ -12,8 +12,8 @@
 
                         <!--                        <custom-select v-model:inputValue="state.category.icon" :options="state.classList" label-name="Icon"/>-->
                         <!--                        <i :class="state.category.icon" class="fa-4x"></i>-->
-                        <custom-select v-model:inputValue="state.category.type" :options="state.typeOptions" label-name="Type"/>
-                        <input-text-field v-model:hasError="state.errors.name" v-model:inputValue="state.category.name" :error-message="state.errorMessage.name" input-type="text"
+                        <custom-select v-model:inputValue="state.category.type" :error-message="state.errorMessage.type" :options="state.typeOptions" label-name="Type"/>
+                        <input-text-field v-model:inputValue="state.category.name" :error-message="state.errorMessage.name" input-type="text"
                                           label-name="Category Name "/>
                         <div class="flex justify-end full-width">
                             <submit-btn :isLoading="isLoading" btn-name="Save" @submit="save"/>
@@ -38,10 +38,15 @@ import SubmitBtn from "@/Components/SubmitBtn";
 import CustomSelect from "@/Components/CustomSelect";
 import Card from "@/Components/Card";
 
+const {useRouter, useRoute} = require("vue-router");
+
+
 export default {
     name: "CategoryCreate",
     components: {Card, CustomSelect, SubmitBtn, GoBackBtn, PageLayout, InputTextField, Modal},
     setup() {
+        const vueRoute = useRoute()
+        const vueRouter = useRouter()
         const isLoading = ref(false)
         const state = reactive({
             category: {
@@ -50,11 +55,6 @@ export default {
                 icon: ""
             },
             typeOptions: [{name: "Income"}, {name: "Expense"}],
-            errors: {
-                type: false,
-                name: false,
-                icon: false,
-            },
             errorMessage: [],
 
         })
@@ -62,16 +62,13 @@ export default {
         let save = () => {
             isLoading.value = true
             axios.post(route('categories.store'), state.category).then(res => {
-                console.log(res)
+                vueRouter.go(-1)
             }).catch(err => {
                 console.error(state)
                 let errors = (err.response.data.errors)
                 for (const error in errors) {
                     state.errorMessage[error] = errors[error][0]
-                    state.errors[error] = true
-                    console.log(errors[error])
                 }
-
 
             }).finally(() => {
                 isLoading.value = false

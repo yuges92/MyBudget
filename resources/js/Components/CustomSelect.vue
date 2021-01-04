@@ -2,10 +2,10 @@
   <div class="custom-form-field-container">
     <label :for="labelName" class="input-label ">{{ labelName }}</label>
 
-    <button :id="labelName" :class="{'has-error':hasError}" :placeholder="labelName" class="input-select-btn" type="button" @click="toggleDropDown">
+    <button :id="labelName" :class="{'has-error':errorMessage}" :placeholder="labelName" class="input-select-btn" type="button" @click="toggleDropDown">
       {{ input }}
     </button>
-    <span v-if="hasError" class="input-error-message">{{ errorMessage }}</span>
+    <span v-if="errorMessage" class="input-error-message">{{ errorMessage }}</span>
 
     <div class="drop-down-selection-container">
       <ul :class="{'show':showDropdownList}" class="drop-down-selection">
@@ -37,9 +37,6 @@ export default {
       type: Array,
       required: true,
 
-    },
-    hasError: {
-      type: Boolean,
     },
     errorMessage: {
       type: String,

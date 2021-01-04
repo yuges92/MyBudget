@@ -16362,9 +16362,6 @@ __webpack_require__.r(__webpack_exports__);
       type: Array,
       required: true
     },
-    hasError: {
-      type: Boolean
-    },
     errorMessage: {
       type: String
     }
@@ -16450,9 +16447,6 @@ __webpack_require__.r(__webpack_exports__);
     inputType: {
       type: String,
       required: true
-    },
-    hasError: {
-      type: Boolean
     },
     errorMessage: {
       type: String
@@ -16798,11 +16792,13 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _Pages_Categories_CategoryEdit__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! @/Pages/Categories/CategoryEdit */ "./resources/js/Pages/Categories/CategoryEdit.vue");
 /* harmony import */ var _Components_ConfirmModal__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! @/Components/ConfirmModal */ "./resources/js/Components/ConfirmModal.vue");
 /* harmony import */ var _Composables_usePromisedModal__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! @/Composables/usePromisedModal */ "./resources/js/Composables/usePromisedModal.js");
+/* harmony import */ var _Composables_useCatagory__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! @/Composables/useCatagory */ "./resources/js/Composables/useCatagory.js");
 
 
 function asyncGeneratorStep(gen, resolve, reject, _next, _throw, key, arg) { try { var info = gen[key](arg); var value = info.value; } catch (error) { reject(error); return; } if (info.done) { resolve(value); } else { Promise.resolve(value).then(_next, _throw); } }
 
 function _asyncToGenerator(fn) { return function () { var self = this, args = arguments; return new Promise(function (resolve, reject) { var gen = fn.apply(self, args); function _next(value) { asyncGeneratorStep(gen, resolve, reject, _next, _throw, "next", value); } function _throw(err) { asyncGeneratorStep(gen, resolve, reject, _next, _throw, "throw", err); } _next(undefined); }); }; }
+
 
 
 
@@ -16822,36 +16818,38 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
   },
   setup: function setup() {
     var promisedModal = (0,_Composables_usePromisedModal__WEBPACK_IMPORTED_MODULE_7__.usePromisedModal)('You wont get the data back ');
-    var state = (0,vue__WEBPACK_IMPORTED_MODULE_4__.reactive)({
-      categories: [],
-      showForm: false,
-      currentCategory: {},
-      incomeTypes: [],
-      expenseTypes: [],
-      showDeleteConfirm: false
+
+    var _useCategory = (0,_Composables_useCatagory__WEBPACK_IMPORTED_MODULE_8__.useCategory)(),
+        fetchCategories = _useCategory.fetchCategories,
+        deleteCategory = _useCategory.deleteCategory,
+        state = _useCategory.state;
+
+    (0,vue__WEBPACK_IMPORTED_MODULE_4__.onMounted)(function () {
+      fetchCategories();
     });
 
-    var fetchCategories = /*#__PURE__*/function () {
-      var _ref = _asyncToGenerator( /*#__PURE__*/_babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default().mark(function _callee() {
-        var response;
+    var deleteConfirmation = /*#__PURE__*/function () {
+      var _ref = _asyncToGenerator( /*#__PURE__*/_babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default().mark(function _callee(category_id) {
+        var confirmed;
         return _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default().wrap(function _callee$(_context) {
           while (1) {
             switch (_context.prev = _context.next) {
               case 0:
                 _context.next = 2;
-                return axios.get(route('categories.index'));
+                return promisedModal.confirm();
 
               case 2:
-                response = _context.sent;
-                state.categories = response.data;
-                state.incomeTypes = state.categories.filter(function (item) {
-                  return item.type == 'income';
-                });
-                state.expenseTypes = state.categories.filter(function (item) {
-                  return item.type == 'expense';
-                });
+                confirmed = _context.sent;
 
-              case 6:
+                if (confirmed) {
+                  deleteCategory(category_id).then(function (res) {
+                    fetchCategories();
+                  })["catch"](function (err) {
+                    console.error(err);
+                  })["finally"]();
+                }
+
+              case 4:
               case "end":
                 return _context.stop();
             }
@@ -16859,58 +16857,14 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
         }, _callee);
       }));
 
-      return function fetchCategories() {
+      return function deleteConfirmation(_x) {
         return _ref.apply(this, arguments);
       };
     }();
 
-    (0,vue__WEBPACK_IMPORTED_MODULE_4__.onMounted)(function () {
-      fetchCategories();
-    });
-
-    var showEditForm = function showEditForm(category) {
-      state.showForm = true;
-      state.currentCategory = null;
-      state.currentCategory = category;
-    };
-
-    var showConfirmModal = /*#__PURE__*/function () {
-      var _ref2 = _asyncToGenerator( /*#__PURE__*/_babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default().mark(function _callee2() {
-        var confirmed;
-        return _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default().wrap(function _callee2$(_context2) {
-          while (1) {
-            switch (_context2.prev = _context2.next) {
-              case 0:
-                _context2.next = 2;
-                return promisedModal.confirm();
-
-              case 2:
-                confirmed = _context2.sent;
-                console.log(confirmed);
-
-              case 4:
-              case "end":
-                return _context2.stop();
-            }
-          }
-        }, _callee2);
-      }));
-
-      return function showConfirmModal() {
-        return _ref2.apply(this, arguments);
-      };
-    }();
-
-    var closeForm = function closeForm() {
-      state.showForm = false;
-      state.currentCategory = null;
-    };
-
     return {
       state: state,
-      showEditForm: showEditForm,
-      closeForm: closeForm,
-      showConfirmModal: showConfirmModal,
+      deleteConfirmation: deleteConfirmation,
       promisedModal: promisedModal
     };
   },
@@ -16946,6 +16900,11 @@ __webpack_require__.r(__webpack_exports__);
 
 
 
+
+var _require = __webpack_require__(/*! vue-router */ "./node_modules/vue-router/dist/vue-router.esm-bundler.js"),
+    useRouter = _require.useRouter,
+    useRoute = _require.useRoute;
+
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({
   name: "CategoryCreate",
   components: {
@@ -16958,6 +16917,8 @@ __webpack_require__.r(__webpack_exports__);
     Modal: _Components_Modal__WEBPACK_IMPORTED_MODULE_0__.default
   },
   setup: function setup() {
+    var vueRoute = useRoute();
+    var vueRouter = useRouter();
     var isLoading = (0,vue__WEBPACK_IMPORTED_MODULE_1__.ref)(false);
     var state = (0,vue__WEBPACK_IMPORTED_MODULE_1__.reactive)({
       category: {
@@ -16970,26 +16931,19 @@ __webpack_require__.r(__webpack_exports__);
       }, {
         name: "Expense"
       }],
-      errors: {
-        type: false,
-        name: false,
-        icon: false
-      },
       errorMessage: []
     });
 
     var save = function save() {
       isLoading.value = true;
       axios.post(route('categories.store'), state.category).then(function (res) {
-        console.log(res);
+        vueRouter.go(-1);
       })["catch"](function (err) {
         console.error(state);
         var errors = err.response.data.errors;
 
         for (var error in errors) {
           state.errorMessage[error] = errors[error][0];
-          state.errors[error] = true;
-          console.log(errors[error]);
         }
       })["finally"](function () {
         isLoading.value = false;
@@ -17028,14 +16982,16 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _Components_CustomSelect__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! @/Components/CustomSelect */ "./resources/js/Components/CustomSelect.vue");
 /* harmony import */ var _Components_Card__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! @/Components/Card */ "./resources/js/Components/Card.vue");
 /* harmony import */ var _faList__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! @/faList */ "./resources/js/faList.js");
-/* harmony import */ var vue_router__WEBPACK_IMPORTED_MODULE_12__ = __webpack_require__(/*! vue-router */ "./node_modules/vue-router/dist/vue-router.esm-bundler.js");
+/* harmony import */ var vue_router__WEBPACK_IMPORTED_MODULE_13__ = __webpack_require__(/*! vue-router */ "./node_modules/vue-router/dist/vue-router.esm-bundler.js");
 /* harmony import */ var _Components_ConfirmModal__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! @/Components/ConfirmModal */ "./resources/js/Components/ConfirmModal.vue");
 /* harmony import */ var _Composables_usePromisedModal__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! @/Composables/usePromisedModal */ "./resources/js/Composables/usePromisedModal.js");
+/* harmony import */ var _Composables_useCatagory__WEBPACK_IMPORTED_MODULE_12__ = __webpack_require__(/*! @/Composables/useCatagory */ "./resources/js/Composables/useCatagory.js");
 
 
 function asyncGeneratorStep(gen, resolve, reject, _next, _throw, key, arg) { try { var info = gen[key](arg); var value = info.value; } catch (error) { reject(error); return; } if (info.done) { resolve(value); } else { Promise.resolve(value).then(_next, _throw); } }
 
 function _asyncToGenerator(fn) { return function () { var self = this, args = arguments; return new Promise(function (resolve, reject) { var gen = fn.apply(self, args); function _next(value) { asyncGeneratorStep(gen, resolve, reject, _next, _throw, "next", value); } function _throw(err) { asyncGeneratorStep(gen, resolve, reject, _next, _throw, "throw", err); } _next(undefined); }); }; }
+
 
 
 
@@ -17064,6 +17020,11 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
   setup: function setup() {
     var isLoading = (0,vue__WEBPACK_IMPORTED_MODULE_2__.ref)(false);
     var promisedModal = (0,_Composables_usePromisedModal__WEBPACK_IMPORTED_MODULE_11__.usePromisedModal)('You wont get the data back ');
+
+    var _useCategory = (0,_Composables_useCatagory__WEBPACK_IMPORTED_MODULE_12__.useCategory)(),
+        fetchCategory = _useCategory.fetchCategory,
+        deleteCategory = _useCategory.deleteCategory;
+
     var confirmModalState = (0,vue__WEBPACK_IMPORTED_MODULE_2__.reactive)({
       visible: false,
       message: "",
@@ -17089,8 +17050,8 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
       errorMessage: [],
       classList: _faList__WEBPACK_IMPORTED_MODULE_9__.default
     });
-    var vueRoute = (0,vue_router__WEBPACK_IMPORTED_MODULE_12__.useRoute)();
-    var vueRouter = (0,vue_router__WEBPACK_IMPORTED_MODULE_12__.useRouter)();
+    var vueRoute = (0,vue_router__WEBPACK_IMPORTED_MODULE_13__.useRoute)();
+    var vueRouter = (0,vue_router__WEBPACK_IMPORTED_MODULE_13__.useRouter)();
     var category_id = vueRoute.params.id;
     console.log('category_id', category_id);
 
@@ -17111,24 +17072,35 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
       })["finally"](function () {
         isLoading.value = false;
       });
-    };
+    }; // let fetchCategory = async (id) => {
+    //     let response = await axios.get(route('categories.show', category_id));
+    //     console.log(response)
+    //     state.category = response.data
+    // }
 
-    var fetchCategory = /*#__PURE__*/function () {
-      var _ref = _asyncToGenerator( /*#__PURE__*/_babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default().mark(function _callee(id) {
-        var response;
+
+    var deleteConfirmation = /*#__PURE__*/function () {
+      var _ref = _asyncToGenerator( /*#__PURE__*/_babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default().mark(function _callee(category_id) {
+        var confirmed;
         return _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default().wrap(function _callee$(_context) {
           while (1) {
             switch (_context.prev = _context.next) {
               case 0:
                 _context.next = 2;
-                return axios.get(route('categories.show', category_id));
+                return promisedModal.confirm();
 
               case 2:
-                response = _context.sent;
-                console.log(response);
-                state.category = response.data;
+                confirmed = _context.sent;
 
-              case 5:
+                if (confirmed) {
+                  deleteCategory(category_id).then(function (res) {
+                    vueRouter.go(-1);
+                  })["catch"](function (err) {
+                    console.error(err);
+                  })["finally"]();
+                }
+
+              case 4:
               case "end":
                 return _context.stop();
             }
@@ -17136,47 +17108,40 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
         }, _callee);
       }));
 
-      return function fetchCategory(_x) {
+      return function deleteConfirmation(_x) {
         return _ref.apply(this, arguments);
       };
     }();
 
-    var deleteCategory = /*#__PURE__*/function () {
-      var _ref2 = _asyncToGenerator( /*#__PURE__*/_babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default().mark(function _callee2(id) {
-        var confirmed;
-        return _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default().wrap(function _callee2$(_context2) {
-          while (1) {
-            switch (_context2.prev = _context2.next) {
-              case 0:
-                _context2.next = 2;
-                return promisedModal.confirm();
+    (0,vue__WEBPACK_IMPORTED_MODULE_2__.onBeforeMount)( /*#__PURE__*/_asyncToGenerator( /*#__PURE__*/_babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default().mark(function _callee2() {
+      var response;
+      return _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default().wrap(function _callee2$(_context2) {
+        while (1) {
+          switch (_context2.prev = _context2.next) {
+            case 0:
+              _context2.next = 2;
+              return fetchCategory(category_id);
 
-              case 2:
-                confirmed = _context2.sent;
-                console.log(confirmed);
-                return _context2.abrupt("return", 1);
+            case 2:
+              response = _context2.sent;
+              _context2.next = 5;
+              return response.data;
 
-              case 6:
-              case "end":
-                return _context2.stop();
-            }
+            case 5:
+              state.category = _context2.sent;
+
+            case 6:
+            case "end":
+              return _context2.stop();
           }
-        }, _callee2);
-      }));
-
-      return function deleteCategory(_x2) {
-        return _ref2.apply(this, arguments);
-      };
-    }();
-
-    (0,vue__WEBPACK_IMPORTED_MODULE_2__.onBeforeMount)(function () {
-      fetchCategory();
-    });
+        }
+      }, _callee2);
+    })));
     return {
       update: update,
       state: state,
       isLoading: isLoading,
-      deleteCategory: deleteCategory,
+      deleteConfirmation: deleteConfirmation,
       promisedModal: promisedModal
     };
   }
@@ -18153,7 +18118,7 @@ var render = /*#__PURE__*/_withId(function (_ctx, _cache, $props, $setup, $data,
   , ["for"]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("button", {
     id: $props.labelName,
     "class": [{
-      'has-error': $props.hasError
+      'has-error': $props.errorMessage
     }, "input-select-btn"],
     placeholder: $props.labelName,
     type: "button",
@@ -18162,7 +18127,7 @@ var render = /*#__PURE__*/_withId(function (_ctx, _cache, $props, $setup, $data,
     })
   }, (0,vue__WEBPACK_IMPORTED_MODULE_0__.toDisplayString)($setup.input), 11
   /* TEXT, CLASS, PROPS */
-  , ["id", "placeholder"]), $props.hasError ? ((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createBlock)("span", _hoisted_2, (0,vue__WEBPACK_IMPORTED_MODULE_0__.toDisplayString)($props.errorMessage), 1
+  , ["id", "placeholder"]), $props.errorMessage ? ((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createBlock)("span", _hoisted_2, (0,vue__WEBPACK_IMPORTED_MODULE_0__.toDisplayString)($props.errorMessage), 1
   /* TEXT */
   )) : (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("v-if", true), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("div", _hoisted_3, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("ul", {
     "class": [{
@@ -18264,13 +18229,13 @@ var render = /*#__PURE__*/_withId(function (_ctx, _cache, $props, $setup, $data,
       return $setup.input = $event;
     }),
     "class": [{
-      'has-error': $props.hasError
+      'has-error': $props.errorMessage
     }, "input-field "],
     placeholder: $props.labelName,
     type: $props.inputType
   }, null, 10
   /* CLASS, PROPS */
-  , ["id", "placeholder", "type"]), [[vue__WEBPACK_IMPORTED_MODULE_0__.vModelDynamic, $setup.input]]), $props.hasError ? ((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createBlock)("span", _hoisted_2, (0,vue__WEBPACK_IMPORTED_MODULE_0__.toDisplayString)($props.errorMessage), 1
+  , ["id", "placeholder", "type"]), [[vue__WEBPACK_IMPORTED_MODULE_0__.vModelDynamic, $setup.input]]), $props.errorMessage ? ((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createBlock)("span", _hoisted_2, (0,vue__WEBPACK_IMPORTED_MODULE_0__.toDisplayString)($props.errorMessage), 1
   /* TEXT */
   )) : (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("v-if", true)]);
 });
@@ -18913,10 +18878,12 @@ var render = /*#__PURE__*/_withId(function (_ctx, _cache, $props, $setup, $data,
             /* PROPS, DYNAMIC_SLOTS */
             , ["to"]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("button", {
               "class": "btn",
-              onClick: _cache[1] || (_cache[1] = function () {
-                return $setup.showConfirmModal && $setup.showConfirmModal.apply($setup, arguments);
-              })
-            }, "Delete")])]);
+              onClick: function onClick($event) {
+                return $setup.deleteConfirmation(category.id);
+              }
+            }, "Delete", 8
+            /* PROPS */
+            , ["onClick"])])]);
           }), 256
           /* UNKEYED_FRAGMENT */
           ))])];
@@ -18996,7 +18963,7 @@ var render = /*#__PURE__*/_withId(function (_ctx, _cache, $props, $setup, $data,
           return [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("form", {
             action: "",
             "class": "form ",
-            onSubmit: _cache[4] || (_cache[4] = (0,vue__WEBPACK_IMPORTED_MODULE_0__.withModifiers)(function () {
+            onSubmit: _cache[3] || (_cache[3] = (0,vue__WEBPACK_IMPORTED_MODULE_0__.withModifiers)(function () {
               return $setup.save && $setup.save.apply($setup, arguments);
             }, ["prevent"]))
           }, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("                        <custom-select v-model:inputValue=\"state.category.icon\" :options=\"state.classList\" label-name=\"Icon\"/>"), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("                        <i :class=\"state.category.icon\" class=\"fa-4x\"></i>"), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)(_component_custom_select, {
@@ -19004,17 +18971,14 @@ var render = /*#__PURE__*/_withId(function (_ctx, _cache, $props, $setup, $data,
             "onUpdate:inputValue": _cache[1] || (_cache[1] = function ($event) {
               return $setup.state.category.type = $event;
             }),
+            "error-message": $setup.state.errorMessage.type,
             options: $setup.state.typeOptions,
             "label-name": "Type"
           }, null, 8
           /* PROPS */
-          , ["inputValue", "options"]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)(_component_input_text_field, {
-            hasError: $setup.state.errors.name,
-            "onUpdate:hasError": _cache[2] || (_cache[2] = function ($event) {
-              return $setup.state.errors.name = $event;
-            }),
+          , ["inputValue", "error-message", "options"]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)(_component_input_text_field, {
             inputValue: $setup.state.category.name,
-            "onUpdate:inputValue": _cache[3] || (_cache[3] = function ($event) {
+            "onUpdate:inputValue": _cache[2] || (_cache[2] = function ($event) {
               return $setup.state.category.name = $event;
             }),
             "error-message": $setup.state.errorMessage.name,
@@ -19022,7 +18986,7 @@ var render = /*#__PURE__*/_withId(function (_ctx, _cache, $props, $setup, $data,
             "label-name": "Category Name "
           }, null, 8
           /* PROPS */
-          , ["hasError", "inputValue", "error-message"]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("div", _hoisted_1, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)(_component_submit_btn, {
+          , ["inputValue", "error-message"]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("div", _hoisted_1, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)(_component_submit_btn, {
             isLoading: $setup.isLoading,
             "btn-name": "Save",
             onSubmit: $setup.save
@@ -19097,8 +19061,8 @@ var render = /*#__PURE__*/_withId(function (_ctx, _cache, $props, $setup, $data,
         "card-header-content": _withId(function () {
           return [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("button", {
             "btn-name": "btn delete-btn ",
-            onClick: _cache[1] || (_cache[1] = function () {
-              return $setup.deleteCategory && $setup.deleteCategory.apply($setup, arguments);
+            onClick: _cache[1] || (_cache[1] = function ($event) {
+              return $setup.deleteConfirmation($setup.state.category.id);
             })
           }, "Delete")];
         }),
@@ -20441,6 +20405,124 @@ function render(_ctx, _cache, $props, $setup, $data, $options) {
     /* STABLE */
 
   });
+}
+
+/***/ }),
+
+/***/ "./resources/js/Composables/useCatagory.js":
+/*!*************************************************!*\
+  !*** ./resources/js/Composables/useCatagory.js ***!
+  \*************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "useCategory": () => /* binding */ useCategory
+/* harmony export */ });
+/* harmony import */ var _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @babel/runtime/regenerator */ "./node_modules/@babel/runtime/regenerator/index.js");
+/* harmony import */ var _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var vue__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! vue */ "./node_modules/vue/dist/vue.esm-bundler.js");
+
+
+function asyncGeneratorStep(gen, resolve, reject, _next, _throw, key, arg) { try { var info = gen[key](arg); var value = info.value; } catch (error) { reject(error); return; } if (info.done) { resolve(value); } else { Promise.resolve(value).then(_next, _throw); } }
+
+function _asyncToGenerator(fn) { return function () { var self = this, args = arguments; return new Promise(function (resolve, reject) { var gen = fn.apply(self, args); function _next(value) { asyncGeneratorStep(gen, resolve, reject, _next, _throw, "next", value); } function _throw(err) { asyncGeneratorStep(gen, resolve, reject, _next, _throw, "throw", err); } _next(undefined); }); }; }
+
+
+function useCategory() {
+  var state = (0,vue__WEBPACK_IMPORTED_MODULE_1__.reactive)({
+    categories: [],
+    incomeTypes: [],
+    expenseTypes: [],
+    category: {}
+  });
+
+  var fetchCategories = /*#__PURE__*/function () {
+    var _ref = _asyncToGenerator( /*#__PURE__*/_babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default().mark(function _callee() {
+      return _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default().wrap(function _callee$(_context) {
+        while (1) {
+          switch (_context.prev = _context.next) {
+            case 0:
+              axios.get(route('categories.index')).then(function (response) {
+                state.categories = response.data;
+                state.incomeTypes = response.data.filter(function (item) {
+                  return item.type == 'income';
+                });
+                state.expenseTypes = response.data.filter(function (item) {
+                  return item.type == 'expense';
+                });
+              })["catch"]();
+
+            case 1:
+            case "end":
+              return _context.stop();
+          }
+        }
+      }, _callee);
+    }));
+
+    return function fetchCategories() {
+      return _ref.apply(this, arguments);
+    };
+  }();
+
+  var fetchCategory = /*#__PURE__*/function () {
+    var _ref2 = _asyncToGenerator( /*#__PURE__*/_babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default().mark(function _callee2(category_id) {
+      return _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default().wrap(function _callee2$(_context2) {
+        while (1) {
+          switch (_context2.prev = _context2.next) {
+            case 0:
+              _context2.next = 2;
+              return axios.get(route('categories.show', category_id));
+
+            case 2:
+              return _context2.abrupt("return", _context2.sent);
+
+            case 3:
+            case "end":
+              return _context2.stop();
+          }
+        }
+      }, _callee2);
+    }));
+
+    return function fetchCategory(_x) {
+      return _ref2.apply(this, arguments);
+    };
+  }();
+
+  var deleteCategory = /*#__PURE__*/function () {
+    var _ref3 = _asyncToGenerator( /*#__PURE__*/_babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default().mark(function _callee3(category_id) {
+      return _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default().wrap(function _callee3$(_context3) {
+        while (1) {
+          switch (_context3.prev = _context3.next) {
+            case 0:
+              _context3.next = 2;
+              return axios["delete"](route('categories.destroy', category_id));
+
+            case 2:
+              return _context3.abrupt("return", _context3.sent);
+
+            case 3:
+            case "end":
+              return _context3.stop();
+          }
+        }
+      }, _callee3);
+    }));
+
+    return function deleteCategory(_x2) {
+      return _ref3.apply(this, arguments);
+    };
+  }();
+
+  return {
+    fetchCategories: fetchCategories,
+    deleteCategory: deleteCategory,
+    fetchCategory: fetchCategory,
+    state: state
+  };
 }
 
 /***/ }),

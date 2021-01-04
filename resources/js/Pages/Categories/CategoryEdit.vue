@@ -7,7 +7,7 @@
         <template #page-body>
             <card class="">
                 <template #card-header-content>
-                    <button btn-name="btn delete-btn " @click="deleteCategory">Delete</button>
+                    <button btn-name="btn delete-btn " @click="deleteConfirmation(state.category.id)">Delete</button>
 
                 </template>
                 <template #card-body-content>
@@ -43,6 +43,7 @@ import faList from "@/faList";
 import {useRoute, useRouter} from 'vue-router'
 import ConfirmModal from "@/Components/ConfirmModal";
 import {usePromisedModal} from "@/Composables/usePromisedModal";
+import {useCategory} from "@/Composables/useCatagory";
 
 export default {
     name: "CategoryEdit",
@@ -50,6 +51,7 @@ export default {
     setup() {
         const isLoading = ref(false)
         const promisedModal = usePromisedModal('You wont get the data back ')
+        const {fetchCategory, deleteCategory} = useCategory()
         const confirmModalState = reactive({
             visible: false,
             message: "",
@@ -99,32 +101,31 @@ export default {
         }
 
 
-        let fetchCategory = async (id) => {
-            let response = await axios.get(route('categories.show', category_id));
-            console.log(response)
-            state.category = response.data
-        }
+        // let fetchCategory = async (id) => {
+        //     let response = await axios.get(route('categories.show', category_id));
+        //     console.log(response)
+        //     state.category = response.data
+        // }
 
-        let deleteCategory = async (id) => {
+        let deleteConfirmation = async (category_id) => {
             const confirmed = await promisedModal.confirm()
-            console.log(confirmed)
-            return 1;
-                axios.delete(route('categories.destroy', category_id)).then(() => {
-                    console.log('deleted')
+            if (confirmed) {
+                deleteCategory(category_id).then(res => {
                     vueRouter.go(-1)
-
                 }).catch(err => {
                     console.error(err)
-                })
+                }).finally()
+            }
 
         }
-        onBeforeMount(() => {
-            fetchCategory()
+        onBeforeMount(async () => {
+            let response = await fetchCategory(category_id)
+            state.category = await response.data
 
         });
 
 
-        return {update, state, isLoading, deleteCategory, promisedModal}
+        return {update, state, isLoading, deleteConfirmation, promisedModal}
     },
 
 }

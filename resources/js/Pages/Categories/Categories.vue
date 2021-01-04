@@ -38,7 +38,7 @@
                                         <i class="fas fa-sitemap"></i>
                                         <span>{{ category.name }}</span>
                                     </router-link>
-                                    <button class="btn" @click="showConfirmModal">Delete</button>
+                                    <button class="btn" @click="deleteConfirmation(category.id)">Delete</button>
                                 </div>
 
                             </li>
@@ -65,50 +65,32 @@ import {onMounted, reactive} from "vue";
 import CategoryEdit from "@/Pages/Categories/CategoryEdit";
 import ConfirmModal from "@/Components/ConfirmModal";
 import {usePromisedModal} from "@/Composables/usePromisedModal";
+import {useCategory} from "@/Composables/useCatagory";
 
 export default {
     name: "Categories",
     components: {ConfirmModal, CategoryEdit, Modal, Card, PageLayout},
     setup() {
-        const promisedModal = usePromisedModal('You wont get the data back ')
+        const promisedModal = usePromisedModal('You wont get the data back ');
+        const {fetchCategories, deleteCategory, state} = useCategory();
 
-        const state = reactive({
-            categories: [],
-            showForm: false,
-            currentCategory: {},
-            incomeTypes: [],
-            expenseTypes: [],
-            showDeleteConfirm: false
-        })
-
-
-        let fetchCategories = async () => {
-            let response = await axios.get(route('categories.index'));
-            state.categories = response.data
-            state.incomeTypes = state.categories.filter(item => item.type == 'income');
-            state.expenseTypes = state.categories.filter(item => item.type == 'expense');
-        }
         onMounted(() => {
             fetchCategories()
-
         });
 
-        const showEditForm = (category) => {
-            state.showForm = true
-            state.currentCategory = null
-            state.currentCategory = category
-        }
-        const showConfirmModal = async () => {
+        const deleteConfirmation = async (category_id) => {
             let confirmed = await promisedModal.confirm()
-            console.log(confirmed)
-        }
-        const closeForm = () => {
-            state.showForm = false
-            state.currentCategory = null
+            if (confirmed) {
+                deleteCategory(category_id).then(res => {
+                    fetchCategories()
+                }).catch(err => {
+                    console.error(err)
+                }).finally()
+            }
         }
 
 
-        return {state, showEditForm, closeForm, showConfirmModal, promisedModal}
+        return {state, deleteConfirmation, promisedModal}
     },
 
     methods: {},
