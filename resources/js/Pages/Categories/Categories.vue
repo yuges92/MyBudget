@@ -7,46 +7,48 @@
         </template>
         <template #page-body>
             <div class="flex  ">
-                <card card-title="All Expense Categories" class="all-categories m-4">
-                    <template v-slot:card-header-content>
 
+                <card card-title="All Categories" class="all-categories-container">
+                    <template v-slot:card-header-content>
+                        <custom-select
+                            v-model:inputValue="selectedType"
+                            :options="types"
+                            class="category-select"
+                            label-name=""/>
                     </template>
                     <template v-slot:card-body-content>
-                        <ul class="list">
-                            <li v-for="category in state.expenseTypes" class="list-item">
-                                <div class="flex w-full">
-                                    <router-link :to="{name:'categories.edit', params:{id:category.id}}" class="btn flex justify-around w-full">
-                                        <i class="fas fa-sitemap"></i>
-                                        <span>{{ category.name }}</span>
+                        <table class="table">
+                            <thead>
+                            <tr>
+                                <th>Icon</th>
+                                <th>Type</th>
+                                <th>Category Name</th>
+                                <th class="w-12">Action</th>
+                            </tr>
+                            </thead>
+                            <tbody>
+                            <tr v-for="category in categories" v-if="categories" class="text-center">
+                                <td><i class="fas fa-sitemap"></i></td>
+                                <td  ><span :class="getTypeColor(category.type)" class=" px-2 py-1 rounded-3xl text-white">{{ category.type }}</span></td>
+                                <td class="text-left">{{ category.name }}</td>
+                                <td class="flex  justify-end">
+                                    <router-link :to="{name:'categories.edit', params:{id:category.id}}" class="btn btn-edit">
+                                        Edit
                                     </router-link>
-                                    <button class="btn">Delete</button>
-                                </div>
-                            </li>
-                        </ul>
+
+                                    <button class="btn btn-delete" @click="deleteConfirmation(category.id)">Delete</button>
+                                </td>
+                            </tr>
+                            <tr v-else>
+                                <td>-</td>
+                                <td>-</td>
+                                <td>-</td>
+                                <td>-</td>
+                            </tr>
+                            </tbody>
+                        </table>
                     </template>
                 </card>
-
-                <card :class="{'w-1/3':state.showForm}" card-title="All Income Categories" class="all-categories m-4">
-                    <template v-slot:card-header-content>
-                    </template>
-                    <template v-slot:card-body-content>
-                        <ul class="list">
-
-                            <li v-for="category in state.incomeTypes" class="list-item">
-                                <div class="flex w-full">
-                                    <router-link :to="{name:'categories.edit', params:{id:category.id}}" class="btn flex justify-around w-full">
-                                        <i class="fas fa-sitemap"></i>
-                                        <span>{{ category.name }}</span>
-                                    </router-link>
-                                    <button class="btn" @click="deleteConfirmation(category.id)">Delete</button>
-                                </div>
-
-                            </li>
-                        </ul>
-                    </template>
-                </card>
-
-                <category-edit v-if="state.showForm" :category="state.currentCategory"></category-edit>
 
             </div>
 
@@ -61,19 +63,21 @@
 import PageLayout from "@/Components/PageLayout";
 import Card from "@/Components/Card";
 import Modal from "@/Components/Modal";
-import {onMounted, reactive} from "vue";
+import {onMounted, reactive, ref, computed} from "vue";
 import CategoryEdit from "@/Pages/Categories/CategoryEdit";
 import ConfirmModal from "@/Components/ConfirmModal";
 import {usePromisedModal} from "@/Composables/usePromisedModal";
 import {useCategory} from "@/Composables/useCatagory";
+import CustomSelect from "@/Components/CustomSelect";
 
 export default {
     name: "Categories",
-    components: {ConfirmModal, CategoryEdit, Modal, Card, PageLayout},
+    components: {CustomSelect, ConfirmModal, CategoryEdit, Modal, Card, PageLayout},
     setup() {
         const promisedModal = usePromisedModal('You wont get the data back ');
         const {fetchCategories, deleteCategory, state} = useCategory();
-
+        const selectedType = ref("All");
+        const types = ref([{name: "All"}, {name: "incomes"}, {name: "expenses"}]);
         onMounted(() => {
             fetchCategories()
         });
@@ -89,14 +93,39 @@ export default {
             }
         }
 
+        const categories = computed(() => {
+            if (selectedType.value == "incomes") {
+                return state.incomeTypes
 
-        return {state, deleteConfirmation, promisedModal}
+            } else if (selectedType.value == "expenses") {
+                return state.expenseTypes
+
+            }
+            return state.categories
+
+
+        })
+
+
+        return {state, deleteConfirmation, promisedModal, categories, selectedType, types}
     },
 
-    methods: {},
+    methods: {
+        getTypeColor(type){
+            if(type=="income"){
+                return 'bg-blue-500'
+            }
+                return 'bg-orange-400'
+
+
+        }
+    },
 }
 </script>
 
 <style scoped>
-
+.category-select {
+    min-width: 6rem;
+    text-align: center;
+}
 </style>

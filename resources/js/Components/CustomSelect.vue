@@ -1,6 +1,6 @@
 <template>
   <div class="custom-form-field-container">
-    <label :for="labelName" class="input-label ">{{ labelName }}</label>
+    <label :for="labelName" class="input-label">{{ labelName }}</label>
 
     <button :id="labelName" :class="{'has-error':errorMessage}" :placeholder="labelName" class="input-select-btn" type="button" @click="toggleDropDown">
       {{ input }}

@@ -101,12 +101,6 @@ export default {
         }
 
 
-        // let fetchCategory = async (id) => {
-        //     let response = await axios.get(route('categories.show', category_id));
-        //     console.log(response)
-        //     state.category = response.data
-        // }
-
         let deleteConfirmation = async (category_id) => {
             const confirmed = await promisedModal.confirm()
             if (confirmed) {

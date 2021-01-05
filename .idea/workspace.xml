@@ -3,13 +3,14 @@
   <component name="ChangeListManager">
     <list default="true" id="1db62128-3702-4220-bcbe-fc42f957e3b5" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/css/client.css" beforeDir="false" afterPath="$PROJECT_DIR$/public/css/client.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/public/js/app.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/js/app.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/resources/js/Components/CustomSelect.vue" beforeDir="false" afterPath="$PROJECT_DIR$/resources/js/Components/CustomSelect.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/js/Components/InputTextField.vue" beforeDir="false" afterPath="$PROJECT_DIR$/resources/js/Components/InputTextField.vue" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/resources/js/Composables/useCatagory.js" beforeDir="false" afterPath="$PROJECT_DIR$/resources/js/Composables/useCatagory.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/resources/js/Pages/Categories/Categories.vue" beforeDir="false" afterPath="$PROJECT_DIR$/resources/js/Pages/Categories/Categories.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/js/Pages/Categories/CategoryCreate.vue" beforeDir="false" afterPath="$PROJECT_DIR$/resources/js/Pages/Categories/CategoryCreate.vue" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/resources/js/Pages/Categories/CategoryEdit.vue" beforeDir="false" afterPath="$PROJECT_DIR$/resources/js/Pages/Categories/CategoryEdit.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/sass/components/_btns.scss" beforeDir="false" afterPath="$PROJECT_DIR$/resources/sass/components/_btns.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/sass/components/_customInputs.scss" beforeDir="false" afterPath="$PROJECT_DIR$/resources/sass/components/_customInputs.scss" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -281,7 +282,8 @@
       <workItem from="1609600969258" duration="4371000" />
       <workItem from="1609614192833" duration="16924000" />
       <workItem from="1609698691722" duration="12305000" />
-      <workItem from="1609782635864" duration="5906000" />
+      <workItem from="1609782635864" duration="6209000" />
+      <workItem from="1609873108077" duration="7061000" />
     </task>
     <servers />
   </component>

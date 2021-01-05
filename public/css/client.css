@@ -883,6 +883,7 @@ a {
   cursor: pointer;
   outline: none;
   padding: 0.5rem;
+  border-radius: 5px;
 }
 .btn:hover {
   opacity: 0.65;
@@ -911,6 +912,32 @@ a {
 .loading-btn span {
   margin-left: 0.5rem;
   color: #ececec;
+}
+
+.btn-edit {
+  background: #072673;
+  color: #fff;
+  min-width: 4rem;
+  text-align: center;
+  text-transform: uppercase;
+  font-size: 0.9rem;
+  padding: 0.5rem 1rem;
+  border-radius: 5px;
+  height: 2rem;
+  margin: 0.2rem;
+}
+
+.btn-delete {
+  background: #f25a5a;
+  color: #fff;
+  min-width: 4rem;
+  text-align: center;
+  text-transform: uppercase;
+  font-size: 0.9rem;
+  padding: 0.5rem 1rem;
+  border-radius: 5px;
+  height: 2rem;
+  margin: 0.2rem;
 }
 
 .custom-form-field-container {
@@ -962,6 +989,7 @@ a {
   width: 100%;
   display: none;
   border-radius: 0 0 10px 10px;
+  overflow: hidden;
 }
 .drop-down-selection-container .drop-down-selection.show {
   display: flex;
