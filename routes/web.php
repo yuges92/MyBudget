@@ -19,10 +19,9 @@ Route::get('logout', function(){
 });
 
 Route::get('/', [\App\Http\Controllers\HomeController::class, 'index']);
-
+Route::get('/test', [\App\Http\Controllers\TestController::class, 'index'])->name('test');
 
 Route::get('/{any}', [\App\Http\Controllers\SPAController::class,'index'])->where('any', '^(?!api).*$');
 
-Route::get('/test', [\App\Http\Controllers\TestController::class, 'index'])->name('test');
 
 

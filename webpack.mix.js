@@ -23,6 +23,6 @@ mix.js('resources/js/app.js', 'public/js')
     .webpackConfig(require('./webpack.config'))
     .vue();
 
-mix.browserSync({
-    proxy: 'https://mybudgetapp.test/'
-});
+// mix.browserSync({
+//     proxy: 'https://mybudgetapp.test/'
+// });

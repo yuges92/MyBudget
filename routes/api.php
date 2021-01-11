@@ -2,6 +2,7 @@
 
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
+use Illuminate\Support\Facades\Storage;
 
 /*
 |--------------------------------------------------------------------------
@@ -20,6 +21,14 @@ Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
 
 Route::post('users', function () {
     return response()->json(request()->all(), 201);
+});
+
+Route::get('icons', function () {
+    $files= collect(Storage::disk('public')->files('svg-icons'))->map(function($file) {
+        return Storage::url($file);
+    });
+
+    return response()->json($files,201);
 });
 
 Route::resource('categories', \App\Http\Controllers\Api\CategoryController::class);

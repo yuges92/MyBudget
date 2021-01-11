@@ -12,20 +12,38 @@
                     <router-link class="btn" :to="{name:'debts.create'}"><i class="fas fa-plus"></i> <span>Add Debt</span></router-link>
                 </template>
                 <template v-slot:card-body-content>
-                    <ul class="list">
-                        <li v-for="index in 5" class="list-item">
+                    <table class="table">
+                        <thead>
+                        <tr>
+                            <th>Type</th>
+                            <th>From</th>
+                            <th>Date</th>
+                            <th>Amount</th>
+                            <th class="w-12">Action</th>
+                        </tr>
+                        </thead>
+                        <tbody>
+                        <tr v-for="debt in 10" v-if="1"  class="text-center">
+                            <td><i class="fas fa-sitemap"></i></td>
+                            <td class="text-left">{{ debt }}</td>
+                            <td >{{ debt }}</td>
+                            <td>{{ debt }}</td>
+                            <td class="flex  justify-end">
+                                <router-link :to="{name:'debts.edit', params:{id:1}}" class="btn btn-edit">
+                                    Edit
+                                </router-link>
 
-                            <router-link class="btn" :to="{name:'debts.edit', params:{id:index}}">
-                                Transaction {{ index }}
-                                <span class="date">01/01/2020</span>
-                                <span>Type</span>
-                                <span>From</span>
-                                <span>Date</span>
-                                <span>Amount</span>
-                            </router-link>
-
-                        </li>
-                    </ul>
+                                <button class="btn btn-delete" @click="">Delete</button>
+                            </td>
+                        </tr>
+                        <tr v-else>
+                            <td>-</td>
+                            <td>-</td>
+                            <td>-</td>
+                            <td>-</td>
+                        </tr>
+                        </tbody>
+                    </table>
                 </template>
             </card>
 

@@ -174,7 +174,7 @@
                     }
 
 
-                    &:hover, &.active, &.router-link-active.router-link-exact-active {
+                    &:hover, &.active, &.router-link-active {
                         background: $primary-color;
                         color: #fff;
                         z-index: 0;

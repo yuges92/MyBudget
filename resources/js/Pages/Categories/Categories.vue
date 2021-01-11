@@ -1,22 +1,28 @@
 <template>
     <page-layout page-title="Categories">
         <template #right-content>
-            <router-link :to="{name:'categories.create'}" class="btn"><i class="fas fa-plus"></i>
-                <span>Add Transaction</span>
-            </router-link>
+            <custom-select
+                v-model:inputValue="selectedType"
+                :options="types"
+                class="category-select"
+                label-name=""/>
         </template>
         <template #page-body>
             <div class="flex  ">
 
                 <card card-title="All Categories" class="all-categories-container">
                     <template v-slot:card-header-content>
-                        <custom-select
-                            v-model:inputValue="selectedType"
-                            :options="types"
-                            class="category-select"
-                            label-name=""/>
+
+                        <router-link :to="{name:'categories.create'}" class="btn"><i class="fas fa-plus"></i>
+                            <span> Add new category</span>
+                        </router-link>
                     </template>
                     <template v-slot:card-body-content>
+                        <div v-for="item in icons" :key="item.id">
+                            <svg style="width: 4rem">
+                                <image :xlink:href="item" style="width: 100%; height: 100%"  alt=""/>
+                            </svg>
+                        </div>
                         <table class="table">
                             <thead>
                             <tr>
@@ -29,7 +35,7 @@
                             <tbody>
                             <tr v-for="category in categories" v-if="categories" class="text-center">
                                 <td><i class="fas fa-sitemap"></i></td>
-                                <td  ><span :class="getTypeColor(category.type)" class=" px-2 py-1 rounded-3xl text-white">{{ category.type }}</span></td>
+                                <td><span :class="getTypeColor(category.type)" class=" px-2 py-1 rounded-3xl text-white">{{ category.type }}</span></td>
                                 <td class="text-left">{{ category.name }}</td>
                                 <td class="flex  justify-end">
                                     <router-link :to="{name:'categories.edit', params:{id:category.id}}" class="btn btn-edit">
@@ -109,17 +115,31 @@ export default {
 
         return {state, deleteConfirmation, promisedModal, categories, selectedType, types}
     },
+    data() {
+        return {
+            icons: []
+        }
+    },
 
     methods: {
-        getTypeColor(type){
-            if(type=="income"){
+        getTypeColor(type) {
+            if (type == "income") {
                 return 'bg-blue-500'
             }
-                return 'bg-orange-400'
+            return 'bg-orange-400'
 
 
         }
     },
+
+    mounted() {
+        axios.get('api/icons').then(res=>{
+            console.log(res)
+            this.icons=res.data
+        }).catch(error=>{
+            console.error(error)
+        })
+    }
 }
 </script>
 
