@@ -15,7 +15,7 @@ export function usePromisedModal(message = null) {
         resolveFn(true);
     }
 
-    const confirm = () => {
+    const openModal = () => {
         modalState.visible = true
         return new Promise((resolve => {
             resolveFn = resolve
@@ -29,6 +29,6 @@ export function usePromisedModal(message = null) {
     }
 
 
-    return {modalState, confirm, response, closeModal}
+    return {modalState, openModal, response, closeModal}
 
 }

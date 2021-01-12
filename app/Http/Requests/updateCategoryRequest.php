@@ -3,6 +3,7 @@
 namespace App\Http\Requests;
 
 use Illuminate\Foundation\Http\FormRequest;
+use Illuminate\Support\Facades\Storage;
 use Illuminate\Validation\Rule;
 
 class updateCategoryRequest extends FormRequest
@@ -24,9 +25,14 @@ class updateCategoryRequest extends FormRequest
      */
     public function rules()
     {
+        $files = collect(Storage::disk('public')->files('svg-icons'))->map(function ($file) {
+            return Storage::url($file);
+        });
         return [
             'name' => ['required', Rule::unique('categories')->ignore(request('id'))->where('type', request('type'))],
             'type' => ['required'],
+            'icon' => ['required', Rule::in($files)]
+
         ];
     }
 }

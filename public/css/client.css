@@ -606,7 +606,7 @@ a {
 .left-side-menu .left-side-menu-body .side-menu-container .side-menu-nav-list .side-menu-nav-list-link .side-menu-nav-list-link-name {
   transition: all 200ms ease-in-out;
 }
-.left-side-menu .left-side-menu-body .side-menu-container .side-menu-nav-list .side-menu-nav-list-link:hover, .left-side-menu .left-side-menu-body .side-menu-container .side-menu-nav-list .side-menu-nav-list-link.active, .left-side-menu .left-side-menu-body .side-menu-container .side-menu-nav-list .side-menu-nav-list-link.router-link-active.router-link-exact-active {
+.left-side-menu .left-side-menu-body .side-menu-container .side-menu-nav-list .side-menu-nav-list-link:hover, .left-side-menu .left-side-menu-body .side-menu-container .side-menu-nav-list .side-menu-nav-list-link.active, .left-side-menu .left-side-menu-body .side-menu-container .side-menu-nav-list .side-menu-nav-list-link.router-link-active {
   background: #002245;
   color: #fff;
   z-index: 0;

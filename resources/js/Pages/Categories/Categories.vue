@@ -12,17 +12,11 @@
 
                 <card card-title="All Categories" class="all-categories-container">
                     <template v-slot:card-header-content>
-
                         <router-link :to="{name:'categories.create'}" class="btn"><i class="fas fa-plus"></i>
                             <span> Add new category</span>
                         </router-link>
                     </template>
                     <template v-slot:card-body-content>
-                        <div v-for="item in icons" :key="item.id">
-                            <svg style="width: 4rem">
-                                <image :xlink:href="item" style="width: 100%; height: 100%"  alt=""/>
-                            </svg>
-                        </div>
                         <table class="table">
                             <thead>
                             <tr>
@@ -34,7 +28,7 @@
                             </thead>
                             <tbody>
                             <tr v-for="category in categories" v-if="categories" class="text-center">
-                                <td><i class="fas fa-sitemap"></i></td>
+                                <td ><img  :src="category.icon" alt="" class="w-12 mx-auto"></td>
                                 <td><span :class="getTypeColor(category.type)" class=" px-2 py-1 rounded-3xl text-white">{{ category.type }}</span></td>
                                 <td class="text-left">{{ category.name }}</td>
                                 <td class="flex  justify-end">
@@ -89,7 +83,7 @@ export default {
         });
 
         const deleteConfirmation = async (category_id) => {
-            let confirmed = await promisedModal.confirm()
+            let confirmed = await promisedModal.openModal()
             if (confirmed) {
                 deleteCategory(category_id).then(res => {
                     fetchCategories()
@@ -115,11 +109,6 @@ export default {
 
         return {state, deleteConfirmation, promisedModal, categories, selectedType, types}
     },
-    data() {
-        return {
-            icons: []
-        }
-    },
 
     methods: {
         getTypeColor(type) {
@@ -132,14 +121,6 @@ export default {
         }
     },
 
-    mounted() {
-        axios.get('api/icons').then(res=>{
-            console.log(res)
-            this.icons=res.data
-        }).catch(error=>{
-            console.error(error)
-        })
-    }
 }
 </script>
 

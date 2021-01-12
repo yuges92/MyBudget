@@ -3,6 +3,7 @@
 namespace App\Http\Requests;
 
 use Illuminate\Foundation\Http\FormRequest;
+use Illuminate\Support\Facades\Storage;
 use Illuminate\Validation\Rule;
 
 class CategoryRequest extends FormRequest
@@ -24,10 +25,14 @@ class CategoryRequest extends FormRequest
      */
     public function rules()
     {
+        $files = collect(Storage::disk('public')->files('svg-icons'))->map(function ($file) {
+            return Storage::url($file);
+        });
         return [
 //            'name' => ['required', 'unique:categories,name,NULL,id,type,' . request('type')],
             'name' => ['required', Rule::unique('categories')->where('type', request('type'))],
-            'type' => ['required']
+            'type' => ['required'],
+            'icon' => ['required', Rule::in($files)]
         ];
     }
 }
