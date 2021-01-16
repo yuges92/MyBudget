@@ -46,7 +46,6 @@ const routes = [
         ]
 
     },
-
     {
         path: '/transactions',
         component: EmptyLayout,

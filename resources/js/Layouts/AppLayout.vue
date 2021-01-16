@@ -37,7 +37,6 @@ export default {
         BottomNavBar,
     },
     setup() {
-        console.log('setup')
     },
     props: {
         pageTitle: {

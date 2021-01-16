@@ -28,15 +28,17 @@
                             </thead>
                             <tbody>
                             <tr v-for="category in categories" v-if="categories" class="text-center">
-                                <td ><img  :src="category.icon" alt="" class="w-12 mx-auto"></td>
+                                <td><img :src="category.icon" alt="" class="w-12 mx-auto"></td>
                                 <td><span :class="getTypeColor(category.type)" class=" px-2 py-1 rounded-3xl text-white">{{ category.type }}</span></td>
                                 <td class="text-left">{{ category.name }}</td>
-                                <td class="flex  justify-end">
-                                    <router-link :to="{name:'categories.edit', params:{id:category.id}}" class="btn btn-edit">
-                                        Edit
-                                    </router-link>
+                                <td>
+                                    <div class="flex  justify-end">
+                                        <router-link :to="{name:'categories.edit', params:{id:category.id}}" class="btn btn-edit">
+                                            Edit
+                                        </router-link>
+                                        <button class="btn btn-delete" @click="deleteConfirmation(category.id)">Delete</button>
+                                    </div>
 
-                                    <button class="btn btn-delete" @click="deleteConfirmation(category.id)">Delete</button>
                                 </td>
                             </tr>
                             <tr v-else>

@@ -17,7 +17,6 @@ export default {
 
     },
     setup() {
-        console.log('setup')
     },
 
 

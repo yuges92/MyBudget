@@ -36,21 +36,18 @@ export default {
         }
     },
     setup(props, {emit}) {
-        console.log(props)
         const promisedModal = props['promisedModal'];
 
         const {fetchIcons, icons} = useIcon()
 
         onBeforeMount(() => {
             fetchIcons().then(res => {
-                console.log('icons loaded')
             }).catch(err => {
                 console.error(err)
             })
         })
 
         const chooseIcon = (item) => {
-            console.log(item)
             emit('update:icon', item)
             promisedModal.response(true)
         }

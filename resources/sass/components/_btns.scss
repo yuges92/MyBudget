@@ -42,7 +42,7 @@
     }
 }
 
-.btn-edit{
+.btn-edit {
     background: #072673;
     color: #fff;
     min-width: 4rem;
@@ -54,6 +54,7 @@
     height: 2rem;
     margin: 0.2rem;
 }
+
 .btn-delete {
     background: #f25a5a;
     color: #fff;
@@ -67,11 +68,15 @@
     margin: 0.2rem;
 }
 
-.icon-btn {
+.btn-icon {
     padding: 0.5rem;
     border-radius: 5px;
+    border: 1px solid #d7d7d7;
+    margin-bottom: 1rem;
 
     &:hover {
         background: #f3f3ff;
+        border-color: #f3f3ff;
+
     }
 }

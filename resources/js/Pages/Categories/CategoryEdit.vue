@@ -12,7 +12,7 @@
 
                 <template #card-body-content>
                     <form action="" class="form " @submit.prevent="update">
-                        <button class="icon-btn" type="button" @click="iconModal.openModal()"><img :src="state.category.icon" alt="" class="w-12"></button>
+                        <button class="btn-icon" type="button" @click="iconModal.openModal()"><img :src="state.category.icon" alt="" class="w-12"></button>
                         <custom-select v-model:inputValue="state.category.type" :error-message="state.errorMessage.type" :options="state.typeOptions"
                                        label-name="Type"/>
                         <input-text-field v-model:inputValue="state.category.name" :error-message="state.errorMessage.name" input-type="text"
