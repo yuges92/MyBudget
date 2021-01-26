@@ -3,11 +3,10 @@
 namespace App\Http\Requests;
 
 use Illuminate\Foundation\Http\FormRequest;
-use Illuminate\Support\Facades\Log;
 use Illuminate\Support\Facades\Storage;
 use Illuminate\Validation\Rule;
 
-class CategoryRequest extends FormRequest
+class DebtStoreRequest extends FormRequest
 {
     /**
      * Determine if the user is authorized to make this request.
@@ -31,9 +30,8 @@ class CategoryRequest extends FormRequest
         });
 
         return [
-//            'name' => ['required', 'unique:categories,name,NULL,id,type,' . request('type')],
-            'name' => ['required', Rule::unique('categories')->where('type', request('type'))],
-            'type' => ['required'],
+            'name' => ['required', 'unique:debts'],
+            'amount' => ['required','numeric'],
             'icon' => ['required', Rule::in($files)]
         ];
     }

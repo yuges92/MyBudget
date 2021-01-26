@@ -49,7 +49,7 @@ const {useRouter, useRoute} = require("vue-router");
 
 
 export default {
-    name: "CategoryCreate",
+    name: "ExpenseCreate",
     components: {IconChooser, Button, Card, CustomSelect, SubmitBtn, GoBackBtn, PageLayout, InputTextField, Modal},
     setup() {
         const promisedModal = usePromisedModal();

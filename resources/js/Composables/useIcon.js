@@ -7,7 +7,7 @@ export function useIcon() {
         return axios.get('/api/icons').then(response => {
             icons.value = response.data
             return new Promise(resolve => {
-                resolve(true);
+                resolve(response);
             })
         }).catch(err => {
             console.error(err)

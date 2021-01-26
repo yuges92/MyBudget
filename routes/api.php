@@ -24,11 +24,18 @@ Route::post('users', function () {
 });
 
 Route::get('icons', function () {
-    $files= collect(Storage::disk('public')->files('svg-icons'))->map(function($file) {
-        return Storage::url($file);
+
+    $files = collect();
+    $allFiles= collect(Storage::disk('public')->files('svg-icons'));
+    $allFiles->filter(function ($file) use ($files) {
+        if (\Illuminate\Support\Facades\File::extension($file) == "svg") {
+            $files->push(Storage::url($file));
+        }
+
     });
 
-    return response()->json($files,201);
+    return response()->json($files, 201);
 });
 
 Route::resource('categories', \App\Http\Controllers\Api\CategoryController::class);
+Route::resource('debts', \App\Http\Controllers\Api\DebtsController::class);

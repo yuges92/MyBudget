@@ -51,7 +51,7 @@ class CategoryController extends Controller
     /**
      * Update the specified resource in storage.
      *
-     * @param CategoryRequest $request
+     * @param updateCategoryRequest $request
      * @param Category $category
      * @return JsonResponse
      */
@@ -67,6 +67,7 @@ class CategoryController extends Controller
      * Remove the specified resource from storage.
      *
      * @param Category $category
+     * @return JsonResponse
      * @throws Exception
      */
     public function destroy(Category $category): JsonResponse

@@ -16,6 +16,9 @@ import Notifications from "@/Pages/Notifications";
 import Categories from "@/Pages/Categories/Categories";
 import CategoryEdit from "@/Pages/Categories/CategoryEdit";
 import CategoryCreate from "@/Pages/Categories/CategoryCreate";
+import Expenses from "@/Pages/Expenses/Expenses"
+import ExpenseCreate from "@/Pages/Expenses/ExpenseCreate"
+import ExpenseEdit from "@/Pages/Expenses/ExpenseEdit"
 
 const routes = [
     {
@@ -109,6 +112,28 @@ const routes = [
                 path: 'create',
                 name: "categories.create",
                 component: CategoryCreate
+            }
+        ]
+    },
+    {
+        path: '/expenses',
+        component: EmptyLayout,
+        children: [
+            {
+                path: '',
+                name: "expenses.index",
+                component: Expenses,
+            },
+            {
+                path: ':id',
+                name: "expenses.edit",
+                component: ExpenseEdit,
+            },
+
+            {
+                path: 'create',
+                name: "expenses.create",
+                component: ExpenseCreate
             }
         ]
     },

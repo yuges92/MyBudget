@@ -22,7 +22,7 @@
 
 import Modal from "@/Components/Modal";
 import {useIcon} from "@/Composables/useIcon";
-import {onBeforeMount} from "vue";
+import {computed, onBeforeMount} from "vue";
 
 export default {
     name: "IconChooser",
@@ -55,6 +55,9 @@ export default {
         const showModal = async () => {
             await promisedModal.confirm()
         }
+      // let iconList=  computed(()=>icon.forEach(item=>{
+      //
+      // }))
 
         return {icons, chooseIcon, promisedModal, showModal}
     },

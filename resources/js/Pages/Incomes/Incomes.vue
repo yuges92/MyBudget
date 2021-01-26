@@ -33,17 +33,7 @@
                 </card>
             </div>
 
-            <modal v-model:visible="showModal" modal-action-text="Save" modal-title="Add Income" @submit="save">
-                <template v-slot:modal-body>
-                    <form action="" class="form" onsubmit.preventDefault="">
-                        <input-text-field v-model:inputValue="form.firstName" input-type="text" label-name="Type"/>
-                        <input-text-field v-model:inputValue="form.lastName" input-type="text" label-name="Description"/>
-                        <input-text-field v-model:inputValue="form.lastName" input-type="date" label-name="Date"/>
-                        <input-text-field v-model:inputValue="form.lastName" input-type="text" label-name="From"/>
-                        <input-text-field v-model:inputValue="form.lastName" input-type="number" label-name="Amount"/>
-                    </form>
-                </template>
-            </modal>
+
 
         </template>
 

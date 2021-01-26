@@ -8,17 +8,20 @@
                 <template #card-body-content>
 
                     <form action="" class="form" @submit.prevent="save">
-                        <custom-select v-model:inputValue="state.income.type" :options="state.typeOptions"
-                                       label-name="Type"/>
+                        <button class="btn-icon" type="button" @click="promisedModal.openModal"><img :src="state.income.icon" alt="" class="w-12"></button>
+
+                        <input-text-field v-model:inputValue="state.income.name" input-type="text" label-name="Name"/>
                         <input-text-field v-model:inputValue="state.income.date" input-type="date" label-name="Date"/>
                         <input-text-field v-model:inputValue="state.income.from" input-type="text" label-name="From"/>
-                        <input-text-field v-model:inputValue="state.income.amount" input-type="number"
-                                          label-name="Amount"/>
+                        <input-text-field v-model:inputValue="state.income.amount" input-type="number" label-name="Amount"/>
                         <submit-btn :isLoading="isLoading" btn-name="Save" @submit="save"/>
                     </form>
                 </template>
 
             </card>
+        </template>
+        <template #modals>
+            <icon-chooser v-model:icon="state.income.icon" :promisedModal="promisedModal"></icon-chooser>
         </template>
     </page-layout>
 
@@ -34,30 +37,23 @@ import GoBackBtn from "@/Components/GoBackBtn";
 import SubmitBtn from "@/Components/SubmitBtn";
 import CustomSelect from "@/Components/CustomSelect";
 import Card from "@/Components/Card";
+import {usePromisedModal} from "@/Composables/usePromisedModal";
+import IconChooser from "@/Components/IconChooser";
 
 export default {
     name: "DebtCreate",
-    components: {Card, CustomSelect, SubmitBtn, GoBackBtn, PageLayout, InputTextField, Modal},
+    components: {IconChooser, Card, CustomSelect, SubmitBtn, GoBackBtn, PageLayout, InputTextField, Modal},
     setup() {
+        const promisedModal = usePromisedModal();
+
         const isLoading = ref(false)
         const state = reactive({
             income: {
-                type: "Salary",
+                name: "",
                 date: "",
-                from: "",
-                amount: ""
+                amount: "",
+                icon: "/storage/svg-icons/1.svg"
             },
-            typeOptions: [
-                {
-                    name: "Salary"
-                },
-                {
-                    name: "Rent Share"
-                },
-                {
-                    name: "Other"
-                },
-            ]
 
         })
 
@@ -65,7 +61,7 @@ export default {
             console.log(state.income)
             isLoading.value = true
             console.log(state.income)
-            axios.post('/api/users', state.income).then(res => {
+            axios.post(route('debts.store'), state.income).then(res => {
                 console.log(res)
             }).catch(err => {
                 console.log(err)
@@ -75,7 +71,7 @@ export default {
             })
         }
 
-        return {save, state, isLoading}
+        return {save, state, isLoading, promisedModal}
     },
 
 }
