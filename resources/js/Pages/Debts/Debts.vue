@@ -6,34 +6,34 @@
             </div>
         </template>
         <template #page-body>
-            <card card-title="All Debts" >
+            <card card-title="All Debts">
                 <template v-slot:card-header-content>
                     <!--                        <button class="btn" @click="toggleModal"></button>-->
-                    <router-link class="btn" :to="{name:'debts.create'}"><i class="fas fa-plus"></i> <span>Add Debt</span></router-link>
+                    <router-link :to="{name:'debts.create'}" class="btn"><i class="fas fa-plus"></i> <span>Add Debt</span></router-link>
                 </template>
                 <template v-slot:card-body-content>
                     <table class="table">
                         <thead>
                         <tr>
-                            <th>Type</th>
-                            <th>From</th>
-                            <th>Date</th>
+                            <th>Icon</th>
+                            <th>Name</th>
                             <th>Amount</th>
                             <th class="w-12">Action</th>
                         </tr>
                         </thead>
                         <tbody>
-                        <tr v-for="debt in 10" v-if="1"  class="text-center">
-                            <td><i class="fas fa-sitemap"></i></td>
-                            <td class="text-left">{{ debt }}</td>
-                            <td >{{ debt }}</td>
-                            <td>{{ debt }}</td>
-                            <td class="flex  justify-end">
-                                <router-link :to="{name:'debts.edit', params:{id:1}}" class="btn btn-edit">
-                                    Edit
-                                </router-link>
+                        <tr v-for="debt in state.debts" v-if="state.debts" class="text-center">
+                            <td><img :src="debt.icon" alt="" class="w-12 mx-auto"></td>
+                            <td >{{ debt.name }}</td>
+                            <td >£{{ debt.amount }}</td>
+                            <td>
+                                <div class="flex  justify-end">
+                                    <router-link :to="{name:'debts.edit', params:{id:debt.id}}" class="btn btn-edit">
+                                        Edit
+                                    </router-link>
+                                    <button class="btn btn-delete" @click="deleteConfirmation(debt.id)">Delete</button>
+                                </div>
 
-                                <button class="btn btn-delete" @click="">Delete</button>
                             </td>
                         </tr>
                         <tr v-else>
@@ -49,6 +49,10 @@
 
         </template>
 
+        <template #modals>
+            <confirm-modal :confirm-modal="promisedModal"></confirm-modal>
+        </template>
+
     </page-layout>
 
 </template>
@@ -56,7 +60,35 @@
 <script>
 import PageLayout from "@/Components/PageLayout";
 import Card from "@/Components/Card";
+import {usePromisedModal} from "@/Composables/usePromisedModal";
+import {useDebt} from "@/Composables/useDebt";
+import {onMounted} from "vue";
+import ConfirmModal from "@/Components/ConfirmModal";
+
 export default {
-    components: {Card, PageLayout},
+    components: {ConfirmModal, Card, PageLayout},
+    setup() {
+        const promisedModal = usePromisedModal('You wont get the data back ');
+        const {fetchDebts, deleteDebt, state} = useDebt();
+        onMounted(() => {
+            fetchDebts()
+        });
+
+        const deleteConfirmation = async (id) => {
+            console.log(id)
+            let confirmed = await promisedModal.openModal()
+            if (confirmed) {
+                deleteDebt(id).then(res => {
+                    fetchDebts()
+                }).catch(err => {
+                    console.error(err)
+                }).finally()
+            }
+        }
+
+
+        return {state, deleteConfirmation, promisedModal}
+    },
+
 }
 </script>

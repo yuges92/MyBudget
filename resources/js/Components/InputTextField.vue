@@ -24,7 +24,6 @@ export default {
             type: String
         },
         inputValue: {
-            type: String,
             required: true,
 
         },

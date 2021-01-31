@@ -4,9 +4,9 @@ namespace App\Http\Controllers\Api;
 
 use App\Http\Controllers\Controller;
 use App\Http\Requests\DebtStoreRequest;
+use App\Http\Requests\DebtUpdateRequest;
 use App\Models\Debt;
 use Illuminate\Http\JsonResponse;
-use Illuminate\Http\Request;
 
 class DebtsController extends Controller
 {
@@ -33,7 +33,7 @@ class DebtsController extends Controller
     }
 
 
-    public function update(DebtStoreRequest $request, Debt $debt)
+    public function update(DebtUpdateRequest $request, Debt $debt)
     {
         $debt->update($request->validated());
         return response()->json($debt, 201);
