@@ -25,7 +25,6 @@ class DebtFactory extends Factory
             'name' => $this->faker->name,
             'amount' => $this->faker->randomFloat(2, 0, 1000),
             'icon' => '/storage/svg-icons/1.svg',
-
         ];
     }
 }

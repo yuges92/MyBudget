@@ -2,17 +2,17 @@
 
 namespace Database\Factories;
 
-use App\Models\Category;
+use App\Models\Expense;
 use Illuminate\Database\Eloquent\Factories\Factory;
 
-class CategoryFactory extends Factory
+class ExpenseFactory extends Factory
 {
     /**
      * The name of the factory's corresponding model.
      *
      * @var string
      */
-    protected $model = Category::class;
+    protected $model = Expense::class;
 
     /**
      * Define the model's default state.
@@ -23,7 +23,7 @@ class CategoryFactory extends Factory
     {
         return [
             'name' => $this->faker->name,
-            'type' => $this->faker->randomElement(['income', 'expense', 'debt']),
+            'amount' => $this->faker->randomFloat(2, 0, 1000),
             'icon' => '/storage/svg-icons/1.svg',
         ];
     }

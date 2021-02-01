@@ -17,6 +17,7 @@ export function useCategory() {
             state.categories = response.data
             state.incomeTypes = response.data.filter(item => item.type == 'income');
             state.expenseTypes = response.data.filter(item => item.type == 'expense');
+            state.debtsTypes = response.data.filter(item => item.type == 'debt');
             return new Promise(resolve => {
                 resolve(true);
             })

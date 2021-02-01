@@ -12,7 +12,7 @@
 
                 <card card-title="All Categories" class="all-categories-container">
                     <template v-slot:card-header-content>
-                        <router-link :to="{name:'categories.create'}" class="btn"><i class="fas fa-plus"></i>
+                        <router-link :to="{name:'categories.create'}" class="btn"><i class="fas fa-plus "></i>
                             <span> Add new category</span>
                         </router-link>
                     </template>
@@ -79,7 +79,7 @@ export default {
         const promisedModal = usePromisedModal('You wont get the data back ');
         const {fetchCategories, deleteCategory, state} = useCategory();
         const selectedType = ref("All");
-        const types = ref([{name: "All"}, {name: "incomes"}, {name: "expenses"}]);
+        const types = ref([{name: "All"}, {name: "incomes"}, {name: "expenses"}, {name: "debts"}]);
         onMounted(() => {
             fetchCategories()
         });
@@ -102,6 +102,8 @@ export default {
             } else if (selectedType.value == "expenses") {
                 return state.expenseTypes
 
+            } else if (selectedType.value == "debts") {
+                return state.debtsTypes
             }
             return state.categories
 
@@ -114,10 +116,12 @@ export default {
 
     methods: {
         getTypeColor(type) {
-            if (type == "income") {
-                return 'bg-blue-500'
+            let colorArray = {
+                income: "bg-blue-500",
+                expense: "bg-orange-400",
+                debt: "bg-purple-500",
             }
-            return 'bg-orange-400'
+            return colorArray[type]
 
 
         }

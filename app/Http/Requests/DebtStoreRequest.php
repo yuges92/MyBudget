@@ -2,6 +2,7 @@
 
 namespace App\Http\Requests;
 
+use App\Models\Icon;
 use Illuminate\Foundation\Http\FormRequest;
 use Illuminate\Support\Facades\Storage;
 use Illuminate\Validation\Rule;
@@ -25,9 +26,8 @@ class DebtStoreRequest extends FormRequest
      */
     public function rules()
     {
-        $files = collect(Storage::disk('public')->files('svg-icons'))->map(function ($file) {
-            return Storage::url($file);
-        });
+        $files = Icon::getIconsAsFileList();
+
 
         return [
             'name' => ['required', 'unique:debts'],

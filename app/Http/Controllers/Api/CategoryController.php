@@ -4,7 +4,7 @@ namespace App\Http\Controllers\Api;
 
 use App\Http\Controllers\Controller;
 use App\Http\Requests\CategoryRequest;
-use App\Http\Requests\updateCategoryRequest;
+use App\Http\Requests\CategoryUpdateRequest;
 use App\Models\Category;
 use Exception;
 use Illuminate\Http\JsonResponse;
@@ -51,11 +51,11 @@ class CategoryController extends Controller
     /**
      * Update the specified resource in storage.
      *
-     * @param updateCategoryRequest $request
+     * @param CategoryUpdateRequest $request
      * @param Category $category
      * @return JsonResponse
      */
-    public function update(updateCategoryRequest $request, Category $category): JsonResponse
+    public function update(CategoryUpdateRequest $request, Category $category): JsonResponse
     {
         $category->update($request->validated());
 

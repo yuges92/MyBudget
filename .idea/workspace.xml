@@ -3,13 +3,19 @@
   <component name="ChangeListManager">
     <list default="true" id="1db62128-3702-4220-bcbe-fc42f957e3b5" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Api/DebtsController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/Api/DebtsController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/js/Components/InputTextField.vue" beforeDir="false" afterPath="$PROJECT_DIR$/resources/js/Components/InputTextField.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/js/Components/SideMenu.vue" beforeDir="false" afterPath="$PROJECT_DIR$/resources/js/Components/SideMenu.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/js/Pages/Debts/DebtCreate.vue" beforeDir="false" afterPath="$PROJECT_DIR$/resources/js/Pages/Debts/DebtCreate.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/js/Pages/Debts/DebtEdit.vue" beforeDir="false" afterPath="$PROJECT_DIR$/resources/js/Pages/Debts/DebtEdit.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/js/Pages/Debts/Debts.vue" beforeDir="false" afterPath="$PROJECT_DIR$/resources/js/Pages/Debts/Debts.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tests/TestCase.php" beforeDir="false" afterPath="$PROJECT_DIR$/tests/TestCase.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Api/CategoryController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/Api/CategoryController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Requests/CategoryRequest.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Requests/CategoryRequest.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Requests/DebtStoreRequest.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Requests/DebtStoreRequest.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Requests/DebtUpdateRequest.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Requests/DebtUpdateRequest.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Requests/updateCategoryRequest.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Requests/CategoryUpdateRequest.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/database/factories/CategoryFactory.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/factories/CategoryFactory.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/database/factories/DebtFactory.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/factories/DebtFactory.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/database/migrations/2021_01_02_174714_create_categories_table.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/migrations/2021_01_02_174714_create_categories_table.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/js/Composables/useCatagory.js" beforeDir="false" afterPath="$PROJECT_DIR$/resources/js/Composables/useCatagory.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/js/Pages/Categories/Categories.vue" beforeDir="false" afterPath="$PROJECT_DIR$/resources/js/Pages/Categories/Categories.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/js/Pages/Categories/CategoryCreate.vue" beforeDir="false" afterPath="$PROJECT_DIR$/resources/js/Pages/Categories/CategoryCreate.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/js/Pages/Categories/CategoryEdit.vue" beforeDir="false" afterPath="$PROJECT_DIR$/resources/js/Pages/Categories/CategoryEdit.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/routes/api.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/api.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -204,24 +210,24 @@
     </key>
   </component>
   <component name="RunManager" selected="PHPUnit.phpunit.xml">
-    <configuration name="DebtControllerTest" type="PHPUnitRunConfigurationType" factoryName="PHPUnit" temporary="true">
-      <TestRunner class="Tests\Feature\Api\DebtControllerTest" configuration_file="$PROJECT_DIR$/phpunit.xml" file="$PROJECT_DIR$/tests/Feature/Api/DebtControllerTest.php" scope="Class" />
+    <configuration name="CategoryControllerTest" type="PHPUnitRunConfigurationType" factoryName="PHPUnit" temporary="true">
+      <TestRunner class="Tests\Feature\Api\CategoryControllerTest" configuration_file="$PROJECT_DIR$/phpunit.xml" file="$PROJECT_DIR$/tests/Feature/Api/CategoryControllerTest.php" scope="Class" />
       <method v="2" />
     </configuration>
-    <configuration name="DebtControllerTest.canAddNewCategory" type="PHPUnitRunConfigurationType" factoryName="PHPUnit" temporary="true">
-      <TestRunner class="Tests\Feature\Api\DebtControllerTest" configuration_file="$PROJECT_DIR$/phpunit.xml" file="$PROJECT_DIR$/tests/Feature/Api/DebtControllerTest.php" method="canAddNewCategory" scope="Method" />
+    <configuration name="CategoryControllerTest.canAddNewCategory" type="PHPUnitRunConfigurationType" factoryName="PHPUnit" temporary="true">
+      <TestRunner class="Tests\Feature\Api\CategoryControllerTest" configuration_file="$PROJECT_DIR$/phpunit.xml" file="$PROJECT_DIR$/tests/Feature/Api/CategoryControllerTest.php" method="canAddNewCategory" scope="Method" />
+      <method v="2" />
+    </configuration>
+    <configuration name="DebtControllerTest" type="PHPUnitRunConfigurationType" factoryName="PHPUnit" temporary="true">
+      <TestRunner class="Tests\Feature\Api\DebtControllerTest" configuration_file="$PROJECT_DIR$/phpunit.xml" file="$PROJECT_DIR$/tests/Feature/Api/DebtControllerTest.php" scope="Class" />
       <method v="2" />
     </configuration>
     <configuration name="DebtControllerTest.canDeleteACategory" type="PHPUnitRunConfigurationType" factoryName="PHPUnit" temporary="true">
       <TestRunner class="Tests\Feature\Api\DebtControllerTest" configuration_file="$PROJECT_DIR$/phpunit.xml" file="$PROJECT_DIR$/tests/Feature/Api/DebtControllerTest.php" method="canDeleteACategory" scope="Method" />
       <method v="2" />
     </configuration>
-    <configuration name="DebtControllerTest.canGetACategory" type="PHPUnitRunConfigurationType" factoryName="PHPUnit" temporary="true">
-      <TestRunner class="Tests\Feature\Api\DebtControllerTest" configuration_file="$PROJECT_DIR$/phpunit.xml" file="$PROJECT_DIR$/tests/Feature/Api/DebtControllerTest.php" method="canGetACategory" scope="Method" />
-      <method v="2" />
-    </configuration>
-    <configuration name="DebtControllerTest.canUpdateACategory" type="PHPUnitRunConfigurationType" factoryName="PHPUnit" temporary="true">
-      <TestRunner class="Tests\Feature\Api\DebtControllerTest" configuration_file="$PROJECT_DIR$/phpunit.xml" file="$PROJECT_DIR$/tests/Feature/Api/DebtControllerTest.php" method="canUpdateACategory" scope="Method" />
+    <configuration name="ExpenseControllerTest.canAddNewExpense" type="PHPUnitRunConfigurationType" factoryName="PHPUnit" temporary="true">
+      <TestRunner class="Tests\Feature\Api\ExpenseControllerTest" configuration_file="$PROJECT_DIR$/phpunit.xml" file="$PROJECT_DIR$/tests/Feature/Api/ExpenseControllerTest.php" method="canAddNewExpense" scope="Method" />
       <method v="2" />
     </configuration>
     <configuration name="phpunit.xml" type="PHPUnitRunConfigurationType" factoryName="PHPUnit">
@@ -230,11 +236,11 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="PHPUnit.CategoryControllerTest" />
+        <item itemvalue="PHPUnit.CategoryControllerTest.canAddNewCategory" />
+        <item itemvalue="PHPUnit.ExpenseControllerTest.canAddNewExpense" />
         <item itemvalue="PHPUnit.DebtControllerTest.canDeleteACategory" />
         <item itemvalue="PHPUnit.DebtControllerTest" />
-        <item itemvalue="PHPUnit.DebtControllerTest.canGetACategory" />
-        <item itemvalue="PHPUnit.DebtControllerTest.canUpdateACategory" />
-        <item itemvalue="PHPUnit.DebtControllerTest.canAddNewCategory" />
       </list>
     </recent_temporary>
   </component>
@@ -291,7 +297,8 @@
       <workItem from="1611686656896" duration="2759000" />
       <workItem from="1611858559969" duration="1549000" />
       <workItem from="1612094121294" duration="1325000" />
-      <workItem from="1612110337410" duration="6321000" />
+      <workItem from="1612110337410" duration="7659000" />
+      <workItem from="1612202275570" duration="4948000" />
     </task>
     <servers />
   </component>

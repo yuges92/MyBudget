@@ -63,7 +63,7 @@ export default {
                 name: "",
                 icon: "/storage/svg-icons/1.svg"
             },
-            typeOptions: [{name: "Income"}, {name: "Expense"},],
+            typeOptions: [{name: "income"}, {name: "expense"}, {name: "debt"}],
             errorMessage: [],
 
         })

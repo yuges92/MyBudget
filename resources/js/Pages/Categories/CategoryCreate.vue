@@ -8,7 +8,7 @@
             <card class="">
                 <template #card-body-content>
                     <form action="" class="form " @submit.prevent="save">
-                            <button class="btn-icon" type="button" @click="promisedModal.openModal"><img :src="state.category.icon" alt="" class="w-12"></button>
+                        <button class="btn-icon" type="button" @click="promisedModal.openModal"><img :src="state.category.icon" alt="" class="w-12"></button>
                         <custom-select v-model:inputValue="state.category.type" :error-message="state.errorMessage.type" :options="state.typeOptions" label-name="Type"/>
                         <input-text-field v-model:inputValue="state.category.name" :error-message="state.errorMessage.name" input-type="text"
                                           label-name="Category Name "/>
@@ -62,7 +62,7 @@ export default {
                 name: "",
                 icon: "/storage/svg-icons/1.svg"
             },
-            typeOptions: [{name: "Income"}, {name: "Expense"}],
+            typeOptions: [{name: "income"}, {name: "expense"}, {name: "debt"}],
             errorMessage: [],
 
         })

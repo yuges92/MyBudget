@@ -2,11 +2,12 @@
 
 namespace App\Http\Requests;
 
+use App\Models\Icon;
 use Illuminate\Foundation\Http\FormRequest;
 use Illuminate\Support\Facades\Storage;
 use Illuminate\Validation\Rule;
 
-class updateCategoryRequest extends FormRequest
+class CategoryUpdateRequest extends FormRequest
 {
     /**
      * Determine if the user is authorized to make this request.
@@ -25,12 +26,10 @@ class updateCategoryRequest extends FormRequest
      */
     public function rules()
     {
-        $files = collect(Storage::disk('public')->files('svg-icons'))->map(function ($file) {
-            return Storage::url($file);
-        });
+        $files = Icon::getIconsAsFileList();
         return [
             'name' => ['required', Rule::unique('categories')->ignore(request('id'))->where('type', request('type'))],
-            'type' => ['required'],
+            'type' => ['required',Rule::in('income', 'expense', 'debt')],
             'icon' => ['required', Rule::in($files)]
 
         ];
