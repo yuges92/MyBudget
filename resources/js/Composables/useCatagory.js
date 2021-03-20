@@ -5,7 +5,8 @@ export function useCategory() {
         categories: [],
         incomeTypes: [],
         expenseTypes: [],
-        category: {}
+        category: {},
+        types: [{name: "income"}, {name: "expense"}, {name: "debt"}]
     })
 
     const saveCategory = async () => {

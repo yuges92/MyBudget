@@ -1,4 +1,4 @@
-import {ref} from "vue";
+import {onBeforeMount, ref} from "vue";
 
 export function useIcon() {
     const icons = ref([])
@@ -13,6 +13,10 @@ export function useIcon() {
             console.error(err)
         })
     }
+
+    onBeforeMount(() => {
+        fetchIcons()
+    })
 
     return {fetchIcons, icons}
 }

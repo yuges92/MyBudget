@@ -40,9 +40,9 @@ export default {
             routes: [
                 {title: "Overview", to: "overview", icon: "fas fa-home"},
                 {title: "Transactions", to: "transactions.index", icon: "fas fa-chart-line"},
-                {title: "Incomes", to: "incomes.index", icon: "fas fa-hand-holding-usd"},
-                {title: "Expenses", to: "expenses.index", icon: "fas fa-file-invoice-dollar"},
-                {title: "Debts/Loans", to: "debts.index", icon: "fas fa-credit-card"},
+                // {title: "Incomes", to: "incomes.index", icon: "fas fa-hand-holding-usd"},
+                // {title: "Expenses", to: "expenses.index", icon: "fas fa-file-invoice-dollar"},
+                // {title: "Debts/Loans", to: "debts.index", icon: "fas fa-credit-card"},
                 {title: "Categories", to: "categories.index", icon: "fas fa-sitemap"},
                 {title: "Notifications", to: "notifications", icon: "fas fa-bell"},
                 {title: "Settings", to: "settings", icon: "fas fa-cogs"},
