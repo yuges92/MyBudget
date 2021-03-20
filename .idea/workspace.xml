@@ -3,19 +3,24 @@
   <component name="ChangeListManager">
     <list default="true" id="1db62128-3702-4220-bcbe-fc42f957e3b5" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Api/CategoryController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/Api/CategoryController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Requests/CategoryRequest.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Requests/CategoryRequest.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Requests/DebtStoreRequest.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Requests/DebtStoreRequest.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Requests/DebtUpdateRequest.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Requests/DebtUpdateRequest.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Requests/updateCategoryRequest.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Requests/CategoryUpdateRequest.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/database/factories/CategoryFactory.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/factories/CategoryFactory.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/database/factories/DebtFactory.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/factories/DebtFactory.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/database/migrations/2021_01_02_174714_create_categories_table.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/migrations/2021_01_02_174714_create_categories_table.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/composer.json" beforeDir="false" afterPath="$PROJECT_DIR$/composer.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/composer.lock" beforeDir="false" afterPath="$PROJECT_DIR$/composer.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/css/app.css" beforeDir="false" afterPath="$PROJECT_DIR$/public/css/app.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/css/client.css" beforeDir="false" afterPath="$PROJECT_DIR$/public/css/client.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/css/external.css" beforeDir="false" afterPath="$PROJECT_DIR$/public/css/external.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/js/app.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/js/app.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/mix-manifest.json" beforeDir="false" afterPath="$PROJECT_DIR$/public/mix-manifest.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/css/app.css" beforeDir="false" afterPath="$PROJECT_DIR$/resources/css/app.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/js/Components/SideMenu.vue" beforeDir="false" afterPath="$PROJECT_DIR$/resources/js/Components/SideMenu.vue" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/resources/js/Composables/useCatagory.js" beforeDir="false" afterPath="$PROJECT_DIR$/resources/js/Composables/useCatagory.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/js/Pages/Categories/Categories.vue" beforeDir="false" afterPath="$PROJECT_DIR$/resources/js/Pages/Categories/Categories.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/js/Composables/useIcon.js" beforeDir="false" afterPath="$PROJECT_DIR$/resources/js/Composables/useIcon.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/resources/js/Pages/Categories/CategoryCreate.vue" beforeDir="false" afterPath="$PROJECT_DIR$/resources/js/Pages/Categories/CategoryCreate.vue" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/resources/js/Pages/Categories/CategoryEdit.vue" beforeDir="false" afterPath="$PROJECT_DIR$/resources/js/Pages/Categories/CategoryEdit.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/routes/api.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/api.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/js/Pages/Transaction/TransactionCreate.vue" beforeDir="false" afterPath="$PROJECT_DIR$/resources/js/Pages/Transaction/TransactionCreate.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/sass/_variable.scss" beforeDir="false" afterPath="$PROJECT_DIR$/resources/sass/_variable.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/app.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/app.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tailwind.config.js" beforeDir="false" afterPath="$PROJECT_DIR$/tailwind.config.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/webpack.mix.js" beforeDir="false" afterPath="$PROJECT_DIR$/webpack.mix.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -180,7 +185,7 @@
   <component name="PropertiesComponent">
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/resources/js/Pages/Expenses" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/public/fonts" />
     <property name="list.type.of.created.stylesheet" value="SCSS" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.detected.package.tslint" value="true" />
@@ -195,11 +200,11 @@
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/public/fonts" />
       <recent name="$PROJECT_DIR$/resources/js/Pages/Expenses" />
       <recent name="$PROJECT_DIR$/storage/app/public" />
       <recent name="$PROJECT_DIR$/resources/js/Pages/Debts" />
       <recent name="$PROJECT_DIR$/resources/js/Pages/Transaction" />
-      <recent name="$PROJECT_DIR$/resources/js/Components" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$/resources/js/Pages/Categories" />
@@ -298,7 +303,12 @@
       <workItem from="1611858559969" duration="1549000" />
       <workItem from="1612094121294" duration="1325000" />
       <workItem from="1612110337410" duration="7659000" />
-      <workItem from="1612202275570" duration="4948000" />
+      <workItem from="1612202275570" duration="8889000" />
+      <workItem from="1613222606076" duration="1110000" />
+      <workItem from="1614005718430" duration="7000" />
+      <workItem from="1615631742930" duration="1421000" />
+      <workItem from="1615728611430" duration="1999000" />
+      <workItem from="1616243886416" duration="366000" />
     </task>
     <servers />
   </component>

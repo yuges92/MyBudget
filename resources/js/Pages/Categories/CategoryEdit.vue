@@ -13,10 +13,8 @@
                 <template #card-body-content>
                     <form action="" class="form " @submit.prevent="update">
                         <button class="btn-icon" type="button" @click="iconModal.openModal()"><img :src="state.category.icon" alt="" class="w-12"></button>
-                        <custom-select v-model:inputValue="state.category.type" :error-message="state.errorMessage.type" :options="state.typeOptions"
-                                       label-name="Type"/>
-                        <input-text-field v-model:inputValue="state.category.name" :error-message="state.errorMessage.name" input-type="text"
-                                          label-name="Category Name"/>
+                        <custom-select v-model:inputValue="state.category.type" :error-message="state.errorMessage.type" :options="categoryState.types" label-name="Type"/>
+                        <input-text-field v-model:inputValue="state.category.name" :error-message="state.errorMessage.name" input-type="text" label-name="Category Name"/>
                         <div class="flex justify-end full-width">
                             <submit-btn :isLoading="isLoading" btn-name="Update" @submit="update"/>
                         </div>
@@ -56,7 +54,7 @@ export default {
         const promisedModal = usePromisedModal('You wont get the data back ')
         const iconModal = usePromisedModal()
 
-        const {fetchCategory, deleteCategory} = useCategory()
+        const {fetchCategory, deleteCategory, state: categoryState} = useCategory()
         const state = reactive({
             category: {
                 type: "",
@@ -102,8 +100,8 @@ export default {
             state.category = await response.data
 
         });
-
-        return {update, state, isLoading, deleteConfirmation, promisedModal, iconModal}
+        console.log(categoryState)
+        return {update, state, categoryState, isLoading, deleteConfirmation, promisedModal, iconModal}
     },
 
 }

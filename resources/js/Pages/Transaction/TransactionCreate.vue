@@ -8,12 +8,11 @@
                 <template #card-body-content>
 
                     <form action="" class="form" @submit.prevent="save">
-                        <custom-select v-model:inputValue="state.income.type" :options="state.typeOptions"
-                                       label-name="Type"/>
+                        <custom-select v-model:inputValue="state.income.type" :options="categoryState.types" label-name="Type"/>
+                        <custom-select v-model:inputValue="state.income.category" :options="categoryState.categories" label-name="Category"/>
                         <input-text-field v-model:inputValue="state.income.date" input-type="date" label-name="Date"/>
                         <input-text-field v-model:inputValue="state.income.from" input-type="text" label-name="From"/>
-                        <input-text-field v-model:inputValue="state.income.amount" input-type="number"
-                                          label-name="Amount"/>
+                        <input-text-field v-model:inputValue="state.income.amount" input-type="number" label-name="Amount"/>
                         <submit-btn :isLoading="isLoading" btn-name="Save" @submit="save"/>
                     </form>
                 </template>
@@ -27,45 +26,42 @@
 
 <script>
 import Modal from "@/Components/Modal";
-import {reactive, ref} from "vue";
+import {onBeforeMount, reactive, ref} from "vue";
 import InputTextField from "@/Components/InputTextField";
 import PageLayout from "@/Components/PageLayout";
 import GoBackBtn from "@/Components/GoBackBtn";
 import SubmitBtn from "@/Components/SubmitBtn";
 import CustomSelect from "@/Components/CustomSelect";
 import Card from "@/Components/Card";
+import {useCategory} from "@/Composables/useCatagory";
 
 export default {
     name: "TransactionCreate",
     components: {Card, CustomSelect, SubmitBtn, GoBackBtn, PageLayout, InputTextField, Modal},
     setup() {
         const isLoading = ref(false)
+        const {state: categoryState, fetchCategories} = useCategory()
+
         const state = reactive({
             income: {
-                type: "Salary",
+                type: "income",
+                category: "",
                 date: "",
                 from: "",
                 amount: ""
             },
-            typeOptions: [
-                {
-                    name: "Salary"
-                },
-                {
-                    name: "Rent Share"
-                },
-                {
-                    name: "Other"
-                },
-            ]
 
+        })
+
+        onBeforeMount(() => {
+            fetchCategories()
         })
 
         let save = () => {
             console.log(state.income)
             isLoading.value = true
             console.log(state.income)
-            axios.post('/api/users', state.income).then(res => {
+            axios.post('/api/transactions', state.income).then(res => {
                 console.log(res)
             }).catch(err => {
                 console.log(err)
@@ -75,7 +71,7 @@ export default {
             })
         }
 
-        return {save, state, isLoading}
+        return {save, state, categoryState, isLoading}
     },
 
 }

@@ -23,7 +23,7 @@
 }
 
 html {
-  font-family: "Nunito", "Arial";
+  font-family: "Poppins", "Arial";
   line-height: 1.15;
 }
 
@@ -497,6 +497,7 @@ a {
   top: 0rem;
   left: 0rem;
   z-index: 3;
+  overflow: hidden;
 }
 .left-side-menu .hamburger-btn {
   background: none;
@@ -938,6 +939,17 @@ a {
   border-radius: 5px;
   height: 2rem;
   margin: 0.2rem;
+}
+
+.btn-icon {
+  padding: 0.5rem;
+  border-radius: 5px;
+  border: 1px solid #d7d7d7;
+  margin-bottom: 1rem;
+}
+.btn-icon:hover {
+  background: #f3f3ff;
+  border-color: #f3f3ff;
 }
 
 .custom-form-field-container {

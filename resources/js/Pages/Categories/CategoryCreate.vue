@@ -9,7 +9,7 @@
                 <template #card-body-content>
                     <form action="" class="form " @submit.prevent="save">
                         <button class="btn-icon" type="button" @click="promisedModal.openModal"><img :src="state.category.icon" alt="" class="w-12"></button>
-                        <custom-select v-model:inputValue="state.category.type" :error-message="state.errorMessage.type" :options="state.typeOptions" label-name="Type"/>
+                        <custom-select v-model:inputValue="state.category.type" :error-message="state.errorMessage.type" :options="categoryState.types" label-name="Type"/>
                         <input-text-field v-model:inputValue="state.category.name" :error-message="state.errorMessage.name" input-type="text"
                                           label-name="Category Name "/>
                         <div class="flex justify-end full-width">
@@ -44,6 +44,7 @@ import {useIcon} from "@/Composables/useIcon";
 import Button from "@/Jetstream/Button";
 import {usePromisedModal} from "@/Composables/usePromisedModal";
 import IconChooser from "@/Components/IconChooser";
+import {useCategory} from "@/Composables/useCatagory";
 
 const {useRouter, useRoute} = require("vue-router");
 
@@ -56,19 +57,17 @@ export default {
         const vueRouter = useRouter()
         const {fetchIcons, icons} = useIcon()
         const isLoading = ref(false)
+        const {state: categoryState} = useCategory()
+
         const state = reactive({
             category: {
-                type: "Income",
+                type: "income",
                 name: "",
                 icon: "/storage/svg-icons/1.svg"
             },
             typeOptions: [{name: "income"}, {name: "expense"}, {name: "debt"}],
             errorMessage: [],
 
-        })
-
-        onBeforeMount(() => {
-            fetchIcons()
         })
 
         const chooseIcon = (item) => {
@@ -92,7 +91,7 @@ export default {
 
         }
 
-        return {save, state, isLoading, icons, chooseIcon, promisedModal}
+        return {save, state,categoryState, isLoading, icons, chooseIcon, promisedModal}
     },
 
 }
